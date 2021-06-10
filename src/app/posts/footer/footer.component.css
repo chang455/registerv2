@@ -1,0 +1,32 @@
+.font-size a{
+  font-size: 20px;
+  align-content: center;
+  text-decoration: wavy;
+}
+.size1{
+  height: 150px;
+  color: white;
+  background-color: #317af1;
+  margin-top: 570px;
+}
+.logo{
+  width: 450px;
+  position: relative;
+  height: auto;
+  margin-left: 200px;
+}
+.logo1 a{
+  justify-content: space-between;
+}
+.logo1 a{
+  margin: 20px;
+  width: 30px;
+  height: auto;
+  justify-content: space-between;
+  color: white;
+}
+
+
+
+
+

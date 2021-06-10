@@ -1,0 +1,18 @@
+.spacer {
+  flex: 1 1 auto;
+}
+.font-size a{
+  font-size: 20px;
+  align-content: center;
+  text-decoration: wavy;
+}
+.size1{
+  height: 100px;
+  color: white;
+  background-color: #3575cb;
+}
+.logo{
+  width: 90px;
+  position: relative;
+  height: auto;
+}
