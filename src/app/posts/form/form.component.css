@@ -1,0 +1,56 @@
+.position{
+  padding: 30px;
+  margin-left: 400px;
+  margin-top: 30px;
+  display: block;
+  width: 730px;
+  background-color:white;
+  border-radius: 10px;
+  flex-wrap: wrap;
+  position: relative;
+}
+.title{
+  font-family: NotoSansLao;
+  font-weight: bold;
+  font-size: 30px;
+  position: relative;
+  margin-left: 450px;
+}
+.position1{
+  font-family: NotoSansLao;
+}
+.vaccine_dose{
+  font-size: 20px;
+  display: block;
+  position: relative;
+}
+.date-control1{
+  border-radius: 3px;
+  margin-bottom: 30px;
+
+  width: 100px;
+  height: 50px;
+  display: flex;
+  box-sizing: border-box;
+}
+
+.form-control{
+  border-radius: 5px;
+  margin-bottom: 20px;
+  width: 400px;
+  height: 40px;
+  text-align: center;
+  display: flex;
+  font-size: 15px;
+  font-weight: bold;
+  font-family: NotoSansLao;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+.form-radio{
+  padding: 0;
+  margin-bottom: 30px;
+  display: block;
+}
+
+
