@@ -4,6 +4,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppComponent } from './app.component';
 import { PostCreateComponent } from './posts/post-create/post-create.component'
 import { FooterCreate } from './posts/footer/footer.component'
+import { FormCreate } from './posts/form/form.component'
 import { HttpClientModule } from '@angular/common/http';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import {MatButtonModule} from '@angular/material/button';
@@ -14,7 +15,8 @@ import {MatIconModule} from '@angular/material/icon';
   declarations: [
     AppComponent,
     PostCreateComponent,
-    FooterCreate
+    FooterCreate,
+    FormCreate
   ],
   imports: [
     BrowserModule,
