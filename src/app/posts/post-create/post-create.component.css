@@ -18,4 +18,8 @@
   position: relative;
   height: auto;
 }
+.menu{
+  display: flex;
+  flex-direction: column;
+}
 

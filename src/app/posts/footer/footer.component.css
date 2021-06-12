@@ -1,8 +1,4 @@
-.font-size a{
-  font-size: 20px;
 
-  text-decoration: wavy;
-}
 .size1{
   height: 150px;
   color: white;
@@ -10,29 +6,23 @@
   margin-top: 100px;
 }
 .logo{
-  width: 250px;
+  width: 300px;
   position: relative;
-  height: auto;
-  margin: auto;
+  height: 60px;
+  margin-left: 50px;
 }
-@media only screen and (max-width:800) {
-  .logo{
-    width: 200px;
-    position: relative;
-    height: auto;
-    margin: auto;
-  }
+.title{
+  display: flex;
+  flex-wrap: wrap;
+  padding: 0;
+  margin: 0;
+  letter-spacing: 1px;
 }
-.logo1 a{
-  justify-content: space-between;
-}
-.logo1 a{
-  margin: auto;
-  width: 30px;
-  height: auto;
-  justify-content: space-between;
-  color: white;
-}
+
+
+
+
+
 
 
 
