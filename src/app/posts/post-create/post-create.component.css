@@ -9,6 +9,7 @@
 }
 .size1{
   height: 100px;
+  width: 100%;
   color: white;
   background-color: #3575cb;
 }
@@ -17,3 +18,4 @@
   position: relative;
   height: auto;
 }
+

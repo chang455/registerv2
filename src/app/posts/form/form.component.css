@@ -1,6 +1,6 @@
 .position{
   padding: 30px;
-  margin-left: 415px;
+  margin:auto;
   margin-top: 30px;
   display: block;
   width: 730px;
@@ -9,12 +9,13 @@
   flex-wrap: wrap;
   position: relative;
 }
+
 .title{
   font-family: NotoSansLao;
   font-weight: bold;
   font-size: 30px;
   position: relative;
-  margin-left: 450px;
+  margin:auto;
 }
 .position1{
   font-family: NotoSansLao;
@@ -51,6 +52,7 @@
 *{
   border-radius: 5px;
 }
+
 
 
 

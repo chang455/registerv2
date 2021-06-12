@@ -1,6 +1,6 @@
 .font-size a{
   font-size: 20px;
-  align-content: center;
+
   text-decoration: wavy;
 }
 .size1{
@@ -10,16 +10,24 @@
   margin-top: 100px;
 }
 .logo{
-  width: 450px;
+  width: 250px;
   position: relative;
   height: auto;
-  margin-left: 200px;
+  margin: auto;
+}
+@media only screen and (max-width:800) {
+  .logo{
+    width: 200px;
+    position: relative;
+    height: auto;
+    margin: auto;
+  }
 }
 .logo1 a{
   justify-content: space-between;
 }
 .logo1 a{
-  margin: 20px;
+  margin: auto;
   width: 30px;
   height: auto;
   justify-content: space-between;
