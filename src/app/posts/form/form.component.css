@@ -1,11 +1,11 @@
 .position{
   padding: 30px;
-  margin-left: 400px;
+  margin-left: 415px;
   margin-top: 30px;
   display: block;
   width: 730px;
-  background-color:white;
-  border-radius: 10px;
+  background-color:#e6e6e6;
+
   flex-wrap: wrap;
   position: relative;
 }
@@ -47,10 +47,24 @@
   padding-left: 5px;
   padding-right: 5px;
 }
-.form-radio{
-  padding: 0;
-  margin-bottom: 30px;
-  display: block;
+
+*{
+  border-radius: 5000000px;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
