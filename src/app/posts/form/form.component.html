@@ -1,7 +1,7 @@
-
+   <p class="title">ການລົງທະບຽນລ່ວງໜ້າສຳລັບການຮັບວັກຊີນກັນພະຍາດໂຄວິດ-19</p>
 
  <div class="position">
-  <p class="title">ການລົງທະບຽນລ່ວງໜ້າສຳລັບການຮັບວັກຊີນກັນພະຍາດໂຄວິດ-19</p>
+
  <form class="position1">
   <!--เลือกเขัม-->                          <div class="vancine_dose">
   <h2 class="sub-title">ເຂັມທີ</h2>
@@ -26,14 +26,8 @@
 <label class="col-sm-2 col-form-label">ປະເພດຂອງວັກຊີນ</label>
 <div class="vaccine_type">
   <select name="select" class="form-control">
-<option value="opt1">ເລືອກຊະນິດຂອງວັກຊີນ</option>
-<option value="opt2">Type 2</option>
-<option value="opt3">Type 3</option>
-<option value="opt4">Type 4</option>
-<option value="opt5">Type 5</option>
-<option value="opt6">Type 6</option>
-<option value="opt7">Type 7</option>
-<option value="opt8">Type 8</option>
+<option [value]="vaccines.id_vaccine_type" *ngFor="let vaccines of vaccinesList">{{ vaccines.name }}</option>
+
 </select>
 </div>
            </div>
@@ -46,14 +40,8 @@
 <label class="col-sm-2 col-form-label">ສະຖານທີ່</label>
 <div class="col-sm-10">
 <select name="select" class="form-control">
-<option value="opt1">ເລືອກສະຖານທີ່</option>
-<option value="opt2">Type 2</option>
-<option value="opt3">Type 3</option>
-<option value="opt4">Type 4</option>
-<option value="opt5">Type 5</option>
-<option value="opt6">Type 6</option>
-<option value="opt7">Type 7</option>
-<option value="opt8">Type 8</option>
+<option value="location.id_location" *ngFor="let location of locationList">{{ location.name_la }}</option>
+
 </select>
 </div>
 </div>
@@ -130,46 +118,34 @@
 
 
 
-<!--ใส่ชื่บ้าน-->  <div class="col-sm-12 col-xl-3 m-b-30">
-<h4 class="sub-title">ຢູ່ບ້ານໃດ</h4>
-<select name="select" class="form-control form-control-default">
-<option value="opt1">ກະລຸນາເລືອກບ້ານ</option>
-<option value="opt2">Type 2</option>
-<option value="opt3">Type 3</option>
-<option value="opt4">Type 4</option>
-<option value="opt5">Type 5</option>
-<option value="opt6">Type 6</option>
-<option value="opt7">Type 7</option>
-<option value="opt8">Type 8</option>
-</select>
-</div>
 
-<!--ใส่แมือง-->  <div class="col-sm-12 col-xl-3 m-b-30">
-<h4 class="sub-title">ຢູ່ເມືອງໃດ</h4>
-<select name="select" class="form-control form-control-default">
-<option value="opt1">ກະລຸນາເລືອກເມືອງ</option>
-<option value="opt2">Type 2</option>
-<option value="opt3">Type 3</option>
-<option value="opt4">Type 4</option>
-<option value="opt5">Type 5</option>
-<option value="opt6">Type 6</option>
-<option value="opt7">Type 7</option>
-<option value="opt8">Type 8</option>
-</select>
-</div>
 <!--ใส่ชื่แขวง-->  <div class="col-sm-12 col-xl-3 m-b-30">
 <h4 class="sub-title">ຢູ່ແຂວງໃດ</h4>
 <select name="select" class="form-control form-control-default">
-<option value="opt1">ກະລຸນາເລືອກແຂວງ</option>
-<option value="opt2">Type 2</option>
-<option value="opt3">Type 3</option>
-<option value="opt4">Type 4</option>
-<option value="opt5">Type 5</option>
-<option value="opt6">Type 6</option>
-<option value="opt7">Type 7</option>
-<option value="opt8">Type 8</option>
+<option [value]="province.id_province" *ngFor="let province of provinceList" >{{ province.name_lao }}</option>
+
 </select>
 </div>
+<!--ใส่แมือง-->  <div class="col-sm-12 col-xl-3 m-b-30">
+  <h4 class="sub-title">ຢູ່ເມືອງໃດ</h4>
+  <select name="select" class="form-control form-control-default">
+    <option [value]="district.id_district" *ngFor="let district of districtList" >{{ district.name_lao }}</option>
+
+  </select>
+  </div>
+<!--ใส่ชื่บ้าน-->  <div class="col-sm-12 col-xl-3 m-b-30">
+  <h4 class="sub-title">ຢູ່ບ້ານໃດ</h4>
+  <select name="select" class="form-control form-control-default">
+  <option value="opt1">ກະລຸນາເລືອກບ້ານ</option>
+  <option value="opt2">Type 2</option>
+  <option value="opt3">Type 3</option>
+  <option value="opt4">Type 4</option>
+  <option value="opt5">Type 5</option>
+  <option value="opt6">Type 6</option>
+  <option value="opt7">Type 7</option>
+  <option value="opt8">Type 8</option>
+  </select>
+  </div>
 
 
 

@@ -15,7 +15,9 @@
   font-weight: bold;
   font-size: 30px;
   position: relative;
-  margin:auto;
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
 }
 .position1{
   font-family: NotoSansLao;

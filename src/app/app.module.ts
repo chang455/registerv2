@@ -11,13 +11,15 @@ import {MatButtonModule} from '@angular/material/button';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatIconModule} from '@angular/material/icon';
 import { FlexLayoutModule } from '@angular/flex-layout'
+import { FormService } from './form-service/form.service';
 
 @NgModule({
   declarations: [
     AppComponent,
     PostCreateComponent,
     FooterCreate,
-    FormCreate
+    FormCreate,
+    
   ],
   imports: [
     BrowserModule,
