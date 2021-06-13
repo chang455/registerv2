@@ -12,6 +12,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatIconModule} from '@angular/material/icon';
 import { FlexLayoutModule } from '@angular/flex-layout'
 import { FormService } from './form-service/form.service';
+import { ReactiveFormsModule } from "@angular/forms";
 
 @NgModule({
   declarations: [
@@ -19,7 +20,7 @@ import { FormService } from './form-service/form.service';
     PostCreateComponent,
     FooterCreate,
     FormCreate,
-    
+
   ],
   imports: [
     BrowserModule,
@@ -28,7 +29,8 @@ import { FormService } from './form-service/form.service';
     BrowserAnimationsModule,
     MatButtonModule,
     MatIconModule,
-    FlexLayoutModule
+    FlexLayoutModule,
+    
 
   ],
   providers: [],
