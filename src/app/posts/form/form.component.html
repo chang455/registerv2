@@ -4,23 +4,19 @@
 <form class="position">
   <div class="position1">
   <!--เลือกเขัม-->
-  <div class="vaccine_dose">
-
+  <div class="vancine_dose">
     <h2 class="sub-title">ເຂັມທີ</h2>
     <h3 class="sub-title">ອັນນີ້ແມ່ນເຂັມທໍາອິດ ຫຼື ເຂັມທີສອງຂອງທ່ານ?</h3>
-    <div class="form-radio">
 
 
-      <div class="form-check form-check-inline">
-        <input class="form-check-input"  type="radio" >
-        <label class="form-check-label" for="dose">ເຂັມທີ (1) </label>
-        </div>
-        <div class="form-check form-check-inline">
-          <input class="form-check-input" type="radio" >
-          <label class="form-check-label" for="dose">ເຂັມທີ (2)</label>
-          </div>
-          </div>
-  </div>
+
+   <label>
+   <input type="radio" name="radio" checked="checked">
+        <span>ເຂັມທີ (1)</span>
+     <input type="radio" name="radio">
+   <span>ເຂັມທີ (2)</span>
+     </label>
+</div>
 <!--เลือกเขัม-->
 <div class="vacin_type_selet_box">
   <label class="col-sm-2 col-form-label">ປະເພດຂອງວັກຊີນ</label>
@@ -52,19 +48,29 @@
 <!--เลือกเพด-->
 <div class="gender">
   <h3 class="sub-title">ກະລຸນາເລືອກເພດ</h3>
-  <div class="form-check form-check-inline">
-    <input class="form-check-input"  type="radio" >
-    <label class="form-check-label" for="dose">Male</label>
-    </div>
-    <div class="form-check form-check-inline">
-      <input class="form-check-input"  type="radio" >
-      <label class="form-check-label" for="dose">Female</label>
-      </div>
-      <div class="form-check form-check-inline">
-        <input class="form-check-input"  type="radio">
-        <label class="form-check-label" for="dose">ອື່ນໆ</label>
-        </div>
 
+  <div class="form-radio">
+
+  <div class="radio radio-inline">
+   <label>
+       <input type="radio" name="radio" checked="checked">
+       <i class="helper"></i>Male
+   </label>
+  </div>
+  <div class="radio radio-inline">
+   <label>
+       <input type="radio" name="radio">
+       <i class="helper"></i>Female
+   </label>
+  </div>
+  <div class="radio radio-inline">
+  <label>
+     <input type="radio" name="radio">
+     <i class="helper"></i>ອື່ນໆ
+  </label>
+  </div>
+
+            </div>
             </div>
 
  <!--ใส่ชื่นนามสะกุน-->
@@ -122,16 +128,16 @@
   <div class="form-radio">
 
 
-    <div class="form-check form-check-inline">
-      <input class="form-check-input"  type="radio">
-      <label class="form-check-label" for="dose">ແມ່ນຄົນລາວ </label>
-      </div>
-      <div class="form-check form-check-inline">
-        <input class="form-check-input"  type="radio" >
-        <label class="form-check-label" for="dose">ບໍ່ແມ່ນຄົນລາວ</label>
-        </div>
-        </div>
-</div>
+  <label>
+  <input type="radio" name="radio" checked="checked">
+  <i class="helper"></i>ແມ່ນຄົນລາວ
+  </label>
+  </div>
+
+  <label>
+  <input type="radio" name="radio">
+  <i class="helper"></i>ບໍ່ແມ່ນຄົນລາວ
+  </label></div>
   <!--passport-->  <div class="form-group row">
 <label class="col-sm-2 col-form-label">ໄອດີ ຫຼື passport ຂອງທ່ານ</label>
 <div class="col-sm-10">
