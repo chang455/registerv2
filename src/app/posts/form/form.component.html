@@ -1,162 +1,191 @@
 <p class="title">ການລົງທະບຽນລ່ວງໜ້າສຳລັບການຮັບວັກຊີນກັນພະຍາດໂຄວິດ-19</p>
-<form class="position">
+
+
+
+<!-- <form #f="ngForm" (ngSubmit)="onSubmit(f)"  >
+  <input name="first" ngModel required #first="ngModel">
+  <input name="last" ngModel>
+  <input name="tel" ngModel>
+  <button>Submit</button>
+</form> -->
+
+<!-- <p>First name value: {{ first.value }}</p>
+<p>First name valid: {{ first.valid }}</p>
+<p>Form value: {{ f.value | json }}</p>
+<p>Form valid: {{ f.valid }}</p> -->
+
+
+
+
+<form class="position" #userForm="ngForm"  (ngSubmit)="onSubmit(userForm)">
+  {{userForm.value | json}}
   <div class="position1">
-  <!--เลือกเขัม-->
-  <div class="vancine_dose">
-    <h2 class="sub-title">ເຂັມທີ</h2>
-    <h3 class="sub-title">ອັນນີ້ແມ່ນເຂັມທໍາອິດ ຫຼື ເຂັມທີສອງຂອງທ່ານ?</h3>
-
-
-
-   <label>
-   <input type="radio" name="radio" checked="checked">
-        <span>ເຂັມທີ (1)</span>
-     <input type="radio" name="radio">
-   <span>ເຂັມທີ (2)</span>
-     </label>
-</div>
-<!--เลือกเขัม-->
-<div class="vacin_type_selet_box">
-  <label class="col-sm-2 col-form-label">ປະເພດຂອງວັກຊີນ</label>
-  <div class="vaccine_type">
-    <select name="select" class="form-control">
-  <option [value]="vaccines.id_vaccine_type" *ngFor="let vaccines of vaccinesList">{{ vaccines.name }}</option>
-
-  </select>
-  </div>
-             </div>
-             <!--เลือกสะภานที-->
-
-<div class="location_to_get">
-  <label class="col-sm-2 col-form-label">ສະຖານທີ່</label>
-  <div class="col-sm-10">
-  <select name="select" class="form-control">
-  <option value="location.id_location" *ngFor="let location of locationList">{{ location.name_la }}</option>
-
-  </select>
-  </div>
-  </div>
-<!--เลือกวัน-->
-
-<div class="date_to_get">
-  <h4 class="sub-title">Date</h4>
-
-  <input class="form-control" type="date">
-                                 </div>
-<!--เลือกเพด-->
-<div class="gender">
-  <h3 class="sub-title">ກະລຸນາເລືອກເພດ</h3>
-
-  <div class="form-radio">
-
-  <div class="radio radio-inline">
-   <label>
-       <input type="radio" name="radio" checked="checked">
-       <i class="helper"></i>Male
-   </label>
-  </div>
-  <div class="radio radio-inline">
-   <label>
-       <input type="radio" name="radio">
-       <i class="helper"></i>Female
-   </label>
-  </div>
-  <div class="radio radio-inline">
-  <label>
-     <input type="radio" name="radio">
-     <i class="helper"></i>ອື່ນໆ
-  </label>
-  </div>
-
-            </div>
-            </div>
-
- <!--ใส่ชื่นนามสะกุน-->
-
-                       <div class="form-group row">
-
-              <label class="col-sm-2 col-form-label">ຊື່ (ພາສາລາວ)*</label>
-
-              <input type="text" class="form-control" placeholder="ຕາມທີ່ລະບຸໃນບັດປະຈໍາຕົວ/ໜັງສືຜ່ານແດນ/ສໍາມະໂນຄົວ">
+    <!--เลือกเขัม-->
+    <div class="vancine_dose">
+      <h2 class="sub-title">ເຂັມທີ</h2>
+      <h3 class="sub-title">ອັນນີ້ແມ່ນເຂັມທໍາອິດ ຫຼື ເຂັມທີສອງຂອງທ່ານ?</h3>
 
 
 
 
-              <label class="col-sm-2 col-form-label">ນາມສະກຸນ(ພາສາລາວ)*</label>
-
-              <input type="text" class="form-control" placeholder="ຕາມທີ່ລະບຸໃນບັດປະຈໍາຕົວ/ໜັງສືຜ່ານແດນ/ສໍາມະໂນຄົວນ">
-            </div>
-
-<!--ใส่ชื่แขวง-->  <div class="col-sm-12 col-xl-3 m-b-30">
 
 
+        <input ngModel type="radio" value="1" name="dose" >
+      <label>ເຂັມທີ (1)</label>
 
-<h4 class="sub-title">ຢູ່ແຂວງໃດ</h4>
-<select name="select" class="form-control form-control-default">
-<option [value]="province.id_province" *ngFor="let province of provinceList" >{{ province.name_lao }}</option>
+        <input ngModel type="radio" value="2" name="dose" >
+      <label>ເຂັມທີ (2)</label>
 
-</select>
-</div>
 
-<!--ใส่แมือง-->  <div class="col-sm-12 col-xl-3 m-b-30">
-  <h4 class="sub-title">ຢູ່ເມືອງໃດ</h4>
-  <select name="select" class="form-control form-control-default">
-    <option [value]="district.id_district" *ngFor="let district of districtList" >{{ district.name_lao }}</option>
-
-  </select>
-  </div>
-  <!--ใส่ชื่บ้าน-->  <div class="col-sm-12 col-xl-3 m-b-30">
-    <h4 class="sub-title">ຢູ່ບ້ານໃດ</h4>
-    <select name="select" class="form-control form-control-default">
-    <option value="opt1">ກະລຸນາເລືອກບ້ານ</option>
-    <option value="opt2">Type 2</option>
-    <option value="opt3">Type 3</option>
-    <option value="opt4">Type 4</option>
-    <option value="opt5">Type 5</option>
-    <option value="opt6">Type 6</option>
-    <option value="opt7">Type 7</option>
-    <option value="opt8">Type 8</option>
-    </select>
     </div>
+    <!--เลือกเขัม-->
+    <div class="vacin_type_selet_box">
+      <label class="col-sm-2 col-form-label">ປະເພດຂອງວັກຊີນ</label>
+      <div class="vaccine_type">
+        <select name="id_vaccine" class="form-control" ngModel>
+          <option [value]="vaccines.id_vaccine_type" *ngFor="let vaccines of vaccinesList">{{ vaccines.name }}</option>
+
+        </select>
+      </div>
+    </div>
+    <!--เลือกสะภานที-->
+
+    <div class="location_to_get">
+      <label class="col-sm-2 col-form-label">ສະຖານທີ່</label>
+      <div class="col-sm-10">
+        <select name="location_to_get" class="form-control" ngModel>
+          <option [value]="location.id_location" *ngFor="let location of locationList">{{ location.name_la }}</option>
+
+        </select>
+      </div>
+    </div>
+    <!--เลือกวัน-->
+
+    <div class="date_to_get">
+      <h4 class="sub-title">Date</h4>
+
+      <input class="form-control" type="date" name="date_to_get" ngModel>
+    </div>
+    <!--เลือกเพด-->
+    <div class="gender">
+      <h3 class="sub-title">ກະລຸນາເລືອກເພດ</h3>
+
+      <div class="form-radio">
+
+        <div class="radio radio-inline">
+          <label>
+            <input type="radio" value="male" name="gender" ngModel checked="checked">
+            <i class="helper"></i>Male
+          </label>
+        </div>
+        <div class="radio radio-inline">
+          <label>
+            <input type="radio" value="female" name="gender" ngModel>
+            <i class="helper"></i>Female
+          </label>
+        </div>
+        <div class="radio radio-inline">
+          <label>
+            <input type="radio" value="other" name="gender" ngModel>
+            <i class="helper"></i>ອື່ນໆ
+          </label>
+        </div>
+
+      </div>
+    </div>
+
+    <!--ใส่ชื่นนามสะกุน-->
+
+    <div class="form-group row">
+
+      <label class="col-sm-2 col-form-label">ຊື່ (ພາສາລາວ)*</label>
+
+      <input ngModel name="name" type="text" class="form-control" placeholder="ຕາມທີ່ລະບຸໃນບັດປະຈໍາຕົວ/ໜັງສືຜ່ານແດນ/ສໍາມະໂນຄົວ">
+
+
+
+
+      <label class="col-sm-2 col-form-label">ນາມສະກຸນ(ພາສາລາວ)*</label>
+
+      <input ngModel name="lastname" type="text" class="form-control" placeholder="ຕາມທີ່ລະບຸໃນບັດປະຈໍາຕົວ/ໜັງສືຜ່ານແດນ/ສໍາມະໂນຄົວນ">
+    </div>
+
+    <!--ใส่ชื่แขวง-->
+    <div class="col-sm-12 col-xl-3 m-b-30">
+
+
+
+      <h4 class="sub-title">ຢູ່ແຂວງໃດ</h4>
+      <select name="province" class="form-control form-control-default" ngModel>
+        <option [value]="province.id_province" *ngFor="let province of provinceList">{{ province.name_lao }}</option>
+
+      </select>
+    </div>
+
+    <!--ใส่แมือง-->
+    <div class="col-sm-12 col-xl-3 m-b-30">
+      <h4 class="sub-title">ຢູ່ເມືອງໃດ</h4>
+      <select name="district" class="form-control form-control-default" ngModel>
+        <option [value]="district.id_district" *ngFor="let district of districtList">{{ district.name_lao }}</option>
+
+      </select>
+    </div>
+    <!--ใส่ชื่บ้าน-->
+    <!-- <div class="col-sm-12 col-xl-3 m-b-30">
+      <h4 class="sub-title">ຢູ່ບ້ານໃດ</h4>
+      <select ngModel name="village" class="form-control form-control-default">
+        <option value="opt1">ກະລຸນາເລືອກບ້ານ</option>
+        <option value="opt2">Type 2</option>
+        <option value="opt3">Type 3</option>
+        <option value="opt4">Type 4</option>
+        <option value="opt5">Type 5</option>
+        <option value="opt6">Type 6</option>
+        <option value="opt7">Type 7</option>
+        <option value="opt8">Type 8</option>
+      </select>
+    </div> -->
 
 
     <!--islaos-->
-<div class="col-sm-12 col-md-6 col-xl-4 m-b-30">
-  <h4 class="sub-title">ແມ່ນຄົນ ລາວ ຫຼື ບໍ່?</h4>
-  <div class="form-radio">
+    <div class="col-sm-12 col-md-6 col-xl-4 m-b-30">
+      <h4 class="sub-title">ແມ່ນຄົນ ລາວ ຫຼື ບໍ່?</h4>
+      <div class="form-radio">
 
 
-  <label>
-  <input type="radio" name="radio" checked="checked">
-  <i class="helper"></i>ແມ່ນຄົນລາວ
-  </label>
+        <label>
+          <input ngModel value="yes" type="radio" name="islao" checked="checked">
+          <i class="helper"></i>ແມ່ນຄົນລາວ
+        </label>
+      </div>
+
+      <label>
+        <input ngModel type="radio" value="no" name="islao">
+        <i class="helper"></i>ບໍ່ແມ່ນຄົນລາວ
+      </label>
+    </div>
+    <!--passport-->
+    <div class="form-group row">
+      <label class="col-sm-2 col-form-label">ໄອດີ ຫຼື passport ຂອງທ່ານ</label>
+      <div class="col-sm-10">
+        <input ngModel name="id_or_passportid" type="text" class="form-control" placeholder="ຕາມທີ່ລະບຸໃນບັດປະຈໍາຕົວ/ໜັງສືຜ່ານແດນ/ສໍາມະໂນຄົວ">
+      </div>
+    </div>
+    <!--phone-->
+    <div class="form-group row">
+      <label class="col-sm-2 col-form-label">ຫມາຍເລກໂທລະສັບ</label>
+      <div class="col-sm-10">
+        <input ngModel name="phone" type="test" class="form-control" placeholder="020XXXXXXXX ຫລື 030XXXXXXX">
+      </div>
+    </div>
+    <!--email-->
+    <div class="form-group row">
+      <label class="col-sm-2 col-form-label">Email ຂອງທ່ານ</label>
+      <div class="col-sm-10">
+
+        <input type="email" class="form-control" name="email" ngModel email="true" placeholder="ກະລຸນາໃສ່ຂໍ້ມູນ">
+      </div>
+    </div>
+    <button class="big-button" type="submit" id="submit-form" (click)="submit()"> ສົ່ງຂໍ້ມູນ </button>
+
   </div>
-
-  <label>
-  <input type="radio" name="radio">
-  <i class="helper"></i>ບໍ່ແມ່ນຄົນລາວ
-  </label></div>
-  <!--passport-->  <div class="form-group row">
-<label class="col-sm-2 col-form-label">ໄອດີ ຫຼື passport ຂອງທ່ານ</label>
-<div class="col-sm-10">
-<input type="text" class="form-control" placeholder="ຕາມທີ່ລະບຸໃນບັດປະຈໍາຕົວ/ໜັງສືຜ່ານແດນ/ສໍາມະໂນຄົວ">
-</div>
-</div>
-<!--phone--><div class="form-group row">
-  <label class="col-sm-2 col-form-label">ຫມາຍເລກໂທລະສັບ</label>
-  <div class="col-sm-10">
-  <input type="text" class="form-control" placeholder="020XXXXXXXX ຫລື 030XXXXXXX">
-  </div>
-  </div>
-  <!--email--><div class="form-group row">
-<label class="col-sm-2 col-form-label">Email ຂອງທ່ານ</label>
-<div class="col-sm-10">
-
-<input type="email"  class="form-control" name="email" ngModel email="true"
-placeholder="ກະລຸນາໃສ່ຂໍ້ມູນ">
-</div>
-</div>
-<button class ="big-button" type="submit" id="submit-form" > ສົ່ງຂໍ້ມູນ </button>
-
-</div>
 </form>
