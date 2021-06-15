@@ -30,7 +30,9 @@ import { FormsModule, ReactiveFormsModule } from "@angular/forms";
     MatButtonModule,
     MatIconModule,
     FlexLayoutModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule
+
 
 
   ],

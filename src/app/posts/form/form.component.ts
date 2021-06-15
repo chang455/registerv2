@@ -2,7 +2,7 @@ import { HttpClient } from "@angular/common/http";
 import { Component, OnInit, ɵɵtrustConstantResourceUrl } from "@angular/core";
 import { FormService } from "src/app/form-service/form.service";
 import { District, Province, Vaccines,Location } from "./district-get";
-import {NgForm} from '@angular/forms';
+import {FormBuilder, FormGroup, NgForm} from '@angular/forms';
 
 
 @Component({
@@ -16,10 +16,10 @@ export class FormCreate implements OnInit{
   districtList: District []= [];
   vaccinesList: Vaccines []= [];
   locationList: Location []=[];
-
+  myForm: FormGroup;
   usedata : any
 
-  constructor(private service:FormService) {
+  constructor(private service:FormService,private fb:FormBuilder) {
 
     this.service.httpProvince()
     .subscribe(response=>{
@@ -42,6 +42,23 @@ export class FormCreate implements OnInit{
       this.locationList=response;
     })
 
+    this.myForm = this.fb.group({
+      dose:'',
+      id_vaccine:'',
+      location_to_get:'',
+      date_to_get:'',
+      gender:'',
+      name:'',
+      lastname:'',
+      province:'',
+      district:'',
+      islao:'',
+      id_or_passportid:'',
+      phone:'',
+      email:'',
+      // tb_form_create_date:''
+   });
+
    }
   ngOnInit(): void {
 
@@ -50,41 +67,33 @@ export class FormCreate implements OnInit{
 //       this.vaccinesList=result;
 //       })
 
-
-
-
   }
 
+  onSubmit(data: any):void {
+    console.log(data);
 
 
-
-  submit(){
-
-  }
-
-
-  onSubmit(data: NgForm) {
     // console.log(data.value);
     // console.log(data.value.first);  // { first: '', last: '' }
 
-      const datas ={
-        'id_vaccine':data.value.id_vaccine,
-        'dose':data.value.dose,
-        'location_to_get':data.value.location_to_get,
-        'date_to_get':data.value.date_to_get,
-        'gender':data.value.gender,
-        'name':data.value.name,
-        'lastname':data.value.lastname,
-        'district':data.value.district,
-        'province':data.value.province,
-        'islao':data.value.islao,
-        'id_or_passportid':data.value.id_or_passportid,
-        'phone':data.value.phone,
-        'email':data.value.email
-      }
-      console.log(datas)
+      // const datas ={
+      //   'id_vaccine':data.value.id_vaccine,
+      //   'dose':data.value.dose,
+      //   'location_to_get':data.value.location_to_get,
+      //   'date_to_get':data.value.date_to_get,
+      //   'gender':data.value.gender,
+      //   'name':data.value.name,
+      //   'lastname':data.value.lastname,
+      //   'district':data.value.district,
+      //   'province':data.value.province,
+      //   'islao':data.value.islao,
+      //   'id_or_passportid':data.value.id_or_passportid,
+      //   'phone':data.value.phone,
+      //   'email':data.value.email
+      // }
+      // console.log(datas)
 
-      this.service.insert_from(datas).subscribe(result=>{
+      this.service.insert_from(data).subscribe(result=>{
       console.log(result)
       })
 
