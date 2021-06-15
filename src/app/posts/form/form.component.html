@@ -17,8 +17,8 @@
 
 
 
-<form class="position" #user="ngForm"  (ngSubmit)="onSubmit(user.value)">
-  {{user.value | json}}
+<form class="position" [formGroup]="myForm"  (ngSubmit)="onSubmit(myForm.value)">
+  {{myForm.value | json}}
   <div class="position1">
     <!--เลือกเขัม-->
     <div class="vancine_dose">
@@ -30,10 +30,10 @@
 
 
 
-        <input ngModel type="radio" value="1" name="dose" >
+        <input formControlName="dose" type="radio" value="1" name="dose" >
       <label>ເຂັມທີ (1)</label>
 
-        <input ngModel type="radio" value="2" name="dose" >
+        <input formControlName="dose" type="radio" value="2" name="dose" >
       <label>ເຂັມທີ (2)</label>
 
 
@@ -42,7 +42,8 @@
     <div class="vacin_type_selet_box">
       <label class="col-sm-2 col-form-label">ປະເພດຂອງວັກຊີນ</label>
       <div class="vaccine_type">
-        <select name="id_vaccine" class="form-control" ngModel>
+        <select name="id_vaccine" class="form-control" formControlName="id_vaccine">
+          <option value="" disabled selected hidden>ເລືອກປະເພດວັກຊີນ</option>
           <option [value]="vaccines.id_vaccine_type" *ngFor="let vaccines of vaccinesList">{{ vaccines.name }}</option>
 
         </select>
@@ -53,7 +54,8 @@
     <div class="location_to_get">
       <label class="col-sm-2 col-form-label">ສະຖານທີ່</label>
       <div class="col-sm-10">
-        <select name="location_to_get" class="form-control" ngModel>
+        <select name="location_to_get" class="form-control" formControlName="location_to_get">
+          <option value="" disabled selected hidden>ເລືອກສະຖານທີ່</option>
           <option [value]="location.id_location" *ngFor="let location of locationList">{{ location.name_la }}</option>
 
         </select>
@@ -64,7 +66,7 @@
     <div class="date_to_get">
       <h4 class="sub-title">Date</h4>
 
-      <input class="form-control" type="date" name="date_to_get" ngModel>
+      <input class="form-control" type="date" name="date_to_get" formControlName="date_to_get">
     </div>
     <!--เลือกเพด-->
     <div class="gender">
@@ -74,19 +76,19 @@
 
         <div class="radio radio-inline">
           <label>
-            <input type="radio" value="male" name="gender" ngModel checked="checked">
+            <input type="radio" value="male" name="gender" formControlName="gender" checked="checked">
             <i class="helper"></i>Male
           </label>
         </div>
         <div class="radio radio-inline">
           <label>
-            <input type="radio" value="female" name="gender" ngModel>
+            <input type="radio" value="female" name="gender" formControlName="gender">
             <i class="helper"></i>Female
           </label>
         </div>
         <div class="radio radio-inline">
           <label>
-            <input type="radio" value="other" name="gender" ngModel>
+            <input type="radio" value="other" name="gender" formControlName="gender">
             <i class="helper"></i>ອື່ນໆ
           </label>
         </div>
@@ -100,14 +102,14 @@
 
       <label class="col-sm-2 col-form-label">ຊື່ (ພາສາລາວ)*</label>
 
-      <input ngModel name="name" type="text" class="form-control" placeholder="ຕາມທີ່ລະບຸໃນບັດປະຈໍາຕົວ/ໜັງສືຜ່ານແດນ/ສໍາມະໂນຄົວ">
+      <input formControlName="name" name="name" type="text" class="form-control" placeholder="ຕາມທີ່ລະບຸໃນບັດປະຈໍາຕົວ/ໜັງສືຜ່ານແດນ/ສໍາມະໂນຄົວ">
 
 
 
 
       <label class="col-sm-2 col-form-label">ນາມສະກຸນ(ພາສາລາວ)*</label>
 
-      <input ngModel name="lastname" type="text" class="form-control" placeholder="ຕາມທີ່ລະບຸໃນບັດປະຈໍາຕົວ/ໜັງສືຜ່ານແດນ/ສໍາມະໂນຄົວນ">
+      <input formControlName="lastname" name="lastname" type="text" class="form-control" placeholder="ຕາມທີ່ລະບຸໃນບັດປະຈໍາຕົວ/ໜັງສືຜ່ານແດນ/ສໍາມະໂນຄົວນ">
     </div>
 
     <!--ใส่ชื่แขวง-->
@@ -116,7 +118,8 @@
 
 
       <h4 class="sub-title">ຢູ່ແຂວງໃດ</h4>
-      <select name="province" class="form-control form-control-default" ngModel>
+      <select name="province" class="form-control form-control-default" formControlName="province">
+        <option value="" disabled selected hidden>ເລືອກແຂວງ</option>
         <option [value]="province.id_province" *ngFor="let province of provinceList">{{ province.name_lao }}</option>
 
       </select>
@@ -125,7 +128,8 @@
     <!--ใส่แมือง-->
     <div class="col-sm-12 col-xl-3 m-b-30">
       <h4 class="sub-title">ຢູ່ເມືອງໃດ</h4>
-      <select name="district" class="form-control form-control-default" ngModel>
+      <select name="district" class="form-control form-control-default" formControlName="district">
+        <option value="" disabled selected hidden>ເລືອກເມືອງ</option>
         <option [value]="district.id_district" *ngFor="let district of districtList">{{ district.name_lao }}</option>
 
       </select>
@@ -133,7 +137,8 @@
     <!--ใส่ชื่บ้าน-->
     <!-- <div class="col-sm-12 col-xl-3 m-b-30">
       <h4 class="sub-title">ຢູ່ບ້ານໃດ</h4>
-      <select ngModel name="village" class="form-control form-control-default">
+      <select formControlName="village" name="village" class="form-control form-control-default">
+          <option value="" disabled selected hidden>ເລືອກບ້ານ</option>
         <option value="opt1">ກະລຸນາເລືອກບ້ານ</option>
         <option value="opt2">Type 2</option>
         <option value="opt3">Type 3</option>
@@ -145,29 +150,6 @@
       </select>
     </div> -->
 
-    <!--ใส่แมือง-->
-    <div class="col-sm-12 col-xl-3 m-b-30">
-      <h4 class="sub-title">ຢູ່ເມືອງໃດ</h4>
-      <select name="district" class="form-control form-control-default" ngModel>
-        <option value="{{ dis.id_district }}" *ngFor="let dis of districtList">
-          {{ dis.name_lao }}
-        </option>
-      </select>
-    </div>
-    <!--ใส่ชื่บ้าน-->
-    <div class="col-sm-12 col-xl-3 m-b-30">
-      <h4 class="sub-title">ຢູ່ບ້ານໃດ</h4>
-      <select name="village" class="form-control form-control-default" ngModel>
-        <option value="opt1">ກະລຸນາເລືອກບ້ານ</option>
-        <option value="opt2">Type 2</option>
-        <option value="opt3">Type 3</option>
-        <option value="opt4">Type 4</option>
-        <option value="opt5">Type 5</option>
-        <option value="opt6">Type 6</option>
-        <option value="opt7">Type 7</option>
-        <option value="opt8">Type 8</option>
-      </select>
-    </div>
 
     <!--islaos-->
     <div class="col-sm-12 col-md-6 col-xl-4 m-b-30">
@@ -176,13 +158,13 @@
 
 
         <label>
-          <input ngModel value="yes" type="radio" name="islao" checked="checked">
+          <input formControlName="islao" value="y" type="radio" name="islao" checked="checked">
           <i class="helper"></i>ແມ່ນຄົນລາວ
         </label>
       </div>
 
       <label>
-        <input ngModel type="radio" value="no" name="islao">
+        <input formControlName="islao" type="radio" value="n" name="islao">
         <i class="helper"></i>ບໍ່ແມ່ນຄົນລາວ
       </label>
     </div>
@@ -190,14 +172,14 @@
     <div class="form-group row">
       <label class="col-sm-2 col-form-label">ໄອດີ ຫຼື passport ຂອງທ່ານ</label>
       <div class="col-sm-10">
-        <input ngModel name="id_or_passportid" type="text" class="form-control" placeholder="ຕາມທີ່ລະບຸໃນບັດປະຈໍາຕົວ/ໜັງສືຜ່ານແດນ/ສໍາມະໂນຄົວ">
+        <input formControlName="id_or_passportid" name="id_or_passportid" type="text" class="form-control" placeholder="ຕາມທີ່ລະບຸໃນບັດປະຈໍາຕົວ/ໜັງສືຜ່ານແດນ/ສໍາມະໂນຄົວ">
       </div>
     </div>
     <!--phone-->
     <div class="form-group row">
       <label class="col-sm-2 col-form-label">ຫມາຍເລກໂທລະສັບ</label>
       <div class="col-sm-10">
-        <input ngModel name="phone" type="test" class="form-control" placeholder="020XXXXXXXX ຫລື 030XXXXXXX">
+        <input formControlName="phone" name="phone" type="test" class="form-control" placeholder="020XXXXXXXX ຫລື 030XXXXXXX">
       </div>
     </div>
     <!--email-->
@@ -205,10 +187,10 @@
       <label class="col-sm-2 col-form-label">Email ຂອງທ່ານ</label>
       <div class="col-sm-10">
 
-        <input type="email" class="form-control" name="email" ngModel email="true" placeholder="ກະລຸນາໃສ່ຂໍ້ມູນ">
+        <input type="email" class="form-control" name="email" formControlName="email" email="true" placeholder="ກະລຸນາໃສ່ຂໍ້ມູນ">
       </div>
     </div>
-    <button class="big-button" type="submit" id="submit-form" (click)="submit()"> ສົ່ງຂໍ້ມູນ </button>
+    <button class="big-button" type="submit" id="submit-form"> ສົ່ງຂໍ້ມູນ </button>
 
   </div>
 </form>

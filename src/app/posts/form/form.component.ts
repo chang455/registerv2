@@ -1,10 +1,10 @@
 import { HttpClient } from "@angular/common/http";
 import { identifierModuleUrl } from "@angular/compiler";
 import { Component, OnInit } from "@angular/core";
-import { NgForm } from "@angular/forms";
 import { Observable } from "rxjs";
 import { FormService } from "src/app/form-service/form.service";
 import { District, Province, Vaccines,Location } from "./district-get";
+import {FormBuilder, FormGroup, NgForm} from '@angular/forms';
 
 
 @Component({
@@ -17,9 +17,11 @@ export class FormCreate implements OnInit{
   provinceList: Province []= [];
   districtList: District []= [];
   vaccinesList: Vaccines []= [];
-  locationList: Location []= [];
+  locationList: Location []=[];
+  myForm: FormGroup;
+  usedata : any
 
-  constructor(private service:FormService) {
+  constructor(private service:FormService,private fb:FormBuilder) {
 
 
     this.service.getPro()
@@ -46,41 +48,53 @@ export class FormCreate implements OnInit{
       this.locationList=response;
       console.log("response",response);
     })
-  }
 
-  submit(){
+    this.myForm = this.fb.group({
+      dose:'',
+      id_vaccine:'',
+      location_to_get:'',
+      date_to_get:'',
+      gender:'',
+      name:'',
+      lastname:'',
+      province:'',
+      district:'',
+      islao:'',
+      id_or_passportid:'',
+      phone:'',
+      email:'',
+      // tb_form_create_date:''
+   });
 
-  }
+   }
 
-  onSubmit(user: NgForm) {
+  onSubmit(data: any):void {
+    console.log(data);
+
+
     // console.log(data.value);
     // console.log(data.value.first);  // { first: '', last: '' }
 
-      const data ={
-        'id_vaccine':user.value.id_vaccine,
-        'dose':user.value.dose,
-        'location_to_get':user.value.location_to_get,
-        'date_to_get':user.value.date_to_get,
-        'gender':user.value.gender,
-        'name':user.value.name,
-        'lastname':user.value.lastname,
-        'district':user.value.district,
-        'province':user.value.province,
-        'islao':user.value.islao,
-        'id_or_passportid':user.value.id_or_passportid,
-        'phone':user.value.phone,
-        'email':user.value.email
-      }
-      console.log(data);
+      // const datas ={
+      //   'id_vaccine':data.value.id_vaccine,
+      //   'dose':data.value.dose,
+      //   'location_to_get':data.value.location_to_get,
+      //   'date_to_get':data.value.date_to_get,
+      //   'gender':data.value.gender,
+      //   'name':data.value.name,
+      //   'lastname':data.value.lastname,
+      //   'district':data.value.district,
+      //   'province':data.value.province,
+      //   'islao':data.value.islao,
+      //   'id_or_passportid':data.value.id_or_passportid,
+      //   'phone':data.value.phone,
+      //   'email':data.value.email
+      // }
+      // console.log(datas)
 
-      //this.service.insert_from(data).subscribe(result=>{
-      //console.log(result)
-      //})
-
-
-
-
-
+      /*this.service.insert_from(data).subscribe(result=>{
+      console.log(result)
+      })*/
   }
 
   ngOnInit(): void {
