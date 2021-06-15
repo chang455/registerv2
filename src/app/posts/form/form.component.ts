@@ -6,6 +6,7 @@ import { Observable } from "rxjs";
 import { FormService } from "src/app/form-service/form.service";
 import { District, Province, Vaccines,Location } from "./district-get";
 
+
 @Component({
   selector: 'form-create',
   templateUrl: './form.component.html',
@@ -45,37 +46,63 @@ export class FormCreate implements OnInit{
       this.locationList=response;
       console.log("response",response);
     })
+  }
 
+  submit(){
 
   }
 
-  Submit(user: NgForm){
-    const data = {
-      'id_vaccine': user.value.id_vaccine,
-      'dose': user.value.dose,
-      'location_to_get': user.value.location_to_get,
-      'date_to_get': user.value.date_to_get,
-      'gender': user.value.gender,
-      'name': user.value.name,
-      'lastname': user.value.lastname,
-      'village': user.value.village,
-      'district': user.value.district,
-      'province':  user.value.province,
-      'islao': user.value.islao,
-      'id_or_passportid': user.value.id_or_passportid,
-      'phone': user.value.phone,
-      'email': user.value.email,
-      'tb_form_create_date': user.value.tb_form_create_date
-      };
-    console.log(data);
-    this.service.getrequest_leave(data).subscribe(response => {
-      console.log("response", response)
-    })
+  onSubmit(user: NgForm) {
+    // console.log(data.value);
+    // console.log(data.value.first);  // { first: '', last: '' }
+
+      const data ={
+        'id_vaccine':user.value.id_vaccine,
+        'dose':user.value.dose,
+        'location_to_get':user.value.location_to_get,
+        'date_to_get':user.value.date_to_get,
+        'gender':user.value.gender,
+        'name':user.value.name,
+        'lastname':user.value.lastname,
+        'district':user.value.district,
+        'province':user.value.province,
+        'islao':user.value.islao,
+        'id_or_passportid':user.value.id_or_passportid,
+        'phone':user.value.phone,
+        'email':user.value.email
+      }
+      console.log(data);
+
+      //this.service.insert_from(data).subscribe(result=>{
+      //console.log(result)
+      //})
+
+
+
+
+
   }
 
   ngOnInit(): void {
 
   }
-}
 
+}
+  /*const data = {
+'id_vaccine': '1',
+'dose': '2',
+'location_to_get': '1',
+'date_to_get': '2021-06-15',
+'gender': 'male',
+'name': 'test1',
+'lastname': 'test1',
+'village': 'test1',
+'district': '1',
+'province':  '1',
+'islao': 'Yes',
+'id_or_passportid': 'P1234567',
+'phone': '2077778888',
+'email': 'test1@gmail.com',
+'tb_form_create_date': '2021-06-15'
+}; */
 
