@@ -185,7 +185,9 @@ button.big-button:active::before {
 
 
 
-
+.invalid-feedback{
+  color: red;
+}
 
 
 

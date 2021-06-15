@@ -20,7 +20,7 @@
           <h2 class="title">Event Registration Form</h2>
           </div>
           <div class="card-body bg-light">
-            <form class="position bg-light " method="POST" [formGroup]="myForm"  (ngSubmit)="onSubmit(myForm.value)">
+            <form class="position bg-light " method="POST" [formGroup]="registerForm"  (ngSubmit)="onSubmit()">
 
               <div class="position1">
                 <!--เลือกเขัม-->
@@ -33,23 +33,28 @@
 
 
 
-                    <input formControlName="dose" type="radio" value="1" name="dose" >
+                    <input [ngClass]="{ 'is-invalid': submitted && f.vac.errors }" formControlName="vac" type="radio" value="1" name="dose" >
                   <label>ເຂັມທີ (1)</label>
 
-                    <input formControlName="dose" type="radio" value="2" name="dose" >
+                    <input [ngClass]="{ 'is-invalid': submitted && f.vac.errors }" formControlName="vac" type="radio" value="2" name="dose" >
                   <label>ເຂັມທີ (2)</label>
-
+                  <div *ngIf="submitted && f.vac.errors" class="invalid-feedback">
+                    <div *ngIf="f.vac.errors.required">Title is required</div>
+                </div>
 
                 </div>
                 <!--เลือกเขัม-->
                 <div class="vacin_type_selet_box">
                   <label class="col-sm-2 col-form-label">ປະເພດຂອງວັກຊີນ</label>
                   <div class="vaccine_type">
-                    <select name="id_vaccine" class="form-control" formControlName="id_vaccine">
+                    <select [ngClass]="{ 'is-invalid': submitted && f.id_vaccine.errors }" formControlName="id_vaccine" name="id_vaccine" class="form-control" >
                       <option value="" disabled selected hidden>ເລືອກປະເພດວັກຊີນ</option>
                       <option [value]="vaccines.id_vaccine_type" *ngFor="let vaccines of vaccinesList">{{ vaccines.name }}</option>
 
                     </select>
+                    <div *ngIf="submitted && f.id_vaccine.errors" class="invalid-feedback">
+                      <div *ngIf="f.id_vaccine.errors.required">Title is required</div>
+                      </div>
                   </div>
                 </div>
                 <!--เลือกสะภานที-->
@@ -57,11 +62,13 @@
                 <div class="location_to_get">
                   <label class="col-sm-2 col-form-label">ສະຖານທີ່</label>
                   <div class="col-sm-10">
-                    <select name="location_to_get" class="form-control" formControlName="location_to_get">
+                    <select [ngClass]="{ 'is-invalid': submitted && f.location_to_get.errors }" class="form-control" formControlName="location_to_get">
                       <option value="" disabled selected hidden>ເລືອກສະຖານທີ່</option>
                       <option [value]="location.id_location" *ngFor="let location of locationList">{{ location.name_la }}</option>
                         </select>
-
+                        <div *ngIf="submitted && f.location_to_get.errors" class="invalid-feedback">
+                          <div *ngIf="f.location_to_get.errors.required">Title is required</div>
+                          </div>
                   </div>
 
                 </div>
@@ -76,7 +83,7 @@
                 <div class="gender">
                   <h3 class="sub-title">ກະລຸນາເລືອກເພດ</h3>
 
-                  <div class="form-radio">
+                  <!-- <div class="form-radio">
 
                     <div class="radio radio-inline">
                       <label>
@@ -97,7 +104,22 @@
                       </label>
                     </div>
 
-                  </div>
+                  </div> -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
                 </div>
 
                 <!--ใส่ชื่นนามสะกุน-->
