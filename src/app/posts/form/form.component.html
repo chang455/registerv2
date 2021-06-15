@@ -13,19 +13,19 @@
 <p>Form value: {{ f.value | json }}</p>
 <p>Form valid: {{ f.valid }}</p> -->
 
-<div class="page-wrapper bg-primary p-t-45 p-b-50">
+<div class="page-wrapper p-t-45 p-b-50">
   <div class="wrapper wrapper--w790">
-      <div class="card card-5">
-          <div class="card-heading">
-              <h2 class="title">Event Registration Form</h2>
+      <div class="card card-5 ">
+        <div class="card-heading">
+          <h2 class="title">Event Registration Form</h2>
           </div>
-          <div class="card-body">
-            <form class="position" method="POST" [formGroup]="myForm"  (ngSubmit)="onSubmit(myForm.value)">
+          <div class="card-body bg-light">
+            <form class="position bg-light " method="POST" [formGroup]="myForm"  (ngSubmit)="onSubmit(myForm.value)">
 
               <div class="position1">
                 <!--เลือกเขัม-->
                 <div class="vancine_dose">
-                  <h2 class="sub-title">ເຂັມທີ</h2>
+                  <h3 class="sub-title">ເຂັມທີ</h3>
                   <h3 class="sub-title">ອັນນີ້ແມ່ນເຂັມທໍາອິດ ຫຼື ເຂັມທີສອງຂອງທ່ານ?</h3>
 
 

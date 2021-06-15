@@ -3,19 +3,18 @@
   -webkit-border-radius: 3px;
   -moz-border-radius: 3px;
   border-radius: 3px;
-  background: #fff;
+  background:#5f98f4;
 }
 .card-5 {
 
   -webkit-border-radius: 10px;
   -moz-border-radius: 10px;
-  border-radius: 10px;
-
+  border-radius: 5px;
 
 }
 .card-5 .card-heading {
   padding: 20px 0;
-  background: #1a1a1a;
+  background:#3575cb;
   -webkit-border-top-left-radius: 10px;
   -moz-border-radius-topleft: 10px;
   border-top-left-radius: 10px;
@@ -30,6 +29,7 @@
   padding: 52px 85px;
   padding-bottom: 73px;
   margin: auto;
+
 }
 @media (max-width: 767px) {
   .card-5 .card-body {
@@ -37,6 +37,7 @@
     padding-bottom: 50px;
   }
 }
+
 
 .position1{
   font-family: NotoSansLao;
@@ -59,7 +60,7 @@
 .form-control{
   border-radius: 5px;
   margin-bottom: 20px;
-  width: auto;
+  width: 200px;
   height: 40px;
   text-align: center;
   display: flex;
