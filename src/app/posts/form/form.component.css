@@ -1,37 +1,56 @@
-.position{
-  padding: 30px;
-  margin:auto;
-  margin-top: 30px;
-  display: block;
-  width: 730px;
-  background-color:#e6e6e6;
+.card {
+  margin: auto;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+  background: #fff;
+}
+.card-5 {
 
-  flex-wrap: wrap;
-  position: relative;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  border-radius: 10px;
+
+
+}
+.card-5 .card-heading {
+  padding: 20px 0;
+  background: #1a1a1a;
+  -webkit-border-top-left-radius: 10px;
+  -moz-border-radius-topleft: 10px;
+  border-top-left-radius: 10px;
+  -webkit-border-top-right-radius: 10px;
+  -moz-border-radius-topright: 10px;
+  border-top-right-radius: 10px;
+  text-align: center;
+  color: white;
 }
 
-.title{
-  font-family: NotoSansLao;
-  font-weight: bold;
-  font-size: 30px;
-  position: relative;
-  display: flex;
-  justify-content: center;
-  margin-top: 10px;
+.card-5 .card-body {
+  padding: 52px 85px;
+  padding-bottom: 73px;
+  margin: auto;
 }
+@media (max-width: 767px) {
+  .card-5 .card-body {
+    padding: 40px 30px;
+    padding-bottom: 50px;
+  }
+}
+
 .position1{
   font-family: NotoSansLao;
 }
 .vaccine_dose{
   font-size: 20px;
-  display: block;
+  display: flex;
   position: relative;
 }
 .date-control1{
   border-radius: 3px;
   margin-bottom: 30px;
 
-  width: 100px;
+  width: auto;
   height: 50px;
   display: flex;
   box-sizing: border-box;
@@ -40,7 +59,7 @@
 .form-control{
   border-radius: 5px;
   margin-bottom: 20px;
-  width: 400px;
+  width: auto;
   height: 40px;
   text-align: center;
   display: flex;
@@ -52,7 +71,7 @@
 }
 .form-group{
   margin: 0;
-  width: 400px;
+  width: auto;
   height: auto;
   display: flex;
   flex-wrap: wrap;
@@ -84,7 +103,7 @@
 }
 body {
   font-family: 'OpenSans', sans-serif;
-  font-size: 1rem;
+  font-size: 20px;
   line-height: 2;
   display: flex;
           align-items: center;
@@ -115,6 +134,11 @@ button.big-button {
   background: var(--colorShadeE);
 transform-style: preserve-3d;
    transition: all 175ms cubic-bezier(0, 0, 1, 1);
+
+}
+.big-button{
+  justify-content: center;
+
 }
 button.big-button::before {
   position: absolute;

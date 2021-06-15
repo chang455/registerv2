@@ -4,7 +4,7 @@ import { Component, OnInit } from "@angular/core";
 import { Observable } from "rxjs";
 import { FormService } from "src/app/form-service/form.service";
 import { District, Province, Vaccines,Location } from "./district-get";
-import {FormBuilder, FormGroup, NgForm} from '@angular/forms';
+import {FormBuilder, FormControl, FormGroup, NgForm, Validators} from '@angular/forms';
 
 
 @Component({
@@ -22,6 +22,21 @@ export class FormCreate implements OnInit{
   usedata : any
 
   constructor(private service:FormService,private fb:FormBuilder) {
+
+    this.myForm = new FormGroup({
+      location_to_get: new FormControl('',Validators.required),
+      date_to_get: new FormControl('',Validators.required),
+      gender: new FormControl('',Validators.required),
+      name: new FormControl('',Validators.required),
+      lastname: new FormControl('',Validators.required),
+      province: new FormControl('',Validators.required),
+      district: new FormControl('',Validators.required),
+      islao: new FormControl('',Validators.required),
+      id_or_passportid: new FormControl('',Validators.required),
+      phone: new FormControl('',Validators.required),
+      email: new FormControl('',Validators.required),
+
+})
 
 
     this.service.getPro()
@@ -100,6 +115,8 @@ export class FormCreate implements OnInit{
   ngOnInit(): void {
 
   }
+
+  
 
 }
   /*const data = {
