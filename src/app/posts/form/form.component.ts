@@ -98,7 +98,7 @@ export class FormCreate implements OnInit{
             // confirmPassword: ['', Validators.required],
             acceptTerms: [false, Validators.requiredTrue],
             province:['', Validators.required],
-            district:['', Validators.required],
+            district:[false, Validators.required],
         }, {
             validator: MustMatch('vac', 'id_vaccine',)
         });

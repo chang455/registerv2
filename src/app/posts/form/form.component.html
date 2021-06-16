@@ -166,7 +166,7 @@
                 <!--ใส่แมือง-->
                 <div class="col-sm-12 col-xl-3 m-b-30">
                   <h4 class="sub-title">ຢູ່ເມືອງໃດ</h4>
-                  <select name="district" class="form-control" formControlName="district" [(ngModel)]="provinceID" (change)="onchange()" >
+                  <select [ngClass]="{ 'is-invalid': submitted && f.district.errors }" name="district" class="form-control" formControlName="district" [(ngModel)]="provinceID" (change)="onchange()" >
                     <option value="" disabled selected hidden>ເລືອກເມືອງ</option>
                     <option [value]="district.id_district" *ngFor="let district of districtList">{{ district.name_lao }}</option>
 
