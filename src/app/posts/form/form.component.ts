@@ -6,6 +6,7 @@ import { FormService } from "src/app/form-service/form.service";
 import { District, Province, Vaccines,Location } from "./district-get";
 import {FormBuilder, FormControl, FormGroup, NgForm, Validators} from '@angular/forms';
 import { MustMatch } from 'src/app/posts/form/must-match.validator';
+import { DatePipe } from '@angular/common';
 
 @Component({
   selector: 'form-create',
@@ -20,7 +21,9 @@ export class FormCreate implements OnInit{
   locationList: Location []=[];
 
   usedata : any
-
+  provinceID:Array<Object>= [];
+  now1 = new Date();
+  
   constructor(private service:FormService,private fb:FormBuilder) {
 
 
@@ -31,11 +34,7 @@ export class FormCreate implements OnInit{
     })
 
 
-    this.service.getDis()
-    .subscribe(response=>{
-      this.districtList=response;
-      console.log("response",response);
-    })
+
 
     this.service.getVac()
     .subscribe(response=>{
@@ -95,7 +94,9 @@ export class FormCreate implements OnInit{
             email: ['', [Validators.required, Validators.email]],
             password: ['', [Validators.required, Validators.minLength(6)]],
             confirmPassword: ['', Validators.required],
-            acceptTerms: [false, Validators.requiredTrue]
+            acceptTerms: [false, Validators.requiredTrue],
+            province:'',
+            district:'',
         }, {
             validator: MustMatch('password', 'confirmPassword')
         });
@@ -131,6 +132,15 @@ console.log(this.registerForm.value)
         this.submitted = false;
         this.registerForm.reset();
     }
+
+    onchange(){
+      console.log(this.provinceID);
+      this.service.getDis(this.provinceID)
+      .subscribe(response=>{
+        this.districtList=response;
+        console.log("response",response);
+      })
+    }
 }
 
 
@@ -139,30 +149,29 @@ console.log(this.registerForm.value)
   // onSubmit(data: any):void {
   //   console.log(data);
 
-
-  //   // console.log(data.value);
-  //   // console.log(data.value.first);  // { first: '', last: '' }
-
-  //     // const datas ={
-  //     //   'id_vaccine':data.value.id_vaccine,
-  //     //   'dose':data.value.dose,
-  //     //   'location_to_get':data.value.location_to_get,
-  //     //   'date_to_get':data.value.date_to_get,
-  //     //   'gender':data.value.gender,
-  //     //   'name':data.value.name,
-  //     //   'lastname':data.value.lastname,
-  //     //   'district':data.value.district,
-  //     //   'province':data.value.province,
-  //     //   'islao':data.value.islao,
-  //     //   'id_or_passportid':data.value.id_or_passportid,
-  //     //   'phone':data.value.phone,
-  //     //   'email':data.value.email
-  //     // }
-  //     // console.log(datas)
-
   //     /*this.service.insert_from(data).subscribe(result=>{
   //     console.log(result)
   //     })*/
+
+   //   // console.log(data.value);
+  //   // console.log(data.value.first);  // { first: '', last: '' }
+
+      // const datas ={
+      //   'id_vaccine':data.value.id_vaccine,
+      //   'dose':data.value.dose,
+      //   'location_to_get':data.value.location_to_get,
+      //   'date_to_get':data.value.date_to_get,
+      //   'gender':data.value.gender,
+      //   'name':data.value.name,
+      //   'lastname':data.value.lastname,
+      //   'district':data.value.district,
+      //   'province':data.value.province,
+      //   'islao':data.value.islao,
+      //   'id_or_passportid':data.value.id_or_passportid,
+      //   'phone':data.value.phone,
+      //   'email':data.value.email
+      // }
+      // console.log(datas)
   // }
 
   // ngOnInit(): void {

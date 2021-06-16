@@ -21,11 +21,11 @@ console.log(user);
 return this.http.post(url, user)
 }
 
-  getDis(){
-    const url = this.url + "get_district";
-    console.log(url);
-   return this.http.get<any>(url)
-  }
+getDis(id:any){
+  const url = this.url + "get_district_id?id="+id;
+  console.log(url);
+ return this.http.get<any>(url)
+}
 
   getPro(){
     const url = this.url + "get_province";
