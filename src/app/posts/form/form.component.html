@@ -158,27 +158,41 @@
                 <!--islaos-->
                 <div class="col-sm-12 col-md-6 col-xl-4 m-b-30">
                   <h4 class="sub-title">ແມ່ນຄົນ ລາວ ຫຼື ບໍ່?</h4>
-                  <div class="form-radio">
+
+                  <input [ngClass]="{ 'is-invalid': submitted && f.islao.errors }" formControlName="islao" type="radio" value="y" name="islao" >
+                  <label>ແມ່ນຄົນລາວ</label>
+
+                    <input [ngClass]="{ 'is-invalid': submitted && f.islao.errors }" formControlName="islao" type="radio" value="n" name="islao" >
+                  <label>ບໍ່ແມ່ນຄົນລາວ</label>
 
 
-                    <label>
+                  <div *ngIf="submitted && f.islao.errors" class="invalid-feedback">
+                    <div *ngIf="f.islao.errors.required">Title is required</div>
+                    </div>
+                    <!-- <label>
                       <input formControlName="islao" value="y" type="radio" name="islao" checked="checked">
                       <i class="helper"></i>ແມ່ນຄົນລາວ
                     </label>
-                  </div>
+
 
                   <label>
                     <input formControlName="islao" type="radio" value="n" name="islao">
                     <i class="helper"></i>ບໍ່ແມ່ນຄົນລາວ
-                  </label>
+                  </label> -->
                 </div>
                 <!--passport-->
                 <div class="form-group row">
                   <label class="col-sm-2 col-form-label">ໄອດີ ຫຼື passport ຂອງທ່ານ</label>
                   <div class="col-sm-10">
-                    <input formControlName="id_or_passportid" name="id_or_passportid" type="text" class="form-control" placeholder="ຕາມທີ່ລະບຸໃນບັດປະຈໍາຕົວ/ໜັງສືຜ່ານແດນ/ສໍາມະໂນຄົວ">
+                    <input  [ngClass]="{ 'is-invalid': submitted && f.id_or_passportid.errors }" formControlName="id_or_passportid" name="id_or_passportid" type="text" class="form-control" placeholder="ຕາມທີ່ລະບຸໃນບັດປະຈໍາຕົວ/ໜັງສືຜ່ານແດນ/ສໍາມະໂນຄົວ">
                   </div>
+                  <div *ngIf="submitted && f.id_or_passportid.errors" class="invalid-feedback">
+                    <div *ngIf="f.id_or_passportid.errors.required">Title is required</div>
+                    </div>
                 </div>
+                <div *ngIf="submitted && f.id_or_passportid.errors" class="invalid-feedback">
+                    <div *ngIf="f.id_or_passportid.errors.required">Title is required</div>
+                    </div>
                 <!--phone-->
                 <div class="form-group row">
                   <label class="col-sm-2 col-form-label">ຫມາຍເລກໂທລະສັບ</label>
