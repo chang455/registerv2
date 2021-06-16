@@ -23,7 +23,7 @@ export class FormCreate implements OnInit{
   usedata : any
   provinceID:Array<Object>= [];
   now1 = new Date();
-  
+
   constructor(private service:FormService,private fb:FormBuilder) {
 
 
@@ -88,17 +88,19 @@ export class FormCreate implements OnInit{
             vac: ['', Validators.required],
             id_vaccine: ['', Validators.required],
             location_to_get: ['', Validators.required],
+            firstName: ['', Validators.required],
             lastName: ['', Validators.required],
+            gender: ['', Validators.required],
             // validates date format yyyy-mm-dd
             dob: ['', [Validators.required, Validators.pattern(/^\d{4}\-(0[1-9]|1[012])\-(0[1-9]|[12][0-9]|3[01])$/)]],
             email: ['', [Validators.required, Validators.email]],
-            password: ['', [Validators.required, Validators.minLength(6)]],
-            confirmPassword: ['', Validators.required],
+            // password: ['', [Validators.required, Validators.minLength(6)]],
+            // confirmPassword: ['', Validators.required],
             acceptTerms: [false, Validators.requiredTrue],
-            province:'',
-            district:'',
+            province:['', Validators.required],
+            district:['', Validators.required],
         }, {
-            validator: MustMatch('password', 'confirmPassword')
+            validator: MustMatch('vac', 'id_vaccine',)
         });
     }
 
@@ -118,14 +120,15 @@ console.log(this.registerForm.value)
 
         // stop here if form is invalid
         if (this.registerForm.invalid) {
-            return;
+          alert('SUCCESS!! :-)\n\n' + JSON.stringify(this.registerForm.value, null, 4));
+          return;
         }
 
 
 
 
         // display form values on success
-        alert('SUCCESS!! :-)\n\n' + JSON.stringify(this.registerForm.value, null, 4));
+
     }
 
     onReset() {
