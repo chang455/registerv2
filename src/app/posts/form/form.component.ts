@@ -100,7 +100,7 @@ export class FormCreate implements OnInit{
             email: ['', [Validators.required, Validators.email]],
 
         }, {
-            validator: MustMatch('password', 'confirmPassword')
+            validator: MustMatch('vac', 'id_vaccine',)
         });
     }
 
@@ -120,14 +120,15 @@ console.log(this.registerForm.value)
 
         // stop here if form is invalid
         if (this.registerForm.invalid) {
-            return;
+          alert('SUCCESS!! :-)\n\n' + JSON.stringify(this.registerForm.value, null, 4));
+          return;
         }
 
 
 
 
         // display form values on success
-        alert('SUCCESS!! :-)\n\n' + JSON.stringify(this.registerForm.value, null, 4));
+
     }
 
     onReset() {
