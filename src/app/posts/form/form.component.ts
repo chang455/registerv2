@@ -49,7 +49,7 @@ export class FormCreate implements OnInit{
     })
 
     this.registerForm = this.fb.group({
-      vac:'',
+      dose:'',
       id_vaccine:'',
       location_to_get:'',
       date_to_get:'',
@@ -88,17 +88,17 @@ export class FormCreate implements OnInit{
             vac: ['', Validators.required],
             id_vaccine: ['', Validators.required],
             location_to_get: ['', Validators.required],
-            date_to_get: ['', [Validators.required, Validators.pattern(/^\d{4}\-(0[1-9]|1[012])\-(0[1-9]|[12][0-9]|3[01])$/)]],
-            gender:['',Validators.required],
-            name:['',Validators.required],
+            firstName: ['', Validators.required],
             lastName: ['', Validators.required],
-            province:['',Validators.required],
-            district:['',Validators.required],
-            islao:['',Validators.required],
-            id_or_passportid:['',Validators.required],
-            phone:['',Validators.required],
+            gender: ['', Validators.required],
+            // validates date format yyyy-mm-dd
+            dob: ['', [Validators.required, Validators.pattern(/^\d{4}\-(0[1-9]|1[012])\-(0[1-9]|[12][0-9]|3[01])$/)]],
             email: ['', [Validators.required, Validators.email]],
-
+            // password: ['', [Validators.required, Validators.minLength(6)]],
+            // confirmPassword: ['', Validators.required],
+            acceptTerms: [false, Validators.requiredTrue],
+            province:['', Validators.required],
+            district:['', Validators.required],
         }, {
             validator: MustMatch('vac', 'id_vaccine',)
         });
@@ -200,3 +200,4 @@ console.log(this.registerForm.value)
 'email': 'test1@gmail.com',
 'tb_form_create_date': '2021-06-15'
 }; */
+
