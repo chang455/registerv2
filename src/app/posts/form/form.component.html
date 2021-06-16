@@ -88,7 +88,7 @@
                 </div>
                 <!--เลือกเพด-->
                 <div class="gender">
-                  <h3 class="sub-title">ກະລຸນາເລືອກເພດ</h3>
+                  <h5 class="sub-title">ກະລຸນາເລືອກເພດ</h5>
 
                   <!-- <div class="form-radio">
 
@@ -113,10 +113,10 @@
 
                   </div> -->
                   <input [ngClass]="{ 'is-invalid': submitted && f.gender.errors }" formControlName="gender" type="radio" value="male" name="gender" >
-                  <label>Male</label>
+                  <label>ເພດຊາຍ</label>
 
                     <input [ngClass]="{ 'is-invalid': submitted && f.gender.errors }" formControlName="gender" type="radio" value="female" name="gender" >
-                  <label>Female</label>
+                  <label>ເພດຍຶງ</label>
 
                   <input [ngClass]="{ 'is-invalid': submitted && f.gender.errors }" formControlName="gender" type="radio" value="other" name="gender" >
                   <label>ອື່ນໆ</label>
@@ -131,7 +131,7 @@
                 <!--ใส่ชื่นนามสะกุน-->
 
                 <div class="form-group row">
-                  <label class="col-sm-2 col-form-label">First Name</label>
+                  <label class="col-sm-2 col-form-label">ຊື່ (ພາສາລາວ)*</label>
                   <div class="form-group col-5">
 
                     <input type="text" formControlName="firstName" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.firstName.errors }" />
@@ -139,7 +139,7 @@
                         <div *ngIf="f.firstName.errors.required">First Name is required</div>
                     </div>
                 </div>
-                <label class="col-sm-2 col-form-label">Last Name</label>
+                <label class="col-sm-2 col-form-label">ນາມສະກຸນ(ພາສາລາວ)*</label>
                 <div class="form-group col-5">
 
                   <input type="text" formControlName="lastName" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.lastName.errors }" />
@@ -154,7 +154,7 @@
 
 
 
-                  <h4 class="sub-title">ຢູ່ແຂວງໃດ</h4>
+                  <h5 class="sub-title">ຢູ່ແຂວງໃດ</h5>
 
                   <select [ngClass]="{ 'is-invalid': submitted && f.province.errors }"  name="province" class="form-control" formControlName="province" [(ngModel)]="provinceID" (change)="onchange()">
                     <option value="" disable seleted hidden>ເລືອກແຂວງ</option>
@@ -165,7 +165,7 @@
 
                 <!--ใส่แมือง-->
                 <div class="col-sm-12 col-xl-3 m-b-30">
-                  <h4 class="sub-title">ຢູ່ເມືອງໃດ</h4>
+                  <h5 class="sub-title">ຢູ່ເມືອງໃດ</h5>
                   <select name="district" class="form-control" formControlName="district" [(ngModel)]="provinceID" (change)="onchange()" >
                     <option value="" disabled selected hidden>ເລືອກເມືອງ</option>
                     <option [value]="district.id_district" *ngFor="let district of districtList">{{ district.name_lao }}</option>
@@ -189,9 +189,19 @@
                 </div> -->
 
 
+                <div class="col-sm-12 col-xl-3 m-b-30">
+                  <h5 class="sub-title">ອາຊີບ</h5>
+                  <select name="job" class="form-control" formControlName="job">
+                    <option value="" disabled selected hidden>ເລືອກອາຊີບ</option>
+                    <option>Job1</option>
+                    <option>Job1</option>
+                  </select>
+
+                </div>
+
                 <!--islaos-->
                 <div class="col-sm-12 col-md-6 col-xl-4 m-b-30">
-                  <h4 class="sub-title">ແມ່ນຄົນ ລາວ ຫຼື ບໍ່?</h4>
+                  <h5 class="sub-title">ແມ່ນຄົນ ລາວ ຫຼື ບໍ່?</h5>
                   <div class="form-radio">
 
 
