@@ -17,7 +17,7 @@
   <div class="wrapper wrapper--w790">
       <div class="card card-5 ">
         <div class="card-heading">
-          <h2 class="title">Event Registration Form</h2>
+          <h2 class="title">ໃບລົງທະບຽນຊັັວັກຊິນ</h2>
           </div>
           <div class="card-body bg-light">
             <form class="position bg-light " method="POST" [formGroup]="registerForm"  (ngSubmit)="onSubmit()">
@@ -33,10 +33,10 @@
 
 
 
-                    <input [ngClass]="{ 'is-invalid': submitted && f.vac.errors }" formControlName="vac" type="radio" value="1" name="dose" >
+                    <input [ngClass]="{ 'is-invalid': submitted && f.vac.errors }" formControlName="vac" type="radio" value="1" name="vac" >
                   <label>ເຂັມທີ (1)</label>
 
-                    <input [ngClass]="{ 'is-invalid': submitted && f.vac.errors }" formControlName="vac" type="radio" value="2" name="dose" >
+                    <input [ngClass]="{ 'is-invalid': submitted && f.vac.errors }" formControlName="vac" type="radio" value="2" name="vac" >
                   <label>ເຂັມທີ (2)</label>
                   <div *ngIf="submitted && f.vac.errors" class="invalid-feedback">
                     <div *ngIf="f.vac.errors.required">Title is required</div>
@@ -62,7 +62,7 @@
                 <div class="location_to_get">
                   <label class="col-sm-2 col-form-label">ສະຖານທີ່</label>
                   <div class="col-sm-10">
-                    <select [ngClass]="{ 'is-invalid': submitted && f.location_to_get.errors }" class="form-control" formControlName="location_to_get">
+                    <select [ngClass]="{ 'is-invalid': submitted && f.location_to_get.errors }" class="form-control" name="location_to_get" formControlName="location_to_get">
                       <option value="" disabled selected hidden>ເລືອກສະຖານທີ່</option>
                       <option [value]="location.id_location" *ngFor="let location of locationList">{{ location.name_la }}</option>
                         </select>
@@ -75,16 +75,9 @@
                 <!--เลือกวัน-->
 
                 <div class="date_to_get">
+                  <h5 class="sub-title">ວັນເດືອນປິ</h5>
 
-                    <div class="form-group col">
-                        <label>ວັນເດືອນປີເກີດ</label>
-                        <input type="date" formControlName="dob" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.dob.errors }" />
-                        <div *ngIf="submitted && f.dob.errors" class="invalid-feedback">
-                            <div *ngIf="f.dob.errors.required">Date of Birth is required</div>
-                            <div *ngIf="f.dob.errors.pattern">Date of Birth must be a valid date in the format YYYY-MM-DD</div>
-                        </div>
-                    </div>
-
+                  <input class="form-control" type="date" name="date_to_get" formControlName="date_to_get" min="2021-06-16" max="2021-06-31">
                 </div>
                 <!--เลือกเพด-->
                 <div class="gender">
@@ -171,6 +164,7 @@
                     <option [value]="district.id_district" *ngFor="let district of districtList">{{ district.name_lao }}</option>
 
                   </select>
+
                 </div>
                 <!--ใส่ชื่บ้าน-->
                 <!-- <div class="col-sm-12 col-xl-3 m-b-30">

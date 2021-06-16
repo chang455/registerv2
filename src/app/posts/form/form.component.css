@@ -37,7 +37,9 @@
     padding-bottom: 50px;
   }
 }
-
+.title{
+  font-family: NotoSansLao;
+}
 
 .position1{
   font-family: NotoSansLao;
