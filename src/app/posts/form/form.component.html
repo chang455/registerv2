@@ -17,7 +17,7 @@
   <div class="wrapper wrapper--w790">
       <div class="card card-5 ">
         <div class="card-heading">
-          <h2 class="title">ໃບລົງທະບຽນຊັັວັກຊິນ</h2>
+          <h2 class="title">Event Registration Form</h2>
           </div>
           <div class="card-body bg-light">
             <form class="position bg-light " method="POST" [formGroup]="registerForm"  (ngSubmit)="onSubmit()">
@@ -75,13 +75,13 @@
                 <!--เลือกวัน-->
 
                 <div class="date_to_get">
-                  <h5 class="sub-title">ວັນເດືອນປິ</h5>
+                  <h4 class="sub-title">Date</h4>
 
                   <input class="form-control" type="date" name="date_to_get" formControlName="date_to_get" min="2021-06-16" max="2021-06-31">
                 </div>
                 <!--เลือกเพด-->
                 <div class="gender">
-                  <h5 class="sub-title">ກະລຸນາເລືອກເພດ</h5>
+                  <h3 class="sub-title">ກະລຸນາເລືອກເພດ</h3>
 
                   <!-- <div class="form-radio">
 
@@ -105,49 +105,21 @@
                     </div>
 
                   </div> -->
-                  <input [ngClass]="{ 'is-invalid': submitted && f.gender.errors }" formControlName="gender" type="radio" value="male" name="gender" >
-                  <label>ເພດຊາຍ</label>
 
-                    <input [ngClass]="{ 'is-invalid': submitted && f.gender.errors }" formControlName="gender" type="radio" value="female" name="gender" >
-                  <label>ເພດຍຶງ</label>
-
-                  <input [ngClass]="{ 'is-invalid': submitted && f.gender.errors }" formControlName="gender" type="radio" value="other" name="gender" >
-                  <label>ອື່ນໆ</label>
-
-                  <div *ngIf="submitted && f.gender.errors" class="invalid-feedback">
-                    <div *ngIf="f.gender.errors.required">Title is required</div>
-                    </div>
 
 
                 </div>
 
                 <!--ใส่ชื่นนามสะกุน-->
 
-                <div class="form-group row">
-                  <label class="col-sm-2 col-form-label">ຊື່ (ພາສາລາວ)*</label>
-                  <div class="form-group col-5">
 
-                    <input type="text" formControlName="firstName" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.firstName.errors }" />
-                    <div *ngIf="submitted && f.firstName.errors" class="invalid-feedback">
-                        <div *ngIf="f.firstName.errors.required">First Name is required</div>
-                    </div>
-                </div>
-                <label class="col-sm-2 col-form-label">ນາມສະກຸນ(ພາສາລາວ)*</label>
-                <div class="form-group col-5">
-
-                  <input type="text" formControlName="lastName" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.lastName.errors }" />
-                  <div *ngIf="submitted && f.lastName.errors" class="invalid-feedback">
-                      <div *ngIf="f.lastName.errors.required">Last Name is required</div>
-                  </div>
-              </div>
-          </div>
 
                 <!--ใส่ชื่แขวง-->
                 <div class="col-sm-12 col-xl-3 m-b-30">
 
 
 
-                  <h5 class="sub-title">ຢູ່ແຂວງໃດ</h5>
+                  <h4 class="sub-title">ຢູ່ແຂວງໃດ</h4>
 
                   <select [ngClass]="{ 'is-invalid': submitted && f.province.errors }"  name="province" class="form-control" formControlName="province" [(ngModel)]="provinceID" (change)="onchange()">
                     <option value="" disable seleted hidden>ເລືອກແຂວງ</option>
@@ -158,8 +130,8 @@
 
                 <!--ใส่แมือง-->
                 <div class="col-sm-12 col-xl-3 m-b-30">
-                  <h5 class="sub-title">ຢູ່ເມືອງໃດ</h5>
-                  <select name="district" class="form-control" formControlName="district" [(ngModel)]="provinceID" (change)="onchange()" >
+                  <h4 class="sub-title">ຢູ່ເມືອງໃດ</h4>
+                  <select [ngClass]="{ 'is-invalid': submitted && f.district.errors }" name="district" class="form-control" formControlName="district" >
                     <option value="" disabled selected hidden>ເລືອກເມືອງ</option>
                     <option [value]="district.id_district" *ngFor="let district of districtList">{{ district.name_lao }}</option>
 
@@ -183,20 +155,9 @@
                 </div> -->
 
 
-                <div class="col-sm-12 col-xl-3 m-b-30">
-                  <h5 class="sub-title">ອາຊີບ</h5>
-                  <select name="job" class="form-control" formControlName="job">
-                    <option value="" disabled selected hidden>ເລືອກອາຊີບ</option>
-                    <option>Job1</option>
-                    <option>Job1</option>
-                  </select>
-
-                </div>
-
                 <!--islaos-->
                 <div class="col-sm-12 col-md-6 col-xl-4 m-b-30">
-                  <h5 class="sub-title">ແມ່ນຄົນ ລາວ ຫຼື ບໍ່?</h5>
-                  <div class="form-radio">
+                  <h4 class="sub-title">ແມ່ນຄົນ ລາວ ຫຼື ບໍ່?</h4>
 
                   <input [ngClass]="{ 'is-invalid': submitted && f.islao.errors }" formControlName="islao" type="radio" value="y" name="islao" >
                   <label>ແມ່ນຄົນລາວ</label>
