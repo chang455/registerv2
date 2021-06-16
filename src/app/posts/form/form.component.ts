@@ -23,7 +23,7 @@ export class FormCreate implements OnInit{
   usedata : any
   provinceID:Array<Object>= [];
   now1 = new Date();
-  
+
   constructor(private service:FormService,private fb:FormBuilder) {
 
 
@@ -49,7 +49,7 @@ export class FormCreate implements OnInit{
     })
 
     this.registerForm = this.fb.group({
-      dose:'',
+      vac:'',
       id_vaccine:'',
       location_to_get:'',
       date_to_get:'',
@@ -88,15 +88,17 @@ export class FormCreate implements OnInit{
             vac: ['', Validators.required],
             id_vaccine: ['', Validators.required],
             location_to_get: ['', Validators.required],
+            date_to_get: ['', [Validators.required, Validators.pattern(/^\d{4}\-(0[1-9]|1[012])\-(0[1-9]|[12][0-9]|3[01])$/)]],
+            gender:['',Validators.required],
+            name:['',Validators.required],
             lastName: ['', Validators.required],
-            // validates date format yyyy-mm-dd
-            dob: ['', [Validators.required, Validators.pattern(/^\d{4}\-(0[1-9]|1[012])\-(0[1-9]|[12][0-9]|3[01])$/)]],
+            province:['',Validators.required],
+            district:['',Validators.required],
+            islao:['',Validators.required],
+            id_or_passportid:['',Validators.required],
+            phone:['',Validators.required],
             email: ['', [Validators.required, Validators.email]],
-            password: ['', [Validators.required, Validators.minLength(6)]],
-            confirmPassword: ['', Validators.required],
-            acceptTerms: [false, Validators.requiredTrue],
-            province:'',
-            district:'',
+
         }, {
             validator: MustMatch('password', 'confirmPassword')
         });

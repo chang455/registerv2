@@ -33,10 +33,10 @@
 
 
 
-                    <input [ngClass]="{ 'is-invalid': submitted && f.vac.errors }" formControlName="vac" type="radio" value="1" name="dose" >
+                    <input [ngClass]="{ 'is-invalid': submitted && f.vac.errors }" formControlName="vac" type="radio" value="1" name="vac" >
                   <label>ເຂັມທີ (1)</label>
 
-                    <input [ngClass]="{ 'is-invalid': submitted && f.vac.errors }" formControlName="vac" type="radio" value="2" name="dose" >
+                    <input [ngClass]="{ 'is-invalid': submitted && f.vac.errors }" formControlName="vac" type="radio" value="2" name="vac" >
                   <label>ເຂັມທີ (2)</label>
                   <div *ngIf="submitted && f.vac.errors" class="invalid-feedback">
                     <div *ngIf="f.vac.errors.required">Title is required</div>
@@ -62,7 +62,7 @@
                 <div class="location_to_get">
                   <label class="col-sm-2 col-form-label">ສະຖານທີ່</label>
                   <div class="col-sm-10">
-                    <select [ngClass]="{ 'is-invalid': submitted && f.location_to_get.errors }" class="form-control" formControlName="location_to_get">
+                    <select [ngClass]="{ 'is-invalid': submitted && f.location_to_get.errors }" class="form-control"name="location_to_get" formControlName="location_to_get">
                       <option value="" disabled selected hidden>ເລືອກສະຖານທີ່</option>
                       <option [value]="location.id_location" *ngFor="let location of locationList">{{ location.name_la }}</option>
                         </select>
@@ -77,7 +77,7 @@
                 <div class="date_to_get">
                   <h4 class="sub-title">Date</h4>
 
-                  <input class="form-control" type="date" name="date_to_get" formControlName="date_to_get" min="2021-06-16" max="2021-08-31">
+                  <input class="form-control" type="date" name="date_to_get" formControlName="date_to_get" min="2021-06-16" max="2021-06-31">
                 </div>
                 <!--เลือกเพด-->
                 <div class="gender">
