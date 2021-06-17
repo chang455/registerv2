@@ -32,28 +32,21 @@
 
 
 
-                    <input (click)="act=false" [ngClass]="{ 'is-invalid': submitted && f.vac.errors }" formControlName="vac1" type="radio" value="1" name="vac" >
+                    <input (click)="act=false" [ngClass]="{ 'is-invalid': submitted && f.vac.errors }" formControlName="vac" type="radio" value="1" name="vac" >
                   <label>ເຂັມທີ (1)</label>
                   <div *ngIf="submitted && f.vac.errors" class="invalid-feedback">
                     <div *ngIf="f.vac.errors.required">Title is required</div>
-
-
-                </div>
+                    </div>
 <div *ngIf="act">
   <ng-container >
     <label class="col-sm-2 col-form-label">name</label>
-
-
  <input  formControlName="name" name="phone" type="test" class="form-control" placeholder="name">
-
-
   </ng-container>
 </div>
-                    <input (click)="act=true" [ngClass]="{ 'is-invalid': submitted && f.vac.errors }" formControlName="vac2" type="radio" value="2" name="vac" >
+                    <input (click)="act=true" [ngClass]="{ 'is-invalid': submitted && f.vac.errors }" formControlName="vac" type="radio" value="2" name="vac" >
                   <label>ເຂັມທີ (2)</label>
                   <div *ngIf="submitted && f.vac.errors" class="invalid-feedback">
                     <div *ngIf="f.vac.errors.required">Title is required</div>
-
 
 
               </div>
