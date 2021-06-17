@@ -8,6 +8,7 @@ import {FormBuilder, FormControl, FormGroup, NgForm, Validators} from '@angular/
 import { MustMatch } from 'src/app/posts/form/must-match.validator';
 import { DatePipe } from '@angular/common';
 import * as moment from 'moment';
+import Swal from "sweetalert2";
 @Component({
   selector: 'form-create',
   templateUrl: './form.component.html',
@@ -31,26 +32,26 @@ export class FormCreate implements OnInit{
 
 
 
-    // this.service.getPro()
-    // .subscribe(response=>{
-    //   this.provinceList=response;
-    //   console.log("response", response);
-    // })
+    this.service.getPro()
+    .subscribe(response=>{
+      this.provinceList=response;
+
+    })
 
 
 
 
-    // this.service.getVac()
-    // .subscribe(response=>{
-    //   this.vaccinesList=response;
-    //   console.log("response", response);
-    // })
+    this.service.getVac()
+    .subscribe(response=>{
+      this.vaccinesList=response;
 
-    // this.service.getHos()
-    // .subscribe(response=>{
-    //   this.locationList=response;
-    //   console.log("response",response);
-    // })
+    })
+
+    this.service.getHos()
+    .subscribe(response=>{
+      this.locationList=response;
+
+    })
 
     this.registerForm = this.fb.group({
       vac:'',
@@ -104,15 +105,50 @@ export class FormCreate implements OnInit{
     get f() { return this.registerForm.controls; }
 
     onSubmit() {
-        this.submitted = true;
+      this.submitted = true;
+      const data={
+        'id_vaccine':this.registerForm.value.id_vaccine,
+      'dose':this.registerForm.value.dose,
+      'cvid_ref':'123456789',
+      'location_to_get':this.registerForm.value.location_to_get,
+      'date_to_get':this.registerForm.value.date_to_get,
+      'gender':this.registerForm.value.gender,
+      'name':this.registerForm.value.name,
+      'lastname':this.registerForm.value.lastname,
+      'village':'ບ້ານໜ່ອງແຕ່ງ',
+      'district':this.registerForm.value.district,
+      'province':this.registerForm.value.provinceID,
+      'islao':this.registerForm.value.islao,
+      'country':this.registerForm.value.country,
+      'id_or_passportid':this.registerForm.value.id_or_passportid,
+      'phone':this.registerForm.value.phone,
+      'email':this.registerForm.value.email
+    }
+        if(this.registerForm.status=='INVALID'){
 
+          console.log(this.registerForm)
+          console.log("Status: Invalid")
+        }else if(this.registerForm.status=='VALID'){
+          console.log(this.registerForm.value)
+          console.log("Status: Valid")
+
+        this.service.insert_from(data).subscribe(result=>{
+        console.log(result)
+        Swal.fire({
+        icon: 'success',
+        title: 'ລະຫັດຂອງທ່ານ:  '+result.ticket_id,
+        text: 'ເອົາໄວ້ຍືນຍັນແກ່ທ່ານໝໍ',
+        })
+        })
+        this.registerForm.reset();
+        }
         // if(this.registerForm.status === 'VALID'){
 
         //     console.log(this.registerForm.value);
 
         //   }
 
-console.log(this.registerForm.value)
+// console.log(this.registerForm.value)
 
         // stop here if form is invalid
         // if (this.registerForm.invalid) {
@@ -137,19 +173,19 @@ console.log(this.registerForm.value)
    }
 
     onchange(){
-      console.log(this.provinceID);
+      // console.log(this.provinceID);
       this.service.getDis(this.provinceID)
       .subscribe(response=>{
         this.districtList=response;
-        console.log("response",response);
+        // console.log("response",response);
       })
     }
 
 
     changeFn(event:any) {
       // this.radio1 = event.target.value
-      console.log (event.target.value)
-      console.log(this.current_date)
+      // console.log (event.target.value)
+      // console.log(this.current_date)
       if (event.target.value == 2){
         this.radio1 = true
       }else{
