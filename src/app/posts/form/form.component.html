@@ -109,8 +109,16 @@
                     </div>
 
                   </div> -->
+                  <input [ngClass]="{ 'is-invalid': submitted && f.gender.errors }" formControlName="gender" type="radio" value="male" name="gender" >
+                  <label>Male</label>
+                  <input [ngClass]="{ 'is-invalid': submitted && f.gender.errors }" formControlName="gender" type="radio" value="female" name="gender" >
+                  <label>Female</label>
 
-
+                    <input [ngClass]="{ 'is-invalid': submitted && f.gender.errors }" formControlName="gender" type="radio" value="other" name="gender" >
+                  <label>ອື່ນໆ</label>
+                  <div *ngIf="submitted && f.gender.errors" class="invalid-feedback">
+                    <div *ngIf="f.gender.errors.required">Title is required</div>
+                  </div>
 
                 </div>
 
@@ -135,9 +143,35 @@
                       </div>
                   </div>
                 </div>
+<!-- -->
+<div>
+  <h4 class="sub-title">country </h4>
+  <select   name="province" class="form-control" formControlName="province" [(ngModel)]="provinceID" (change)="onchange()">
+    <option value="" disable seleted hidden>country</option>
+    <option></option>
+
+  </select>
 
 
 
+
+</div>
+<div>
+  <h4 class="sub-title">job</h4>
+  <select   name="province" class="form-control" formControlName="province" [(ngModel)]="provinceID" (change)="onchange()">
+    <option value="" disable seleted hidden>job</option>
+    <option ></option>
+
+  </select>
+
+
+
+
+</div>
+
+
+
+<!-- -->
                 <!--ใส่ชื่แขวง-->
                 <div class="col-sm-12 col-xl-3 m-b-30">
 
@@ -163,7 +197,7 @@
 
                 </div>
                 <!--ใส่ชื่บ้าน-->
-                <!-- <div class="col-sm-12 col-xl-3 m-b-30">
+                <div class="col-sm-12 col-xl-3 m-b-30">
                   <h4 class="sub-title">ຢູ່ບ້ານໃດ</h4>
                   <select formControlName="village" name="village" class="form-control form-control-default">
                       <option value="" disabled selected hidden>ເລືອກບ້ານ</option>
@@ -176,7 +210,7 @@
                     <option value="opt7">Type 7</option>
                     <option value="opt8">Type 8</option>
                   </select>
-                </div> -->
+                </div>
                 <div class="col-sm-12 col-xl-3 m-b-30">
                   <h5 class="sub-title">ອາຊີບ</h5>
                   <select name="job" class="form-control" formControlName="job">
