@@ -19,3 +19,26 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
   --colorShadeD: #5f98f4;
   --colorShadeE: #fff;
 }
+.navbar{
+  background-color: #3575cb;
+}
+.footer{
+  background-color: #317AF1;
+}
+.Text{
+  font-family: NotoSansLao;
+  font-size: 10px;
+  text-align:start;
+  padding: 0;
+}
+.Text1{
+  text-align: left;
+  font-family: NotoSansLao;
+  font-size: 13px;
+}
+.collapse{
+  color: white;
+  font-size: 20px;
+  font-family: NotoSansLao;
+  margin: auto;
+}

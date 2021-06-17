@@ -14,7 +14,7 @@
 }
 .card-5 .card-heading {
   padding: 20px 0;
-  background:#3575cb;
+  background:#5f98f4;
   -webkit-border-top-left-radius: 10px;
   -moz-border-radius-topleft: 10px;
   border-top-left-radius: 10px;
@@ -29,6 +29,7 @@
   padding: 52px 85px;
   padding-bottom: 73px;
   margin: auto;
+  margin-bottom: 10px;
 
 }
 @media (max-width: 767px) {
@@ -39,13 +40,13 @@
 }
 .title{
   font-family: NotoSansLao;
-}
 
+}
 .position1{
   font-family: NotoSansLao;
 }
 .vaccine_dose{
-  font-size: 20px;
+  font-size: 30px;
   display: flex;
   position: relative;
 }
@@ -78,13 +79,17 @@
   height: auto;
   display: flex;
   flex-wrap: wrap;
+
 }
 *{
   border-radius: 5px;
 }
 .col-sm-2{
   width: 100%;
-  font-size: 18px;
+  font-size: 20px;
+  margin-bottom: 3px;
+  padding: 0;
+
 }
 .radio{
   margin-bottom: 20px;
