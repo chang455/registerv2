@@ -174,12 +174,13 @@ if (this.registerForm.value.vac == '2' && this.registerForm.value.vac_details ==
                   title: 'ລະຫັດຂອງທ່ານ:  '+result.ticket_id,
                   text: 'ເອົາໄວ້ຍືນຍັນແກ່ທ່ານໝໍ',
                   })
-
-                  setTimeout(()=>{
-                    this.submitted = false;
-                    this.registerForm.reset();
-                    window.location.reload();
-                  }, 4000)
+                  this.submitted = false;
+                  this.registerForm.reset();
+                  // setTimeout(()=>{
+                  //   this.submitted = false;
+                  //   this.registerForm.reset();
+                  //   window.location.reload();
+                  // }, 4000)
 
 
 
