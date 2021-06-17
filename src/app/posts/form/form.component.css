@@ -14,7 +14,7 @@
 }
 .card-5 .card-heading {
   padding: 20px 0;
-  background:#3575cb;
+  background:#5f98f4;
   -webkit-border-top-left-radius: 10px;
   -moz-border-radius-topleft: 10px;
   border-top-left-radius: 10px;
@@ -29,6 +29,7 @@
   padding: 52px 85px;
   padding-bottom: 73px;
   margin: auto;
+  margin-bottom: 10px;
 
 }
 @media (max-width: 767px) {
