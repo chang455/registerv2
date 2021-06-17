@@ -44,6 +44,11 @@ getDis(id:any){
     console.log(url);
     return this.http.get<any>(url);
   }
+  getjob(){
+    const url = this.url + "get_job";
+    console.log(url);
+    return this.http.get<any>(url);
+  }
 
 
 
