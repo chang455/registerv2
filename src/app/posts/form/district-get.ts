@@ -25,5 +25,6 @@ export interface Location{
   active_end_date:Date;
 }
 export interface Job{
-  
+  job_id:number;
+  job_name:string;
 }

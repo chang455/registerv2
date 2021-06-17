@@ -49,6 +49,7 @@ getDis(id:any){
     console.log(url);
     return this.http.get<any>(url);
   }
+  
 
 
 

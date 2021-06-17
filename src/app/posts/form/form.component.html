@@ -51,10 +51,10 @@
     <label >ຕົວຢ່າງ: H1234-A-12345</label>
     <div class="col-sm-10">
 
-      <input [ngClass]="{ 'is-invalid': submitted && f.vac_detais.errors }" formControlName="vac_detais" name="vac_detais" type="test" class="form-control" placeholder="Covid ID card">
-      <div *ngIf="submitted && f.vac_detais.errors" class="invalid-feedback">
+      <input  formControlName="vac_details" name="vac_details" type="test" class="form-control" placeholder="Covid ID card">
+      <!-- <div *ngIf="submitted && f.vac_detais.errors" class="invalid-feedback">
         <div *ngIf="f.vac_detais.errors.required"></div>
-        </div>
+        </div> -->
     </div>
   </div>
 </ng-container>
@@ -139,7 +139,7 @@
       <!-- <h3 class="sub-title"></h3> -->
 
       <select  [ngClass]="{ 'is-invalid': submitted && f.gender.errors }" name="gender" class="form-control" formControlName="gender">
-        <option value="">ເລືອກເພດ</option>
+        <option value="" disabled selected hidden>ເລືອກເພດ</option>
         <option value="Male">Male</option>
         <option value="Female">Female</option>
       </select>
@@ -195,11 +195,8 @@
                   <!-- <h5 class="sub-title">ອາຊີບ</h5> -->
                   <select [ngClass]="{ 'is-invalid': submitted && f.job.errors }" name="job" class="form-control" formControlName="job">
                     <option value="" disabled selected hidden>ເລືອກອາຊີບ</option>
-                    <option value="ຄົນທົ່ວໄປ">ຄົນທົ່ວໄປ</option>
-                    <option value="ພະນັກງານລັດ">ພະນັກງານລັດ</option>
-                    <option value="ພະນັກງານລເອກະຊົນ">ພະນັກງານລເອກະຊົນ</option>
-                    <option value="ຄ້າຂາຍ">ຄ້າຂາຍ</option>
-                    <option value="ບໍໄດ້ເຮັດຫຍັງ">ບໍໄດ້ເຮັດຫຍັງ</option>
+                    <option [value]="job.job_id"  *ngFor="let job of jobList">{{ job.job_name }}</option>
+
                   </select>
                   <div *ngIf="submitted && f.job.errors" class="invalid-feedback">
                     <div *ngIf="f.job.errors.required">Required</div>
@@ -220,6 +217,18 @@
 
                   <div *ngIf="submitted && f.islao.errors" class="invalid-feedback">
                     <div *ngIf="f.islao.errors.required">Required</div>
+                    </div>
+                    <div class="col-sm-12 col-xl-3 m-b-30">
+                      <label class="col-sm-2 col-form-label">ສັນຊາດ</label>
+                      <!-- <h5 class="sub-title">ອາຊີບ</h5> -->
+                      <select [ngClass]="{ 'is-invalid': submitted && f.country.errors }" name="country" class="form-control" formControlName="country">
+                        <option value="" disabled selected hidden>ເລືອກສັນຊາດ</option>
+                        <option [value]="country.name" *ngFor="let country of countries">{{ country.name }}</option>
+
+                      </select>
+                      <div *ngIf="submitted && f.country.errors" class="invalid-feedback">
+                        <div *ngIf="f.country.errors.required">Required</div>
+                        </div>
                     </div>
                     <!-- <label>
                       <input formControlName="islao" value="y" type="radio" name="islao" checked="checked">
