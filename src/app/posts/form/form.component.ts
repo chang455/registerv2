@@ -19,6 +19,7 @@ export class FormCreate implements OnInit{
   districtList: District []= [];
   vaccinesList: Vaccines []= [];
   locationList: Location []=[];
+  act: boolean =false;
 
   usedata : any
   provinceID:Array<Object>= [];
