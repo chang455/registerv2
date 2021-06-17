@@ -26,7 +26,7 @@ export class FormCreate implements OnInit{
   now1 = new Date();
 
   radio1 = false
-  current_date = moment().format("YYYY-MM-DD");
+  current_date = moment().add(1,'days').format("YYYY-MM-DD");
 
   constructor(private service:FormService,private fb:FormBuilder) {
 
@@ -114,9 +114,9 @@ export class FormCreate implements OnInit{
     get f() { return this.registerForm.controls; }
 
     onSubmit() {
-      console.log(this.registerForm.value.country)
-console.log(this.registerForm.value)
-console.log(this.registerForm.value.id_vaccine)
+//       console.log(this.registerForm.value.country)
+// console.log(this.registerForm.value)
+// console.log(this.registerForm.value.id_vaccine)
 
 if (this.registerForm.value.vac == '2' && this.registerForm.value.vac_details == "" ){
  Swal.fire({
@@ -147,21 +147,62 @@ if (this.registerForm.value.vac == '2' && this.registerForm.value.vac_details ==
     }
         if(this.registerForm.status=='INVALID'){
 
-          console.log(this.registerForm)
-          console.log("Status: Invalid")
+          // console.log(this.registerForm)
+          // console.log("Status: Invalid")
         }else if(this.registerForm.status=='VALID'){
-          console.log(this.registerForm.value)
-          console.log("Status: Valid")
+          // console.log(this.registerForm.value)
+          // console.log("Status: Valid")
 
-        this.service.insert_from(data).subscribe(result=>{
-        console.log(result)
+
+        // console.log(result)
+
         Swal.fire({
-        icon: 'success',
-        title: 'ລະຫັດຂອງທ່ານ:  '+result.ticket_id,
-        text: 'ເອົາໄວ້ຍືນຍັນແກ່ທ່ານໝໍ',
-        })
-        })
+          title: 'ລະບົບຈອງຄິວ',
+          text: 'ກະລຸນາກວດສອບຂໍ້ມູນຂອງຸທ່ານ',
+          icon: 'question',
+          showCancelButton: true,
+          confirmButtonColor: '#3085d6',
+          cancelButtonColor: '#d33',
+          confirmButtonText: 'ຕົກລົງ'
 
+        }).then((result) => {
+          if (result.isConfirmed) {
+            this.service.insert_from(data).subscribe(result=>{
+              if(result.resultCode == '00'){
+                Swal.fire({
+                  icon: 'success',
+                  title: 'ລະຫັດຂອງທ່ານ:  '+result.ticket_id,
+                  text: 'ເອົາໄວ້ຍືນຍັນແກ່ທ່ານໝໍ',
+                  })
+
+                  setTimeout(()=>{
+                    this.submitted = false;
+                    this.registerForm.reset();
+                    window.location.reload();
+                  }, 4000)
+
+
+
+              }else{
+                Swal.fire({
+                  icon: 'warning',
+                  title: 'ການສະໝັກລົ້ມເຫຼວ  ',
+                  text: 'ກະລຸນາລອງໃໝ້ອີກຄັ້ງ',
+                  })
+                  setTimeout(()=>{
+                    this.submitted = false;
+                    this.registerForm.reset();
+                    window.location.reload();
+                  }, 4000)
+
+              }
+
+            // this.submitted = false;
+            // this.registerForm.reset();
+            // window.location.reload();
+            })
+          }
+        })
         }
 }
 
@@ -193,7 +234,7 @@ if (this.registerForm.value.vac == '2' && this.registerForm.value.vac_details ==
     }
 
     onItemChange(){
-      console.log(" Value is : ", event );
+      // console.log(" Value is : ", event );
    }
 
     onchange(){
