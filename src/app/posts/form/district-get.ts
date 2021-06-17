@@ -24,3 +24,6 @@ export interface Location{
   active_start_date:Date;
   active_end_date:Date;
 }
+export interface Job{
+  
+}

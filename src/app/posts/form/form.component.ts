@@ -20,7 +20,7 @@ export class FormCreate implements OnInit{
   districtList: District []= [];
   vaccinesList: Vaccines []= [];
   locationList: Location []=[];
-
+  
   usedata : any
   provinceID:Array<Object>= [];
   now1 = new Date();
