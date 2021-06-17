@@ -7,7 +7,7 @@ import { District, Province, Vaccines,Location } from "./district-get";
 import {FormBuilder, FormControl, FormGroup, NgForm, Validators} from '@angular/forms';
 import { MustMatch } from 'src/app/posts/form/must-match.validator';
 import { DatePipe } from '@angular/common';
-
+import * as moment from 'moment';
 @Component({
   selector: 'form-create',
   templateUrl: './form.component.html',
@@ -19,35 +19,38 @@ export class FormCreate implements OnInit{
   districtList: District []= [];
   vaccinesList: Vaccines []= [];
   locationList: Location []=[];
-  act: boolean =false;
 
   usedata : any
   provinceID:Array<Object>= [];
   now1 = new Date();
 
+  radio1 = false
+  current_date = moment().format("YYYY-MM-DD");
+
   constructor(private service:FormService,private fb:FormBuilder) {
 
 
-    this.service.getPro()
-    .subscribe(response=>{
-      this.provinceList=response;
-      console.log("response", response);
-    })
+
+    // this.service.getPro()
+    // .subscribe(response=>{
+    //   this.provinceList=response;
+    //   console.log("response", response);
+    // })
 
 
 
 
-    this.service.getVac()
-    .subscribe(response=>{
-      this.vaccinesList=response;
-      console.log("response", response);
-    })
+    // this.service.getVac()
+    // .subscribe(response=>{
+    //   this.vaccinesList=response;
+    //   console.log("response", response);
+    // })
 
-    this.service.getHos()
-    .subscribe(response=>{
-      this.locationList=response;
-      console.log("response",response);
-    })
+    // this.service.getHos()
+    // .subscribe(response=>{
+    //   this.locationList=response;
+    //   console.log("response",response);
+    // })
 
     this.registerForm = this.fb.group({
       vac:'',
@@ -67,15 +70,7 @@ export class FormCreate implements OnInit{
    });
 
    }
-   registerForm = new FormGroup({
-
-    // title: new FormControl('', [Validators.required]),
-
-    // firstName: new FormControl('', [Validators.required]),
-
-    // lastName: new FormControl('', Validators.required)
-
-  });
+   registerForm = new FormGroup({});
 
 
 
@@ -88,6 +83,7 @@ export class FormCreate implements OnInit{
         this.registerForm = this.fb.group({
             vac: ['', Validators.required],
             id_vaccine: ['', Validators.required],
+            vac_detais: ['', Validators.required],
             location_to_get: ['', Validators.required],
             date_to_get: ['', [Validators.required, Validators.pattern(/^\d{4}\-(0[1-9]|1[012])\-(0[1-9]|[12][0-9]|3[01])$/)]],
             gender:['',Validators.required],
@@ -98,9 +94,8 @@ export class FormCreate implements OnInit{
             islao:['',Validators.required],
             id_or_passportid:['',Validators.required],
             phone:['',Validators.required],
+            job:['',Validators.required],
             email: ['', [Validators.required, Validators.email]],
-
-        }, {
 
         });
     }
@@ -117,14 +112,13 @@ export class FormCreate implements OnInit{
 
         //   }
 
-      this.service.insert_from(this.registerForm.value).subscribe(response =>
-        {console.log("response"+response)})
+console.log(this.registerForm.value)
 
         // stop here if form is invalid
-        if (this.registerForm.invalid) {
-          alert('SUCCESS!! :-)\n\n' + JSON.stringify(this.registerForm.value, null, 4));
-          return;
-        }
+        // if (this.registerForm.invalid) {
+        //   alert('SUCCESS!! :-)\n\n' + JSON.stringify(this.registerForm.value, null, 4));
+        //   return;
+        // }
 
 
 
@@ -138,6 +132,10 @@ export class FormCreate implements OnInit{
         this.registerForm.reset();
     }
 
+    onItemChange(){
+      console.log(" Value is : ", event );
+   }
+
     onchange(){
       console.log(this.provinceID);
       this.service.getDis(this.provinceID)
@@ -146,6 +144,22 @@ export class FormCreate implements OnInit{
         console.log("response",response);
       })
     }
+
+
+    changeFn(event:any) {
+      // this.radio1 = event.target.value
+      console.log (event.target.value)
+      console.log(this.current_date)
+      if (event.target.value == 2){
+        this.radio1 = true
+      }else{
+        this.radio1 = false
+      }
+
+    }
+
+
+
 }
 
 
