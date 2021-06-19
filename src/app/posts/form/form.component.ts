@@ -89,7 +89,8 @@ export class FormCreate implements OnInit{
     ngOnInit() {
         this.registerForm = this.fb.group({
             vac: ['', Validators.required],
-            id_vaccine: ['', Validators.required],
+            // id_vaccine: ['', Validators.required],
+            id_vaccine:'',
             // vac_detais: ['', Validators.required],
             vac_details:'' ,
             location_to_get: ['', Validators.required],
@@ -118,7 +119,7 @@ export class FormCreate implements OnInit{
 // console.log(this.registerForm.value)
 // console.log(this.registerForm.value.id_vaccine)
 
-if (this.registerForm.value.vac == '2' && this.registerForm.value.vac_details == "" ){
+if (this.registerForm.value.vac == '2' && this.registerForm.value.vac_details == "" && this.registerForm.value.id_vaccine==""){
  Swal.fire({
         icon: 'warning',
         title: 'ລະຫັດຂອງທ່ານ:  ',
