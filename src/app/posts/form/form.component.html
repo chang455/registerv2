@@ -74,7 +74,7 @@
                       </div>
                   </div>
                 </div>
-</ng-container>
+                </ng-container>
 
 
 
@@ -523,11 +523,43 @@
                       <div *ngIf="submitted && f.ques1.errors" class="invalid-feedback">
                         <div *ngIf="f.ques1.errors.required">Required</div>
                         </div>
-
-
-
                   </div>
               </div>
+
+              <hr>
+
+              <div class="date_to_get">
+                <label class="col-sm-2 col-form-label">ຖ້າເຄີຍເປັນພະຍາດໂຄວິດ-19, ວັນທີ່ປຶ່ນປົວ
+                  ຫາຍຂາດແມ່ນມື້ໃດ?</label>
+                <!-- <h5 class="sub-title"></h5> -->
+
+                <input [ngClass]="{ 'is-invalid': submitted && f.date_to_get.errors }" class="form-control" type="date" name="date_to_get" formControlName="date_to_get" min="{{current_date}}" max="2021-06-31">
+                <div *ngIf="submitted && f.date_to_get.errors" class="invalid-feedback">
+                  <div *ngIf="f.date_to_get.errors.required">date is required</div>
+                  </div>
+
+              </div>
+
+
+              <hr>
+                <div class="warning mt-2 mb-2">
+                  <label >ໝາຍເຫດ</label>
+                  <li>
+                    ຫຼັງຈາກສົ່ງຂໍ້ມູນໃຫ້ທ່ານຖ່າຍຮູບໜ້າຈໍຫຼືຈົດ
+                    ບັນທຶກລະຫັດບັດຄີວໄວ້ເພື່ອເອົາໄປຢັ້ງຢືນ
+                    ຕອນໄປຮັບການສັກຢາ
+                  </li>
+                  <li>
+                    ຫຼັງຈາກຮູ້ສະຖານທີ່ ແລະ ເວລາໄປຮັບວັກຊີນ
+                    ແລ້ວ ຕ້ອງໄປຕາມຄີວທີ່ນັດໝາຍ, ຖ້າເກີນ
+                    ເວລາທີ່ນັດໝາຍຈະຖືວ່າເປັນການສະລະສິດ
+                  </li>
+                  <li>
+                    ກະລຸນາລໍຖ້າການແຈ້ງຕອບ
+                  </li>
+
+                </div>
+                <hr>
 
                 <button class="big-button" type="submit" id="submit-form"> ສົ່ງຂໍ້ມູນ </button>
 
