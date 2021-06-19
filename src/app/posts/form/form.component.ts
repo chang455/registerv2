@@ -122,6 +122,7 @@ export class FormCreate implements OnInit{
             ques7:['',Validators.required],
             ques8:['',Validators.required],
             ques9:['',Validators.required],
+            Disease:'',
 
         });
     }
