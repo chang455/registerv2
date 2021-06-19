@@ -141,6 +141,22 @@ getDis(id:any){
     return this.http.get<any>(url, {headers:header});
   }
 
+  getvillage(id:any){
+    let header = new HttpHeaders().set(
+      "x-access-token",this.token
+    );
+    const url = this.url + "get_village_id?id="+id;
+    return this.http.get<any>(url, {headers:header});
+
+  }
+  getdisease(){
+    let header = new HttpHeaders().set(
+      "x-access-token",this.token
+    );
+    const url = this.url + "get_disease";
+    return this.http.get<any>(url, {headers:header});
+  }
+
 
 
 

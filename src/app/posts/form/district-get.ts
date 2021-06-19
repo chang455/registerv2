@@ -5,6 +5,7 @@ export interface Province {
 
 export interface District{
   id_district: number;
+
   name_lao:string;
 }
 
@@ -17,6 +18,7 @@ export interface Vaccines{
 }
 export interface Location{
   id_location:number;
+  location_code:string;
   name_la:string;
   status:number;
   per_hr_capacity:number;
@@ -28,3 +30,9 @@ export interface Job{
   job_id:number;
   job_name:string;
 }
+export interface Village{
+  id_district:number;
+  id_village:number;
+  name_lao:string;
+}
+

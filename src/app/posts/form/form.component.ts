@@ -3,7 +3,7 @@ import { identifierModuleUrl } from "@angular/compiler";
 import { Component, OnInit } from "@angular/core";
 import { Observable } from "rxjs";
 import { FormService } from "src/app/form-service/form.service";
-import { District, Province, Vaccines,Location, Job } from "./district-get";
+import { District, Province, Vaccines,Location, Job, Village } from "./district-get";
 import {FormBuilder, FormControl, FormGroup, NgForm, Validators} from '@angular/forms';
 import { MustMatch } from 'src/app/posts/form/must-match.validator';
 import { DatePipe } from '@angular/common';
@@ -19,17 +19,30 @@ export class FormCreate implements OnInit{
   provinceList: Province []= [];
   districtList: District []= [];
   vaccinesList: Vaccines []= [];
+  villageList: Village []= [];
   locationList: Location []=[];
   jobList: Job[]=[];
   usedata : any
-  provinceID:Array<Object>= [];
+  provinceID:any;
+  districtID:Array<Object>= [];
   now1 = new Date();
+
+  villageinput:any;
 
   radio1 = false
   radio2 = false
   current_date = moment().add(1,'days').format("YYYY-MM-DD");
   current_date_covide = moment().format("YYYY-MM-DD");
 
+  age_radio1= false
+  age_radio2=false
+  age_radio3=false
+  age_date:any;
+  age_calculate:any;
+
+  vac1:any;
+  vac2:any;
+  location_code:any;
   constructor(private service:FormService,private fb:FormBuilder) {
 
 
@@ -58,6 +71,7 @@ export class FormCreate implements OnInit{
     this.service.getHos()
     .subscribe(response=>{
       this.locationList=response;
+      console.log(response)
 
     })
 
@@ -89,6 +103,9 @@ export class FormCreate implements OnInit{
 
 
     ngOnInit() {
+
+
+
         this.registerForm = this.fb.group({
             vac: ['', Validators.required],
             // id_vaccine: ['', Validators.required],
@@ -105,7 +122,7 @@ export class FormCreate implements OnInit{
             district:['',Validators.required],
             country:'',
             title:['',Validators.required],
-            dbo:['', [Validators.required, Validators.pattern(/^\d{4}\-(0[1-9]|1[012])\-(0[1-9]|[12][0-9]|3[01])$/)]],
+            dob:['', [Validators.required, Validators.pattern(/^\d{4}\-(0[1-9]|1[012])\-(0[1-9]|[12][0-9]|3[01])$/)]],
             islao:['',Validators.required],
             id_or_passportid:['',Validators.required],
             phone:['',Validators.required],
@@ -123,6 +140,7 @@ export class FormCreate implements OnInit{
             ques8:['',Validators.required],
             ques9:['',Validators.required],
             Disease:'',
+            villageinput:['',Validators.required],
 
         });
     }
@@ -131,6 +149,8 @@ export class FormCreate implements OnInit{
     get f() { return this.registerForm.controls; }
 
     onSubmit() {
+      console.log(this.location_code)
+      console.log(this.ageFromDateOfBirthday('2000-01-01'))
 //       console.log(this.registerForm.value.country)
 // console.log(this.registerForm.value)
 // console.log(this.registerForm.value.id_vaccine)
@@ -145,6 +165,7 @@ if (this.registerForm.value.vac == '2' && this.registerForm.value.vac_details ==
 }else{
   this.submitted = true;
       const data={
+
         'id_vaccine':this.registerForm.value.id_vaccine,
       'dose':this.registerForm.value.vac,
       'cvid_ref':this.registerForm.value.vac_details,
@@ -153,7 +174,8 @@ if (this.registerForm.value.vac == '2' && this.registerForm.value.vac_details ==
       'gender':this.registerForm.value.title,
       'name':this.registerForm.value.name,
       'lastname':this.registerForm.value.lastName,
-      'village':'ບ້ານໜ່ອງແຕ່ງ',
+      'village':this.registerForm.value.village,
+      'villageinput':this.registerForm.value.villageinput,
       'district':this.registerForm.value.district,
       'province':this.registerForm.value.province,
       'islao':this.registerForm.value.islao,     //IS_LAOS
@@ -162,7 +184,7 @@ if (this.registerForm.value.vac == '2' && this.registerForm.value.vac_details ==
       'id_or_passportid':this.registerForm.value.id_or_passportid,
       'phone':this.registerForm.value.phone,
       'email':this.registerForm.value.email,
-      'dbo':this.registerForm.value.dbo,
+      'dob':this.registerForm.value.dob,
       //'national':this.registerForm.value.national,  //NATIONAL
       'work_location':this.registerForm.value.work_location,
       'date_covid':this.registerForm.value.date_covid,
@@ -275,7 +297,15 @@ if (this.registerForm.value.vac == '2' && this.registerForm.value.vac_details ==
       this.service.getDis(this.provinceID)
       .subscribe(response=>{
         this.districtList=response;
+
         // console.log("response",response);
+      })
+    }
+
+    disonchange(){
+      this.service.getvillage(this.districtID)
+      .subscribe(response=>{
+        this.villageList=response;
       })
     }
 
@@ -302,6 +332,40 @@ if (this.registerForm.value.vac == '2' && this.registerForm.value.vac_details ==
         this.radio2 = false
       }
 
+    }
+
+    changeAge(event:any){
+      if (event.target.value == 1){
+        this.age_radio1 = true
+      }else{
+        this.age_radio1 = false
+      }
+      if(event.target.value==2){
+        this.age_radio2= true
+      }else{
+        this.age_radio2=false
+      }
+      if(event.target.value ==3){
+        this.age_radio3=true
+      }else{
+        this.age_radio3=false
+      }
+    }
+    public ageFromDateOfBirthday(dateOfBirth: any): number {
+      const today = new Date();
+      const birthDate = new Date(dateOfBirth);
+      let age = today.getFullYear() - birthDate.getFullYear();
+      const m = today.getMonth() - birthDate.getMonth();
+
+      if (m < 0 || (m === 0 && today.getDate() < birthDate.getDate())) {
+        age--;
+      }
+
+      return age;
+    }
+    age_cal(){
+      console.log(this.age_date)
+      this.age_calculate= this.ageFromDateOfBirthday(this.age_date)
     }
 
     countries = [
