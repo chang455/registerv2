@@ -152,7 +152,7 @@
                   <label class="col-sm-2 col-form-label">ວັນທີເດືອນປີເກີດ</label>
                   <!-- <h5 class="sub-title"></h5> -->
 
-                  <input [ngClass]="{ 'is-invalid': submitted && f.date_to_get.errors }" class="form-control" type="date" name="dbo" formControlName="dbo" min="1900-01-01" max="2003-12-31">
+                  <input [ngClass]="{ 'is-invalid': submitted && f.dbo.errors }" class="form-control" type="date" name="dbo" formControlName="dbo" min="1900-01-01" max="2003-12-31">
                   <div *ngIf="submitted && f.dbo.errors" class="invalid-feedback">
                     <div *ngIf="f.dbo.errors.required">date of birth is required</div>
                     </div>
@@ -449,8 +449,8 @@
                       <input [ngClass]="{ 'is-invalid': submitted && f.islao.errors }" formControlName="ques5" type="radio" value="n"
                           name="ques5">
                       <label>&nbsp;ບໍ່ແມ່ນ</label>
-                      <div *ngIf="submitted && f.ques1.errors" class="invalid-feedback">
-                        <div *ngIf="f.ques1.errors.required">Required</div>
+                      <div *ngIf="submitted && f.ques5.errors" class="invalid-feedback">
+                        <div *ngIf="f.ques5.errors.required">Required</div>
                         </div>
 
 
@@ -467,8 +467,8 @@
                       <input [ngClass]="{ 'is-invalid': submitted && f.islao.errors }" formControlName="ques6" type="radio" value="n"
                           name="ques6">
                       <label>&nbsp;ບໍ່ແມ່ນ</label>
-                      <div *ngIf="submitted && f.ques1.errors" class="invalid-feedback">
-                        <div *ngIf="f.ques1.errors.required">Required</div>
+                      <div *ngIf="submitted && f.ques6.errors" class="invalid-feedback">
+                        <div *ngIf="f.ques6.errors.required">Required</div>
                         </div>
 
 
@@ -485,8 +485,8 @@
                       <input [ngClass]="{ 'is-invalid': submitted && f.islao.errors }" formControlName="ques7" type="radio" value="n"
                           name="ques7">
                       <label>&nbsp;ບໍ່ແມ່ນ</label>
-                      <div *ngIf="submitted && f.ques1.errors" class="invalid-feedback">
-                        <div *ngIf="f.ques1.errors.required">Required</div>
+                      <div *ngIf="submitted && f.ques7.errors" class="invalid-feedback">
+                        <div *ngIf="f.ques7.errors.required">Required</div>
                         </div>
 
 
@@ -503,8 +503,8 @@
                       <input [ngClass]="{ 'is-invalid': submitted && f.islao.errors }" formControlName="ques8" type="radio" value="n"
                           name="ques8">
                       <label>&nbsp;ບໍ່ແມ່ນ</label>
-                      <div *ngIf="submitted && f.ques1.errors" class="invalid-feedback">
-                        <div *ngIf="f.ques1.errors.required">Required</div>
+                      <div *ngIf="submitted && f.ques8.errors" class="invalid-feedback">
+                        <div *ngIf="f.ques8.errors.required">Required</div>
                         </div>
 
 
@@ -520,8 +520,8 @@
                       <input [ngClass]="{ 'is-invalid': submitted && f.islao.errors }" formControlName="ques9" type="radio" value="n"
                           name="ques9">
                       <label>&nbsp;ບໍ່ແມ່ນ</label>
-                      <div *ngIf="submitted && f.ques1.errors" class="invalid-feedback">
-                        <div *ngIf="f.ques1.errors.required">Required</div>
+                      <div *ngIf="submitted && f.ques9.errors" class="invalid-feedback">
+                        <div *ngIf="f.ques9.errors.required">Required</div>
                         </div>
                   </div>
               </div>
@@ -533,7 +533,7 @@
                   ຫາຍຂາດແມ່ນມື້ໃດ?</label>
                 <!-- <h5 class="sub-title"></h5> -->
 
-                <input [ngClass]="{ 'is-invalid': submitted && f.date_covid.errors }" class="form-control" type="date" name="date_covid" formControlName="date_covid" min="{{current_date}}" max="2021-06-31">
+                <input [ngClass]="{ 'is-invalid': submitted && f.date_covid.errors }" class="form-control" type="date" name="date_covid" formControlName="date_covid" min="2019-01-01" max="{{current_date_covide}}">
                 <div *ngIf="submitted && f.date_covid.errors" class="invalid-feedback">
                   <div *ngIf="f.date_covid.errors.required">date is required</div>
                   </div>

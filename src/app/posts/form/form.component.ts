@@ -28,6 +28,7 @@ export class FormCreate implements OnInit{
   radio1 = false
   radio2 = false
   current_date = moment().add(1,'days').format("YYYY-MM-DD");
+  current_date_covide = moment().format("YYYY-MM-DD");
 
   constructor(private service:FormService,private fb:FormBuilder) {
 
@@ -90,8 +91,8 @@ export class FormCreate implements OnInit{
     ngOnInit() {
         this.registerForm = this.fb.group({
             vac: ['', Validators.required],
-            id_vaccine: ['', Validators.required],
-            // id_vaccine:'',
+            // id_vaccine: ['', Validators.required],
+            id_vaccine:'',
             // vac_detais: ['', Validators.required],
             vac_details:'' ,
             location_to_get: ['', Validators.required],
@@ -122,6 +123,7 @@ export class FormCreate implements OnInit{
             ques7:['',Validators.required],
             ques8:['',Validators.required],
             ques9:['',Validators.required],
+
         });
     }
 
@@ -133,11 +135,11 @@ export class FormCreate implements OnInit{
 // console.log(this.registerForm.value)
 // console.log(this.registerForm.value.id_vaccine)
 
-if (this.registerForm.value.vac == '2' && this.registerForm.value.vac_details == "" && this.registerForm.value.country==""){
+if (this.registerForm.value.vac == '2' && this.registerForm.value.vac_details == "" && this.registerForm.value.id_vaccine==""){
  Swal.fire({
         icon: 'warning',
-        title: 'ກະລຸນາກວດສອບຂໍ້ມູນຂອງຸທ່ານ:  ',
-        text: 'ມີບ່ອນວ່າງ',
+        title: 'ກະລຸນາກວດສອບຂໍ້ມູນຂອງຸທ່ານ',
+        text: 'ວິກຊີນ ຫຼື ປະເພດວັກຊີນມີບ່ອນວ່າງ',
         })
 }else{
   this.submitted = true;
