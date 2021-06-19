@@ -97,7 +97,7 @@ export class FormCreate implements OnInit{
             vac_details:'' ,
             location_to_get: ['', Validators.required],
             date_to_get: ['', [Validators.required, Validators.pattern(/^\d{4}\-(0[1-9]|1[012])\-(0[1-9]|[12][0-9]|3[01])$/)]],
-            gender:['',Validators.required],
+            // gender:['',Validators.required],
             name:['',Validators.required],
             lastName: ['', Validators.required],
             village:['', Validators.required],
@@ -122,6 +122,7 @@ export class FormCreate implements OnInit{
             ques7:['',Validators.required],
             ques8:['',Validators.required],
             ques9:['',Validators.required],
+            Disease:'',
 
         });
     }
