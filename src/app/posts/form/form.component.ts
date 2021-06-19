@@ -112,8 +112,16 @@ export class FormCreate implements OnInit{
             job:['',Validators.required],
             email: ['', [Validators.required, Validators.email]],
             work_location:['',Validators.required],
-            
-
+            date_covid:'',
+            ques1:['',Validators.required],
+            ques2:['',Validators.required],
+            ques3:['',Validators.required],
+            ques4:['',Validators.required],
+            ques5:['',Validators.required],
+            ques6:['',Validators.required],
+            ques7:['',Validators.required],
+            ques8:['',Validators.required],
+            ques9:['',Validators.required],
         });
     }
 

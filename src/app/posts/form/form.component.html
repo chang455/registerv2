@@ -533,9 +533,9 @@
                   ຫາຍຂາດແມ່ນມື້ໃດ?</label>
                 <!-- <h5 class="sub-title"></h5> -->
 
-                <input [ngClass]="{ 'is-invalid': submitted && f.date_to_get.errors }" class="form-control" type="date" name="date_to_get" formControlName="date_to_get" min="{{current_date}}" max="2021-06-31">
-                <div *ngIf="submitted && f.date_to_get.errors" class="invalid-feedback">
-                  <div *ngIf="f.date_to_get.errors.required">date is required</div>
+                <input [ngClass]="{ 'is-invalid': submitted && f.date_covid.errors }" class="form-control" type="date" name="date_covid" formControlName="date_covid" min="{{current_date}}" max="2021-06-31">
+                <div *ngIf="submitted && f.date_covid.errors" class="invalid-feedback">
+                  <div *ngIf="f.date_covid.errors.required">date is required</div>
                   </div>
 
               </div>
