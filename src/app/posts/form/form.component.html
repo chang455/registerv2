@@ -152,7 +152,7 @@
                   <label class="col-sm-2 col-form-label">ວັນທີເດືອນປີເກີດ</label>
                   <!-- <h5 class="sub-title"></h5> -->
 
-                  <input [ngClass]="{ 'is-invalid': submitted && f.date_to_get.errors }" class="form-control" type="date" name="date_to_get" formControlName="date_to_get" min="1900-01-01" max="2003-12-31">
+                  <input [ngClass]="{ 'is-invalid': submitted && f.date_to_get.errors }" class="form-control" type="date" name="date_to_get" formControlName="date_to_get" min="" max="2003-12-31">
                   <div *ngIf="submitted && f.date_to_get.errors" class="invalid-feedback">
                     <div *ngIf="f.date_to_get.errors.required">date is required</div>
                     </div>
@@ -217,65 +217,6 @@
                     <option value="opt8">Type 8</option>
                   </select>
                 </div> -->
-
-                <div class="vancine_dose">
-                  <h3 class="title"><u>ຂໍ້ມູນພື້ນຖານຂອງຜູ້ສະໝັກ</u></h3>
-                  <br>
-                  <h4 class="sub-title">ນີ້ແມ່ນເຂັມທໍາອິດ ຫຼື ເຂັມທີສອງຂອງທ່ານ?</h4>
-
-
-                    <input [ngClass]="{ 'is-invalid': submitted && f.vac.errors }" formControlName="vac" type="radio" value="1" name="vac"
-                    (change)="changeFn($event)">
-                  <label>&nbsp;ເຂັມທໍາອິດ (1)</label>
-<br>
-                    <input [ngClass]="{ 'is-invalid': submitted && f.vac.errors }" formControlName="vac" type="radio" value="2" name="vac"
-                    (change)="changeFn($event)">
-
-                  <label>&nbsp;ເຂັມທີສອງ (2)</label>
-                  <div *ngIf="submitted && f.vac.errors" class="invalid-feedback">
-                    <div *ngIf="f.vac.errors.required">Vaccine is required</div>
-                </div>
-<br>
-
-
-<ng-container  *ngIf="radio1">
-<br>
-  <div class="form-group row">
-    <label >ຕື່ມລະຫັດ ID ການສັກວັກຊີນຂອງທ່ານໃສ່ໃຫ້ຄືກັນກັບບັດສັກວັກຊີນຂອງທ່ານ.</label>
-    <label >ຕົວຢ່າງ: H1234-A-12345</label>
-    <div class="col-sm-10">
-
-      <input  formControlName="vac_details" name="vac_details" type="test" class="form-control" placeholder="Covid ID card">
-      <!-- <div *ngIf="submitted && f.vac_detais.errors" class="invalid-feedback">
-        <div *ngIf="f.vac_detais.errors.required"></div>
-        </div> -->
-    </div>
-  </div>
-  <br>
-                <div class="vacin_type_selet_box">
-
-                  <label class="col-sm-2 col-form-label">ປະເພດຂອງວັກຊີນ</label>
-                  <div class="vaccine_type">
-                    <select [ngClass]="{ 'is-invalid': submitted && f.id_vaccine.errors }" formControlName="id_vaccine" name="id_vaccine" class="form-control" >
-                      <option value="" disabled selected hidden>ເລືອກປະເພດວັກຊີນ</option>
-                      <option [value]="vaccines.id_vaccine_type" *ngFor="let vaccines of vaccinesList">{{ vaccines.name }}</option>
-
-                    </select>
-                    <div *ngIf="submitted && f.id_vaccine.errors" class="invalid-feedback">
-                      <div *ngIf="f.id_vaccine.errors.required">Vaccine  is required</div>
-                      </div>
-                  </div>
-                </div>
-</ng-container>
-
-
-
-
-
-
-                </div>
-
-
                 <div class="col-sm-12 col-xl-3 m-b-30">
                   <label class="col-sm-2 col-form-label">ອາຊີບ</label>
                   <!-- <h5 class="sub-title">ອາຊີບ</h5> -->
