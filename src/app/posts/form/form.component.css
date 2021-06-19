@@ -109,7 +109,7 @@
 
 
 
-* {
+/* * {
   box-sizing: border-box;
 }
 *::before, *::after {
@@ -189,8 +189,40 @@ button.big-button:active::before {
 
       box-shadow: 0 0 0 2px var(--colorShadeB), 0 0.25em 0 0 var(--colorShadeB);
 
+} */
+
+.big-button{
+  background-color:#3575cb;
+  margin-right: auto;
+  margin-left: 25%;
+  width: 50%;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+}
+button.big-button:hover {
+  background: var(--colorShadeD);
+  transform: translate(0, 0.375em);
 }
 
+button.big-button:hover::before {
+  transform: translate3d(0, 0.75em, -1em);
+}
+
+button.big-button:active {
+            transform: translate(0em, 0.75em);
+}
+
+button.big-button:active::before {
+  transform: translate3d(0, 0, -1em);
+
+      box-shadow: 0 0 0 2px var(--colorShadeB), 0 0.25em 0 0 var(--colorShadeB);
+
+}
 
 
 
