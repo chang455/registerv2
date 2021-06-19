@@ -363,6 +363,18 @@
                     </div>
                 </div>
 
+
+                <div class="col-sm-12 col-xl-3 m-b-30">
+                  <label class="col-sm-2 col-form-label">ທ່ານມີພະຍາດໃດບໍ້? *</label>
+                  <!-- <h5 class="sub-title">ອາຊີບ</h5> -->
+                  <select  name="Diease" class="form-control" formControlName="Disease">
+                    <option value="" disabled selected hidden>ເລືອກພະຍາດ</option>
+
+
+                  </select>
+
+                </div>
+
                 <div class="">
                   <div class="">
                       <label class="col-sm-2 col-form-label">ມື້ນີ້ທ່ານສະບາຍດີບໍ່?</label>
@@ -475,7 +487,7 @@
 
                   </div>
                   <div class="">
-                      <label class="col-sm-2 col-form-label">ກ່ອນໜ້ານີ%ທ ່ານເຄີຍແພ້ວັກຊີນແບບຮຸນແຮງ
+                      <label class="col-sm-2 col-form-label">ກ່ອນໜ້ານີ້ທ ່ານເຄີຍແພ້ວັກຊີນແບບຮຸນແຮງ
                           ບໍ່?</label>
 
                       <input [ngClass]="{ 'is-invalid': submitted && f.islao.errors }" formControlName="ques7" type="radio" value="y"
