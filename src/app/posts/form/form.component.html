@@ -19,6 +19,7 @@
 
         <div class="card-heading">
           <h2 class="title">ລະບົບລົງທະບຽນຮັບວັກຊິນ</h2>
+          <h2 class="title">Register Vaccine</h2>
           </div>
 
           <div class="card-body bg-light">
@@ -27,19 +28,19 @@
               <div class="position1">
                 <!--เลือกเขัม-->
                 <div class="vancine_dose">
-                  <h3 class="title"><u>ຂໍ້ມູນພື້ນຖານຂອງຜູ້ສະໝັກ</u></h3>
+                  <h3 class="title"><u>ຂໍ້ມູນພື້ນຖານຂອງຜູ້ສະໝັກ / Data Basic </u></h3>
                   <br>
                   <h4 class="sub-title">ນີ້ແມ່ນເຂັມທໍາອິດ ຫຼື ເຂັມທີສອງຂອງທ່ານ?</h4>
 
 
                     <input [ngClass]="{ 'is-invalid': submitted && f.vac.errors }" formControlName="vac" type="radio" value="1" name="vac"
                     (change)="changeFn($event)">
-                  <label>&nbsp;ເຂັມທໍາອິດ (1)</label>
+                  <label>&nbsp;ເຂັມທໍາອິດ (1) / Vac1(1)</label>
 <br>
                     <input [ngClass]="{ 'is-invalid': submitted && f.vac.errors }" formControlName="vac" type="radio" value="2" name="vac"
                     (change)="changeFn($event)">
 
-                  <label>&nbsp;ເຂັມທີສອງ (2)</label>
+                  <label>&nbsp;ເຂັມທີສອງ (2) / Vac(2)</label>
                   <div *ngIf="submitted && f.vac.errors" class="invalid-feedback">
                     <div *ngIf="f.vac.errors.required">Vaccine is required</div>
                 </div>
@@ -51,6 +52,8 @@
   <div class="form-group row">
     <label >ຕື່ມລະຫັດ ID ການສັກວັກຊີນຂອງທ່ານໃສ່ໃຫ້ຄືກັນກັບບັດສັກວັກຊີນຂອງທ່ານ.</label>
     <label >ຕົວຢ່າງ: H1234-A-12345</label>
+    <label >take ID kan suk vac sai kup vac.</label>
+    <label >Ex: H1234-A-12345</label>
     <div class="col-sm-10">
 
       <input  formControlName="vac_details" name="vac_details" type="test" class="form-control" placeholder="Covid ID card">
@@ -62,10 +65,10 @@
   <br>
                 <div class="vacin_type_selet_box">
 
-                  <label class="col-sm-2 col-form-label">ປະເພດຂອງວັກຊີນ</label>
+                  <label class="col-sm-2 col-form-label">ປະເພດຂອງວັກຊີນ / Typ Vac</label>
                   <div class="vaccine_type">
                     <select [ngClass]="{ 'is-invalid': submitted && f.id_vaccine.errors }" formControlName="id_vaccine" name="id_vaccine" class="form-control" >
-                      <option value="" disabled selected hidden>ເລືອກປະເພດວັກຊີນ</option>
+                      <option value="" disabled selected hidden>ເລືອກປະເພດວັກຊີນ / Select</option>
                       <option [value]="vaccines.id_vaccine_type" *ngFor="let vaccines of vaccinesList">{{ vaccines.name }}</option>
 
                     </select>

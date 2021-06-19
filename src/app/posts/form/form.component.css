@@ -84,6 +84,7 @@
 }
 *{
   border-radius: 5px;
+  font-weight:bold
 }
 .col-sm-2{
   width: 100%;
@@ -270,4 +271,3 @@ button.big-button:active::before {
     }
 
 
-    
