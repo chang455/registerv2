@@ -20,10 +20,10 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
   --colorShadeE: #fff;
 }
 .navbar{
-  background-color: #3575cb;
+  background-color: #5f98f4;
 }
 .footer{
-  background-color: #317AF1;
+  background-color: #5f98f4;
 }
 .Text{
   font-family: NotoSansLao;
@@ -34,7 +34,12 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 .Text1{
   text-align: left;
   font-family: NotoSansLao;
-  font-size: 13px;
+  font-size: 8px;
+}
+.Text2{
+  text-align: left;
+  font-family: NotoSansLao;
+  font-size: 15px;
 }
 .collapse{
   color: white;
@@ -42,3 +47,16 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
   font-family: NotoSansLao;
   margin: auto;
 }
+.icon{
+  width: auto;
+  height: 100px;
+  display: grid;
+  margin: auto;
+}
+.row{
+  font-family: NotoSansLao;
+  font-size: 17px;
+  justify-content: center;
+  margin: auto;
+}
+
