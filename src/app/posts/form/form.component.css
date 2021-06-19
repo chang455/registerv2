@@ -99,6 +99,7 @@ font-family: NotoSansLao  ;
   margin-bottom: 13px;
   padding: 0;
   margin-top: 8px;
+  color:#3575cb;
 }
 .radio{
   margin-bottom: 20px;
@@ -108,6 +109,9 @@ font-family: NotoSansLao  ;
 .warning{
   color: red;
   font-size: 15px;
+}
+.sub-title{
+  color: #3575cb;
 }
 
 
