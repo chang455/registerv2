@@ -40,7 +40,12 @@
 }
 .title{
   font-family: NotoSansLao;
-
+  display: block;
+  justify-content: center;
+  padding: 1rem;
+  text-align: center;
+  color: white;
+  
 }
 .position1{
   font-family: NotoSansLao;
@@ -101,6 +106,10 @@
   color: red;
   font-size: 15px;
 }
+
+
+
+
 
 
 
