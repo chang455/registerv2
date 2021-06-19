@@ -86,16 +86,17 @@
 }
 .col-sm-2{
   width: 100%;
-  font-size: 20px;
-  margin-bottom: 3px;
+  font-size: 16px;
+  margin-bottom: 13px;
   padding: 0;
-
+  margin-top: 8px;
 }
 .radio{
   margin-bottom: 20px;
   margin-top: 10px;
 
 }
+
 
 
 
