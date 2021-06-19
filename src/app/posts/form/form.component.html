@@ -223,15 +223,15 @@
 
 
 
-                    <input [ngClass]="{ 'is-invalid': submitted && f.national.errors }" formControlName="national" type="radio" value="1" name="national"
+                    <input [ngClass]="{ 'is-invalid': submitted && f.islao.errors }" formControlName="islao" type="radio" value="1" name="islao"
                     (change)="changeNt($event)">
                   <label>&nbsp;ຄົນລາວ</label>
-                    <input [ngClass]="{ 'is-invalid': submitted && f.national.errors }" formControlName="national" type="radio" value="2" name="national"
+                    <input [ngClass]="{ 'is-invalid': submitted && f.islao.errors }" formControlName="islao" type="radio" value="2" name="islao"
                     (change)="changeNt($event)">
 
                   <label>&nbsp;ຄົນຕ່າງປະເທດ</label>
-                  <div *ngIf="submitted && f.national.errors" class="invalid-feedback">
-                    <div *ngIf="f.national.errors.required">Vaccine is required</div>
+                  <div *ngIf="submitted && f.islao.errors" class="invalid-feedback">
+                    <div *ngIf="f.islao.errors.required">Vaccine is required</div>
                 </div>
 <br>
 <ng-container  *ngIf="radio2">

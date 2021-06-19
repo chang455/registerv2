@@ -106,7 +106,6 @@ export class FormCreate implements OnInit{
             country:'',
             title:['',Validators.required],
             dbo:['', [Validators.required, Validators.pattern(/^\d{4}\-(0[1-9]|1[012])\-(0[1-9]|[12][0-9]|3[01])$/)]],
-            national:['',Validators.required],
             islao:['',Validators.required],
             id_or_passportid:['',Validators.required],
             phone:['',Validators.required],
@@ -136,6 +135,7 @@ export class FormCreate implements OnInit{
 // console.log(this.registerForm.value.id_vaccine)
 
 if (this.registerForm.value.vac == '2' && this.registerForm.value.vac_details == "" && this.registerForm.value.id_vaccine==""){
+  this.submitted = true;
  Swal.fire({
         icon: 'warning',
         title: 'ກະລຸນາກວດສອບຂໍ້ມູນຂອງຸທ່ານ',
@@ -149,27 +149,41 @@ if (this.registerForm.value.vac == '2' && this.registerForm.value.vac_details ==
       'cvid_ref':this.registerForm.value.vac_details,
       'location_to_get':this.registerForm.value.location_to_get,
       'date_to_get':this.registerForm.value.date_to_get,
-      'gender':this.registerForm.value.gender,
+      'gender':this.registerForm.value.title,
       'name':this.registerForm.value.name,
       'lastname':this.registerForm.value.lastName,
       'village':'ບ້ານໜ່ອງແຕ່ງ',
       'district':this.registerForm.value.district,
       'province':this.registerForm.value.province,
-      'islao':this.registerForm.value.islao,
+      'islao':this.registerForm.value.islao,     //IS_LAOS
       'job':this.registerForm.value.job,
-      'country':this.registerForm.value.country,
+      'country':this.registerForm.value.country, // COUNTRY
       'id_or_passportid':this.registerForm.value.id_or_passportid,
       'phone':this.registerForm.value.phone,
-      'email':this.registerForm.value.email
+      'email':this.registerForm.value.email,
+      'dbo':this.registerForm.value.dbo,
+      //'national':this.registerForm.value.national,  //NATIONAL
+      'work_location':this.registerForm.value.work_location,
+      'date_covid':this.registerForm.value.date_covid,
+      'ques1':this.registerForm.value.ques1,
+      'ques2':this.registerForm.value.ques2,
+      'ques3':this.registerForm.value.ques3,
+      'ques4':this.registerForm.value.ques4,
+      'ques5':this.registerForm.value.ques5,
+      'ques6':this.registerForm.value.ques6,
+      'ques7':this.registerForm.value.ques7,
+      'ques8':this.registerForm.value.ques8,
+      'ques9':this.registerForm.value.ques9,
+
     }
         if(this.registerForm.status=='INVALID'){
-
-          // console.log(this.registerForm)
-          // console.log("Status: Invalid")
+          console.log(data)
+          console.log(this.registerForm.value)
+          console.log("Status: Invalid")
         }else if(this.registerForm.status=='VALID'){
           // console.log(this.registerForm.value)
           // console.log("Status: Valid")
-
+          console.log(data)
 
         // console.log(result)
 
