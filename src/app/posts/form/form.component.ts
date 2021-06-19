@@ -112,6 +112,7 @@ export class FormCreate implements OnInit{
             job:['',Validators.required],
             email: ['', [Validators.required, Validators.email]],
             work_location:['',Validators.required],
+            
 
         });
     }
