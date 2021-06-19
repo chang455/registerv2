@@ -380,7 +380,7 @@
                 <h5 class="title container-fluid max-width bg-primary"><u>ຂໍ້ມູນການແພດ / Medical Information</u></h5>
 
                 <div class="col-sm-12 col-xl-3 m-b-30">
-                  <label class="col-sm-2 col-form-label">ທ່ານມີພະຍາດໃດບໍ້? / Do you have any disease? *</label>
+                  <label class="col-sm-2 col-form-label">ທ່ານມີພະຍາດໃດບໍ້? <br> Do you have any disease? *</label>
                   <!-- <h5 class="sub-title">ອາຊີບ</h5> -->
                   <select  name="Diease" class="form-control" formControlName="Disease">
                     <option value="" disabled selected hidden>ເລືອກພະຍາດ / Select</option>
@@ -392,7 +392,7 @@
 
                 <div class="">
                   <div class="">
-                      <label class="col-sm-2 col-form-label">ມື້ນີ້ທ່ານສະບາຍດີບໍ່? / How are you today?</label>
+                      <label class="col-sm-2 col-form-label">ມື້ນີ້ທ່ານສະບາຍດີບໍ່? <br> How are you today?</label>
 
                       <input [ngClass]="{ 'is-invalid': submitted && f.islao.errors }" formControlName="ques1" type="radio" value="y"
                           name="ques1">
@@ -415,7 +415,7 @@
 
                   <div class="">
                       <label class="col-sm-2 col-form-label">ທ້ານມີໄຂ້ບໍ່? ມີໄຂ້ໝາຍເຖິງອຸນຫະພູມຮ່າງກາຍ
-                          ສູງກວ່າ 37.5 ອົງສາ? /Do you have a fever? Fever with body temperature
+                          ສູງກວ່າ 37.5 ອົງສາ? <br>Do you have a fever? Fever with body temperature
                           Above 37.5 degrees?</label>
 
 
@@ -440,7 +440,7 @@
                   <div class="">
                       <label class="col-sm-2 col-form-label">ທ່ານເປັນພະຍາດພູມຄຸ້ມກັນບົກພ່ອງ ຫຼື
                           ກຳລັງກິນຢາທີ່ມີຜົນກະທົບຕໍ່ລະບົບພູມຄຸ້ມ
-                          ກັນຂອງທ່ານ ຫຼື ບໍ່?  / Do you have an autoimmune disease or
+                          ກັນຂອງທ່ານ ຫຼື ບໍ່? <br> Do you have an autoimmune disease or
                           Taking medications that affect the immune system
                           Your together or not?</label>
 
@@ -465,7 +465,7 @@
                   <div class="">
                       <label class="col-sm-2 col-form-label">ທ່ານເປັນນພະຍາດທີ່ເຮັດໃຫ້ເລືອດອອກງ່າຍ ຫຼື
                           ກາລັງກິນຢາທີ່ມີຜົນກະທົບຕໍ່ການກ້າມເລືອດ
-                          ຫຼືບໍ່? / Are you suffering from a disease that makes it easier to bleed?
+                          ຫຼືບໍ່? <br> Are you suffering from a disease that makes it easier to bleed?
                           Taking medications that affect blood clotting
                           Or not?</label>
 
@@ -489,7 +489,7 @@
                   </div>
                   <div class="">
                       <label class="col-sm-2 col-form-label">ທ່ານມີປະຫວັດຊັກ, ເປັນລົມບ້າໝູຫຼືເປັນ
-                          ພະຍາດທີ່ກ່ຽວຂ້ອງກັບລະບົບປະສາດ ຫຼື ບໍ່? / You have a history of seizures, epilepsy or a
+                          ພະຍາດທີ່ກ່ຽວຂ້ອງກັບລະບົບປະສາດ ຫຼື ບໍ່? <br> You have a history of seizures, epilepsy or a
                           Diseases related to the nervous system?</label>
 
                       <input [ngClass]="{ 'is-invalid': submitted && f.islao.errors }" formControlName="ques5" type="radio" value="y"
@@ -512,7 +512,7 @@
                   </div>
                   <div class="">
                       <label class="col-sm-2 col-form-label">ທ່ານກຳລັງໃຫ້ນົມລູກ, ຖືພາຫຼືວາງແຜນຈະ
-                          ເອົາລູກບໍ່? / You are breastfeeding, pregnant, or planning to
+                          ເອົາລູກບໍ່? <br> You are breastfeeding, pregnant, or planning to
                           Have a baby?</label>
 
                       <input [ngClass]="{ 'is-invalid': submitted && f.islao.errors }" formControlName="ques6" type="radio" value="y"
@@ -532,7 +532,7 @@
                   </div>
                   <div class="">
                       <label class="col-sm-2 col-form-label">ກ່ອນໜ້ານີ້ທ ່ານເຄີຍແພ້ວັກຊີນແບບຮຸນແຮງ
-                          ບໍ່? / Have you ever had a severe allergic reaction to a vaccine before?</label>
+                          ບໍ່? <br> Have you ever had a severe allergic reaction to a vaccine before?</label>
 
                       <input [ngClass]="{ 'is-invalid': submitted && f.islao.errors }" formControlName="ques7" type="radio" value="y"
                           name="ques7">
@@ -554,7 +554,7 @@
                   </div>
                   <div class="">
                       <label class="col-sm-2 col-form-label">2 ອາທິດທີ່ຜ່ານມາ ທ່ານເຄີຍຮັບວັກຊີນສະ
-                          ນິດອື່ນບໍ່?/ Two weeks ago you were vaccinated
+                          ນິດອື່ນບໍ່?<br> Two weeks ago you were vaccinated
                           Any other?</label>
 
                       <input [ngClass]="{ 'is-invalid': submitted && f.islao.errors }" formControlName="ques8" type="radio" value="y"
@@ -576,7 +576,7 @@
 
                   </div>
                   <div class="">
-                      <label class="col-sm-2 col-form-label">ທ່ານເຄີຍເປັນພະຍາດໂຄວິດ-19ບໍ່? / Have you ever had Kovid-19?</label>
+                      <label class="col-sm-2 col-form-label">ທ່ານເຄີຍເປັນພະຍາດໂຄວິດ-19ບໍ່? <br> Have you ever had Kovid-19?</label>
 
                       <input [ngClass]="{ 'is-invalid': submitted && f.islao.errors }" formControlName="ques9" type="radio" value="y"
                           name="ques9">
@@ -599,7 +599,7 @@
 
               <div class="date_to_get">
                 <label class="col-sm-2 col-form-label">ຖ້າເຄີຍເປັນພະຍາດໂຄວິດ-19, ວັນທີ່ປຶ່ນປົວ
-                  ຫາຍຂາດແມ່ນມື້ໃດ? / If ever had coronavirus-19, the date of treatment
+                  ຫາຍຂາດແມ່ນມື້ໃດ? <br> If ever had coronavirus-19, the date of treatment
                   What day is missing?</label>
                 <!-- <h5 class="sub-title"></h5> -->
 
@@ -617,8 +617,8 @@
                   <li>
                     ຫຼັງຈາກສົ່ງຂໍ້ມູນໃຫ້ທ່ານຖ່າຍຮູບໜ້າຈໍຫຼືຈົດ
                     ບັນທຶກລະຫັດບັດຄີວໄວ້ເພື່ອເອົາໄປຢັ້ງຢືນ
-                    ຕອນໄປຮັບການສັກຢາ <i>
-                      // After submitting the information you are asked to take a screenshot or take a note
+                    ຕອນໄປຮັບການສັກຢາ  <br><i>
+                     After submitting the information you are asked to take a screenshot or take a note
                      Save the queue card code for verification
                      When getting vaccinated
                     </i>
@@ -626,7 +626,7 @@
                   <li>
                     ຫຼັງຈາກຮູ້ສະຖານທີ່ ແລະ ເວລາໄປຮັບວັກຊີນ
                     ແລ້ວ ຕ້ອງໄປຕາມຄີວທີ່ນັດໝາຍ, ຖ້າເກີນ
-                    ເວລາທີ່ນັດໝາຍຈະຖືວ່າເປັນການສະລະສິດ // <i>
+                    ເວລາທີ່ນັດໝາຍຈະຖືວ່າເປັນການສະລະສິດ <br> <i>
                       After knowing the place and time to get vaccinated
                      Then go to the queue, if more
                      Appointment time will be considered a waiver
@@ -634,9 +634,10 @@
                   </li>
                   <li>
                     ກະລຸນາລໍຖ້າການແຈ້ງຕອບ
-                  </li> // <i>
-                    Please wait for notification
-                  </i>
+                    <br><i>
+                      Please wait for notification
+                    </i>
+                  </li>
                 </div>
                 <hr>
 
