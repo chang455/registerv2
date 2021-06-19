@@ -224,14 +224,14 @@
                   <h4 class="sub-title">ນີ້ແມ່ນເຂັມທໍາອິດ ຫຼື ເຂັມທີສອງຂອງທ່ານ?</h4>
 
 
-                    <input [ngClass]="{ 'is-invalid': submitted && f.vac.errors }" formControlName="national" type="radio" value="1" name="vac"
+                    <input [ngClass]="{ 'is-invalid': submitted && f.vac.errors }" formControlName="vac" type="radio" value="1" name="vac"
                     (change)="changeFn($event)">
-                  <label>&nbsp;ຄົນລາວ</label>
+                  <label>&nbsp;ເຂັມທໍາອິດ (1)</label>
 <br>
-                    <input [ngClass]="{ 'is-invalid': submitted && f.vac.errors }" formControlName="national" type="radio" value="2" name="vac"
+                    <input [ngClass]="{ 'is-invalid': submitted && f.vac.errors }" formControlName="vac" type="radio" value="2" name="vac"
                     (change)="changeFn($event)">
 
-                  <label>&nbsp;ຄົນຕ່າງປະເທດ</label>
+                  <label>&nbsp;ເຂັມທີສອງ (2)</label>
                   <div *ngIf="submitted && f.vac.errors" class="invalid-feedback">
                     <div *ngIf="f.vac.errors.required">Vaccine is required</div>
                 </div>
@@ -240,18 +240,29 @@
 
 <ng-container  *ngIf="radio1">
 <br>
+  <div class="form-group row">
+    <label >ຕື່ມລະຫັດ ID ການສັກວັກຊີນຂອງທ່ານໃສ່ໃຫ້ຄືກັນກັບບັດສັກວັກຊີນຂອງທ່ານ.</label>
+    <label >ຕົວຢ່າງ: H1234-A-12345</label>
+    <div class="col-sm-10">
 
+      <input  formControlName="vac_details" name="vac_details" type="test" class="form-control" placeholder="Covid ID card">
+      <!-- <div *ngIf="submitted && f.vac_detais.errors" class="invalid-feedback">
+        <div *ngIf="f.vac_detais.errors.required"></div>
+        </div> -->
+    </div>
+  </div>
+  <br>
                 <div class="vacin_type_selet_box">
 
-
+                  <label class="col-sm-2 col-form-label">ປະເພດຂອງວັກຊີນ</label>
                   <div class="vaccine_type">
-                    <select [ngClass]="{ 'is-invalid': submitted && f.country.errors }" name="country" class="form-control" formControlName="country">
-                      <option value="" disabled selected hidden>ເລືອກສັນຊາດ</option>
-                      <option [value]="country.name" *ngFor="let country of countries">{{ country.name }}</option>
+                    <select [ngClass]="{ 'is-invalid': submitted && f.id_vaccine.errors }" formControlName="id_vaccine" name="id_vaccine" class="form-control" >
+                      <option value="" disabled selected hidden>ເລືອກປະເພດວັກຊີນ</option>
+                      <option [value]="vaccines.id_vaccine_type" *ngFor="let vaccines of vaccinesList">{{ vaccines.name }}</option>
 
                     </select>
-                    <div *ngIf="submitted && f.country.errors" class="invalid-feedback">
-                      <div *ngIf="f.country.errors.required">Required</div>
+                    <div *ngIf="submitted && f.id_vaccine.errors" class="invalid-feedback">
+                      <div *ngIf="f.id_vaccine.errors.required">Vaccine  is required</div>
                       </div>
                   </div>
                 </div>
@@ -279,24 +290,24 @@
                 </div>
 
                 <!--islaos-->
-                <!-- <div class="">
-                  <label class="col-sm-2 col-form-label">ແມ່ນຄົນລາວ ຫຼື ບໍ່?</label> -->
+                <div class="">
+                  <label class="col-sm-2 col-form-label">ແມ່ນຄົນລາວ ຫຼື ບໍ່?</label>
                   <!-- <h4 class="sub-title">ແມ່ນຄົນລາວຫຼືບໍ່?</h4> -->
 
-                  <!-- <input [ngClass]="{ 'is-invalid': submitted && f.islao.errors }" formControlName="islao" type="radio" value="y" name="islao" >
+                  <input [ngClass]="{ 'is-invalid': submitted && f.islao.errors }" formControlName="islao" type="radio" value="y" name="islao" >
                   <label>&nbsp;ແມ່ນຄົນລາວ</label>
                   &nbsp;&nbsp;
                     <input [ngClass]="{ 'is-invalid': submitted && f.islao.errors }" formControlName="islao" type="radio" value="n" name="islao" >
-                  <label>&nbsp;ບໍ່ແມ່ນຄົນລາວ</label> -->
+                  <label>&nbsp;ບໍ່ແມ່ນຄົນລາວ</label>
 
 
-                  <!-- <div *ngIf="submitted && f.islao.errors" class="invalid-feedback">
+                  <div *ngIf="submitted && f.islao.errors" class="invalid-feedback">
                     <div *ngIf="f.islao.errors.required">Required</div>
                     </div>
                     <div class="col-sm-12 col-xl-3 m-b-30">
-                      <label class="col-sm-2 col-form-label">ສັນຊາດ</label> -->
+                      <label class="col-sm-2 col-form-label">ສັນຊາດ</label>
                       <!-- <h5 class="sub-title">ອາຊີບ</h5> -->
-                      <!-- <select [ngClass]="{ 'is-invalid': submitted && f.country.errors }" name="country" class="form-control" formControlName="country">
+                      <select [ngClass]="{ 'is-invalid': submitted && f.country.errors }" name="country" class="form-control" formControlName="country">
                         <option value="" disabled selected hidden>ເລືອກສັນຊາດ</option>
                         <option [value]="country.name" *ngFor="let country of countries">{{ country.name }}</option>
 
@@ -304,7 +315,7 @@
                       <div *ngIf="submitted && f.country.errors" class="invalid-feedback">
                         <div *ngIf="f.country.errors.required">Required</div>
                         </div>
-                    </div> -->
+                    </div>
                     <!-- <label>
                       <input formControlName="islao" value="y" type="radio" name="islao" checked="checked">
                       <i class="helper"></i>ແມ່ນຄົນລາວ
@@ -315,7 +326,7 @@
                     <input formControlName="islao" type="radio" value="n" name="islao">
                     <i class="helper"></i>ບໍ່ແມ່ນຄົນລາວ
                   </label> -->
-                <!-- </div> -->
+                </div>
                 <!--passport-->
                 <div class="form-group">
                   <label class="col-sm-2 col-form-label">ເລກບັດປະຈຳຕົວ ຫຼື passport</label>
