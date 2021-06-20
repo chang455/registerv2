@@ -16,7 +16,7 @@
 
       <div class="card-heading">
         <h2 class="title">ລະບົບລົງທະບຽນຮັບວັກຊິນ</h2>
-        <h2 class="title">Register Vaccine</h2>
+        <h2 class="title">Pre-Register Vaccine</h2>
       </div>
 
       <div class="card-body bg-light">
@@ -755,7 +755,7 @@
                 <br>
               </div>
               <div class="title-box">
-                <h4 class="sub-title">ນີ້ແມ່ນເຂັມທໍາອິດ ຫຼື ເຂັມທີສອງຂອງທ່ານ? / Is this for your 1st or 2nd dose?</h4>
+                <h4 class="sub-title">ນີ້ແມ່ນເຂັມທໍາອິດ ຫຼື ເຂັມທີສອງຂອງທ່ານ? / <b class="subtitle">Is this for your 1st or 2nd dose?</b></h4>
               </div>
 
 
@@ -817,7 +817,7 @@
                   </div>
                 </div>
               </ng-container> -->
-              <label class="col-sm-2 col-form-label">ປະເພດຂອງວັກຊີນ / Typ Vac</label>
+              <label class="col-sm-2 col-form-label">ປະເພດຂອງວັກຊີນ /  <b class="subtitle">Typ Vac</b></label>
               <ng-container *ngIf="vac1==1">
                 <div class="vaccine_type">
                   <select [ngClass]="{ 'is-invalid': submitted && f.id_vaccine.errors }" formControlName="id_vaccine"
@@ -835,7 +835,7 @@
                 <div class="vaccine_type">
                   <select [ngClass]="{ 'is-invalid': submitted && f.id_vaccine.errors }" formControlName="id_vaccine"
                     name="id_vaccine" class="form-control">
-                    <option value="" disabled selected hidden>ເລືອກປະເພດວັກຊີນ / Select a vac</option>
+                    <option value="" disabled selected hidden>ເລືອກປະເພດວັກຊີນ / <b class="subtitle">Select a vac</b></option>
                     <option value="1">Pfizer</option>
                     <option value="2">Astrazeneca</option>
                     <option value="3">Sinopharm</option>
@@ -850,7 +850,7 @@
 
 
             <div class="location_to_get">
-              <label class="col-sm-2 col-form-label">ສະຖານທີ່ຈະໄປຮັບວັກຊິນ / Select a vaccination site</label>
+              <label class="col-sm-2 col-form-label">ສະຖານທີ່ຈະໄປຮັບວັກຊິນ / <b class="subtitle">Select a vaccination site</b></label>
               <div class="col-sm-10">
                 <select [ngClass]="{ 'is-invalid': submitted && f.location_to_get.errors }" class="form-control"
                   name="location_to_get" formControlName="location_to_get" [(ngModel)]="location_code">
@@ -867,7 +867,7 @@
             <!--เลือกวัน-->
 
             <div class="date_to_get">
-              <label class="col-sm-2 col-form-label">ມື້ເດີນທາງໄປຮັບວັກຊິນ / Travel day to get vaccinated</label>
+              <label class="col-sm-2 col-form-label">ມື້ເດີນທາງໄປຮັບວັກຊິນ /<b class="subtitle">Travel day to get vaccinated</b></label>
               <!-- <h5 class="sub-title"></h5> -->
 
               <input [ngClass]="{ 'is-invalid': submitted && f.date_to_get.errors }" class="form-control" type="date"
@@ -881,7 +881,7 @@
               </h5>
 
             </div>
-            <label class="col-sm-2 col-form-label">ຄຳນຳໜ້າຊື່ / Title</label>
+            <label class="col-sm-2 col-form-label">ຄຳນຳໜ້າຊື່ / <b class="subtitle">Title</b></label>
             <!-- <h4 class="sub-title">ແມ່ນຄົນລາວຫຼືບໍ່?</h4> -->
 
             <input [ngClass]="{ 'is-invalid': submitted && f.islao.errors }" formControlName="title" type="radio"
@@ -899,7 +899,7 @@
 
             <!--ใส่ชื่นนามสะกุน-->
             <div class="date_to_get">
-              <label class="col-sm-2 col-form-label">ຊື່ຂອງຜູ້ສະໝັກ / Name</label>
+              <label class="col-sm-2 col-form-label">ຊື່ຂອງຜູ້ສະໝັກ / <b class="subtitle">Name</b></label>
               <div class="col-sm-10">
 
                 <input [ngClass]="{ 'is-invalid': submitted && f.name.errors }" formControlName="name" name="phone"
@@ -910,7 +910,7 @@
               </div>
             </div>
             <div class="form-group">
-              <label class="col-sm-2 col-form-label">ນາມສະກຸນຂອງຜູ້ສະໝັກ / Lastname</label>
+              <label class="col-sm-2 col-form-label">ນາມສະກຸນຂອງຜູ້ສະໝັກ / <b class="subtitle">Lastname</b>/label>
               <div class="col-sm-10">
 
                 <input [ngClass]="{ 'is-invalid': submitted && f.lastName.errors }" formControlName="lastName"
@@ -945,7 +945,7 @@
             <div class="col-sm-12 col-xl-3 m-b-30">
 
 
-              <label class="col-sm-2 col-form-label">ແຂວງທີ່ຢູ່ປັດຈຸບັນ / Current Province</label>
+              <label class="col-sm-2 col-form-label">ແຂວງທີ່ຢູ່ປັດຈຸບັນ / <b class="subtitle">Current Province</b></label>
               <!-- <h4 class="sub-title">ຢູ່ແຂວງໃດ</h4> -->
 
               <select [ngClass]="{ 'is-invalid': submitted && f.province.errors }" name="province" class="form-control"
@@ -959,7 +959,7 @@
 
             <!--ใส่แมือง-->
             <div class="col-sm-12 col-xl-3 m-b-30">
-              <label class="col-sm-2 col-form-label">ເມືອງທີ່ຢູ່ປັດຈຸບັນ / Current city</label>
+              <label class="col-sm-2 col-form-label">ເມືອງທີ່ຢູ່ປັດຈຸບັນ / <b class="subtitle">Current city</b></label>
               <!-- <h4 class="sub-title">ຢູ່ເມືອງໃດ</h4> -->
 
               <select [ngClass]="{ 'is-invalid': submitted && f.district.errors }" name="district" class="form-control"
@@ -974,7 +974,7 @@
             <!--ใส่ชื่บ้าน-->
 
             <div class="col-sm-12 col-xl-3 m-b-30">
-              <h6 class="sub-title">ຢູ່ບ້ານໃດ / Current village</h6>
+              <h6 class="sub-title">ຢູ່ບ້ານໃດ / <b class="subtitle">Current village</b></h6>
               <ng-container *ngIf="provinceID!=1 else selectVillage">
 
                 <input  [ngClass]="{ 'is-invalid': submitted && f.villageinput.errors }" type="text" name="villageinput" formControlName="villageinput" class="form-control form-control-default">
@@ -1023,7 +1023,7 @@
 
 
             <div class="vancine_dose">
-              <h5 class="sub-title">ສັນຊາດ / Nationality</h5>
+              <h5 class="sub-title">ສັນຊາດ / <b class="subtitle">Nationality</b></h5>
 
 
 
@@ -1066,7 +1066,7 @@
             </div>
 
             <div class="form-group">
-              <label class="col-sm-2 col-form-label">ເລກບັດປະຈຳຕົວ ຫຼື passport</label>
+              <label class="col-sm-2 col-form-label">ເລກບັດປະຈຳຕົວ ຫຼື <b class="subtitle">passport</b></label>
               <div class="col-sm-10">
                 <input [ngClass]="{ 'is-invalid': submitted && f.id_or_passportid.errors }"
                   formControlName="id_or_passportid" name="id_or_passportid" type="text" class="form-control"
@@ -1120,7 +1120,7 @@
 
 
             <div class="col-sm-12 col-xl-3 m-b-30">
-              <label class="col-sm-2 col-form-label">ອາຊີບ /job</label>
+              <label class="col-sm-2 col-form-label">ອາຊີບ /<b class="subtitle">job</b></label>
               <!-- <h5 class="sub-title">ອາຊີບ</h5> -->
               <select [ngClass]="{ 'is-invalid': submitted && f.job.errors }" name="job" class="form-control"
                 formControlName="job">
@@ -1135,7 +1135,7 @@
 
 
             <div class="form-group">
-              <label class="col-sm-2 col-form-label">ບ່ອນເຮັດວຽກ / Workplace</label>
+              <label class="col-sm-2 col-form-label">ບ່ອນເຮັດວຽກ / <b class="subtitle">Workplace</b></label>
               <div class="col-sm-10">
 
                 <input [ngClass]="{ 'is-invalid': submitted && f.work_location.errors }" formControlName="work_location"
@@ -1148,7 +1148,7 @@
 
             <!--phone-->
             <div class="form-group">
-              <label class="col-sm-2 col-form-label">ຫມາຍເລກໂທລະສັບ / Number</label>
+              <label class="col-sm-2 col-form-label">ຫມາຍເລກໂທລະສັບ / <b class="subtitle">Number</b></label>
               <div class="col-sm-10">
 
                 <input [ngClass]="{ 'is-invalid': submitted && f.phone.errors }" formControlName="phone" name="phone"
@@ -1160,7 +1160,7 @@
             </div>
             <!--email-->
             <div class="form-group">
-              <label class="col-sm-2 col-form-label">Email ຂອງທ່ານ / Your Email</label>
+              <label class="col-sm-2 col-form-label">Email ຂອງທ່ານ / <b class="subtitle">Your Email</b></label>
               <div class="col-sm-10">
 
                 <input [ngClass]="{ 'is-invalid': submitted && f.email.errors }" type="email" class="form-control"
