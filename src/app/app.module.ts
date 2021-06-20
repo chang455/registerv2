@@ -11,11 +11,16 @@ import {MatIconModule} from '@angular/material/icon';
 import { FlexLayoutModule } from '@angular/flex-layout'
 import { FormService } from './form-service/form.service';
 import { FormGroup, FormsModule,ReactiveFormsModule } from '@angular/forms';
+import { SearchComponent } from './search/search.component';
+import { RouterModule, Routes } from '@angular/router';
+import { Route } from '@angular/compiler/src/core';
+
 
 @NgModule({
   declarations: [
     AppComponent,
-    FormCreate
+    FormCreate,
+    SearchComponent,
 
   ],
   imports: [

@@ -214,7 +214,7 @@
             &nbsp;&nbsp;
             <input [ngClass]="{ 'is-invalid': submitted && f.title.errors }" formControlName="title" type="radio"
               value="female" name="title">
-            <label>&nbsp;ນາງ / Miss</label>
+            <label>&nbsp;ນາງ / Miss/Ms/Mrs </label>
 
 
             <div *ngIf="submitted && f.title.errors" class="invalid-feedback">
@@ -328,7 +328,7 @@
 
               <input [ngClass]="{ 'is-invalid': submitted && f.islao.errors }" formControlName="islao" type="radio"
                 value="1" name="islao" (change)="changeNt($event)">
-              <label>&nbsp;ຄົນລາວ / isLao</label>
+              <label>&nbsp;ຄົນລາວ / Lao</label>
               <input [ngClass]="{ 'is-invalid': submitted && f.islao.errors }" formControlName="islao" type="radio"
                 value="2" name="islao" (change)="changeNt($event)">
 
