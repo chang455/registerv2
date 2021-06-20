@@ -42,3 +42,18 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
   font-family: NotoSansLao;
   margin: auto;
 }
+<<<<<<< HEAD
+=======
+.icon{
+  width: auto;
+  height: 100px;
+  display: grid;
+  margin: auto;
+}
+.row{
+  font-family: NotoSansLao;
+  font-size: 17px;
+  justify-content: center;
+  margin: auto;
+}
+>>>>>>> a100154e4519e7b63e4d4b169992a4c358415170

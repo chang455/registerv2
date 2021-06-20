@@ -16,7 +16,7 @@
 
       <div class="card-heading">
         <h2 class="title">ລະບົບລົງທະບຽນຮັບວັກຊິນ</h2>
-        <h2 class="title">Register Vaccine</h2>
+        <h2 class="title">Pre-Register for Vaccine</h2>
       </div>
 
       <div class="card-body bg-light">
@@ -82,7 +82,11 @@
                 <br>
               </div>
               <div class="title-box">
+<<<<<<< HEAD
                 <h4 class="sub-title">ນີ້ແມ່ນເຂັມທໍາອິດ ຫຼື ເຂັມທີສອງຂອງທ່ານ? / Is this for your 1st or 2nd dose?</h4>
+=======
+                <h6 class="sub-title">ນີ້ແມ່ນເຂັມທໍາອິດ ຫຼື ເຂັມທີສອງຂອງທ່ານ? / <b class="subtitle">Is this for your 1st or 2nd dose?</b></h6>
+>>>>>>> a100154e4519e7b63e4d4b169992a4c358415170
               </div>
 
 
@@ -144,7 +148,11 @@
                   </div>
                 </div>
               </ng-container> -->
+<<<<<<< HEAD
               <label class="col-sm-2 col-form-label">ປະເພດຂອງວັກຊີນ / Typ Vac</label>
+=======
+              <label class="col-sm-2 col-form-label">ປະເພດຂອງວັກຊີນ / <b class="subtitle">Type of Vaccine</b></label>
+>>>>>>> a100154e4519e7b63e4d4b169992a4c358415170
               <ng-container *ngIf="vac1==1">
                 <div class="vaccine_type">
                   <select [ngClass]="{ 'is-invalid': submitted && f.id_vaccine.errors }" formControlName="id_vaccine"
@@ -176,7 +184,11 @@
 
 
             <div class="location_to_get">
+<<<<<<< HEAD
               <label class="col-sm-2 col-form-label">ສະຖານທີ່ຈະໄປຮັບວັກຊິນ / Select a vaccination site</label>
+=======
+              <label class="col-sm-2 col-form-label">ສະຖານທີ່ຈະໄປຮັບວັກຊິນ / <b class="subtitle">Select a vaccination location</b></label>
+>>>>>>> a100154e4519e7b63e4d4b169992a4c358415170
               <div class="col-sm-10">
                 <select [ngClass]="{ 'is-invalid': submitted && f.location_to_get.errors }" class="form-control"
                   name="location_to_get" formControlName="location_to_get">
@@ -193,7 +205,11 @@
             <!--เลือกวัน-->
 
             <div class="date_to_get">
+<<<<<<< HEAD
               <label class="col-sm-2 col-form-label">ມື້ເດີນທາງໄປຮັບວັກຊິນ / Travel day to get vaccinated</label>
+=======
+              <label class="col-sm-2 col-form-label">ມື້ເດີນທາງໄປຮັບວັກຊິນ / <b class="subtitle">Date to get vaccinated</b></label>
+>>>>>>> a100154e4519e7b63e4d4b169992a4c358415170
               <!-- <h5 class="sub-title"></h5> -->
 
               <input [ngClass]="{ 'is-invalid': submitted && f.date_to_get.errors }" class="form-control" type="date"
@@ -225,24 +241,32 @@
 
             <!--ใส่ชื่นนามสะกุน-->
             <div class="date_to_get">
+<<<<<<< HEAD
               <label class="col-sm-2 col-form-label">ຊື່ຂອງຜູ້ສະໝັກ / Name</label>
+=======
+              <label class="col-sm-2 col-form-label">ຊື່ຂອງຜູ້ສະໝັກ / <b class="subtitle">First name</b></label>
+>>>>>>> a100154e4519e7b63e4d4b169992a4c358415170
               <div class="col-sm-10">
 
                 <input [ngClass]="{ 'is-invalid': submitted && f.name.errors }" formControlName="name" name="phone"
                   type="test" class="form-control" placeholder="ໃສ່ຊື່">
                 <div *ngIf="submitted && f.name.errors" class="invalid-feedback">
-                  <div *ngIf="f.name.errors.required">name is required</div>
+                  <div *ngIf="f.name.errors.required">First name is required</div>
                 </div>
               </div>
             </div>
             <div class="form-group">
+<<<<<<< HEAD
               <label class="col-sm-2 col-form-label">ນາມສະກຸນຂອງຜູ້ສະໝັກ / Lastname</label>
+=======
+              <label class="col-sm-2 col-form-label">ນາມສະກຸນຂອງຜູ້ສະໝັກ / <b class="subtitle">Last name</b></label>
+>>>>>>> a100154e4519e7b63e4d4b169992a4c358415170
               <div class="col-sm-10">
 
                 <input [ngClass]="{ 'is-invalid': submitted && f.lastName.errors }" formControlName="lastName"
                   name="phone" type="test" class="form-control" placeholder="ນາມສະກຸນ">
                 <div *ngIf="submitted && f.lastName.errors" class="invalid-feedback">
-                  <div *ngIf="f.lastName.errors.required">lastName is required</div>
+                  <div *ngIf="f.lastName.errors.required">Last name is required</div>
                 </div>
               </div>
             </div>
@@ -285,7 +309,11 @@
 
             <!--ใส่แมือง-->
             <div class="col-sm-12 col-xl-3 m-b-30">
+<<<<<<< HEAD
               <label class="col-sm-2 col-form-label">ເມືອງທີ່ຢູ່ປັດຈຸບັນ / Current city</label>
+=======
+              <label class="col-sm-2 col-form-label">ເມືອງທີ່ຢູ່ປັດຈຸບັນ / <b class="subtitle">Current District</b></label>
+>>>>>>> a100154e4519e7b63e4d4b169992a4c358415170
               <!-- <h4 class="sub-title">ຢູ່ເມືອງໃດ</h4> -->
 
               <select [ngClass]="{ 'is-invalid': submitted && f.district.errors }" name="district" class="form-control"
@@ -324,7 +352,11 @@
 
 
             <div class="vancine_dose">
+<<<<<<< HEAD
               <h5 class="sub-title"><u>ສັນຊາດ / Nationality</u></h5>
+=======
+              <h6 class="sub-title">ສັນຊາດ / <b class="subtitle">Nationality</b></h6>
+>>>>>>> a100154e4519e7b63e4d4b169992a4c358415170
 
 
 
@@ -336,7 +368,7 @@
 
               <label>&nbsp;ຄົນຕ່າງປະເທດ / Foreigners </label>
               <div *ngIf="submitted && f.islao.errors" class="invalid-feedback">
-                <div *ngIf="f.islao.errors.required">Vaccine is required</div>
+                <div *ngIf="f.islao.errors.required">Nationality is required</div>
               </div>
               <br>
               <ng-container *ngIf="radio2">
@@ -421,7 +453,11 @@
 
 
             <div class="col-sm-12 col-xl-3 m-b-30">
+<<<<<<< HEAD
               <label class="col-sm-2 col-form-label">ອາຊີບ /job</label>
+=======
+              <label class="col-sm-2 col-form-label">ອາຊີບ / <b class="subtitle">job Selector</b></label>
+>>>>>>> a100154e4519e7b63e4d4b169992a4c358415170
               <!-- <h5 class="sub-title">ອາຊີບ</h5> -->
               <select [ngClass]="{ 'is-invalid': submitted && f.job.errors }" name="job" class="form-control"
                 formControlName="job">
@@ -430,7 +466,7 @@
 
               </select>
               <div *ngIf="submitted && f.job.errors" class="invalid-feedback">
-                <div *ngIf="f.job.errors.required">Required</div>
+                <div *ngIf="f.job.errors.required">Job Required</div>
               </div>
             </div>
 
@@ -442,7 +478,7 @@
                 <input [ngClass]="{ 'is-invalid': submitted && f.work_location.errors }" formControlName="work_location"
                   name="work_location" type="test" class="form-control" placeholder="ບ່ອນເຮັດວຽກ / Required ">
                 <div *ngIf="submitted && f.work_location.errors" class="invalid-feedback">
-                  <div *ngIf="f.work_location.errors.required">Title is required</div>
+                  <div *ngIf="f.work_location.errors.required">Workplace is required</div>
                 </div>
               </div>
             </div>
@@ -455,7 +491,7 @@
                 <input [ngClass]="{ 'is-invalid': submitted && f.phone.errors }" formControlName="phone" name="phone"
                   type="test" class="form-control" placeholder="020XXXXXXXX ">
                 <div *ngIf="submitted && f.phone.errors" class="invalid-feedback">
-                  <div *ngIf="f.phone.errors.required">Title is required</div>
+                  <div *ngIf="f.phone.errors.required">Number is required</div>
                 </div>
               </div>
             </div>
@@ -468,7 +504,7 @@
                   name="email" formControlName="email" email="true" placeholder="ກະລຸນາໃສ່ຂໍ້ມູນ">
               </div>
               <div *ngIf="submitted && f.email.errors" class="invalid-feedback">
-                <div *ngIf="f.email.errors.required">Title is required</div>
+                <div *ngIf="f.email.errors.required">Email is required</div>
               </div>
             </div>
 
@@ -487,7 +523,11 @@
 
             <div class="">
               <div class="">
+<<<<<<< HEAD
                 <label class="col-sm-2 col-form-label">ມື້ນີ້ທ່ານສະບາຍດີບໍ່? <br> How are you today?</label>
+=======
+                <label class="col-sm-2 col-form-label">ມື້ນີ້ທ່ານສະບາຍດີບໍ່? <br> <b class="subtitle"> Are you feeling good today?</b></label>
+>>>>>>> a100154e4519e7b63e4d4b169992a4c358415170
 
                 <input [ngClass]="{ 'is-invalid': submitted && f.ques1.errors }" formControlName="ques1" type="radio"
                   value="y" name="ques1">
@@ -499,7 +539,7 @@
                 &nbsp;&nbsp;&nbsp; <br>
                 <input [ngClass]="{ 'is-invalid': submitted && f.ques1.errors }" formControlName="ques1" type="radio"
                   value="o" name="ques1">
-                <label>&nbsp;ບໍ່ຮູ້ / Dont kown</label>
+                <label>&nbsp;ບໍ່ຮູ້ / Don't kown</label>
 
                 <div *ngIf="submitted && f.ques1.errors" class="invalid-feedback">
                   <div *ngIf="f.ques1.errors.required">ກະລຸນາປ້ອນຂໍ້ມູນ / Required </div>
@@ -510,8 +550,13 @@
 
               <div class="">
                 <label class="col-sm-2 col-form-label">ທ້ານມີໄຂ້ບໍ່? ມີໄຂ້ໝາຍເຖິງອຸນຫະພູມຮ່າງກາຍ
+<<<<<<< HEAD
                   ສູງກວ່າ 37.5 ອົງສາ? <br>Do you have a fever? Fever with body temperature
                   Above 37.5 degrees?</label>
+=======
+                  ສູງກວ່າ 37.5 ອົງສາ? <br><b class="subtitle">Do you have a fever? Fever with body temperature
+                    Over 37.5 degrees?</b></label>
+>>>>>>> a100154e4519e7b63e4d4b169992a4c358415170
 
 
                 <input [ngClass]="{ 'is-invalid': submitted && f.ques2.errors }" formControlName="ques2" type="radio"
@@ -524,7 +569,7 @@
                 &nbsp;&nbsp;&nbsp;<br>
                 <input [ngClass]="{ 'is-invalid': submitted && f.ques2.errors }" formControlName="ques2" type="radio"
                   value="o" name="ques2">
-                <label>&nbsp;ບໍ່ຮູ້ / Dont kown</label>
+                <label>&nbsp;ບໍ່ຮູ້ / Don't kown</label>
                 <div *ngIf="submitted && f.ques2.errors" class="invalid-feedback">
                   <div *ngIf="f.ques2.errors.required">ກະລຸນາປ້ອນຂໍ້ມູນ / Required </div>
                 </div>
@@ -535,9 +580,14 @@
               <div class="">
                 <label class="col-sm-2 col-form-label">ທ່ານເປັນພະຍາດພູມຄຸ້ມກັນບົກພ່ອງ ຫຼື
                   ກຳລັງກິນຢາທີ່ມີຜົນກະທົບຕໍ່ລະບົບພູມຄຸ້ມ
+<<<<<<< HEAD
                   ກັນຂອງທ່ານ ຫຼື ບໍ່? <br> Do you have an autoimmune disease or
                   Taking medications that affect the immune system
                   Your together or not?</label>
+=======
+                  ກັນຂອງທ່ານ ຫຼື ບໍ່? <br> <b class="subtitle">Do you have an autoimmune disease or
+                    Taking medications that affect the immune system or not?</b></label>
+>>>>>>> a100154e4519e7b63e4d4b169992a4c358415170
 
                 <input [ngClass]="{ 'is-invalid': submitted && f.ques3.errors }" formControlName="ques3" type="radio"
                   value="y" name="ques3">
@@ -549,7 +599,7 @@
                 &nbsp;&nbsp;&nbsp;<br>
                 <input [ngClass]="{ 'is-invalid': submitted && f.ques3.errors }" formControlName="ques3" type="radio"
                   value="o" name="ques3">
-                <label>&nbsp;ບໍ່ຮູ້ / Dont kown</label>
+                <label>&nbsp;ບໍ່ຮູ້ / Don't kown</label>
                 <div *ngIf="submitted && f.ques3.errors" class="invalid-feedback">
                   <div *ngIf="f.ques3.errors.required">ກະລຸນາປ້ອນຂໍ້ມູນ / Required </div>
                 </div>
@@ -560,9 +610,15 @@
               <div class="">
                 <label class="col-sm-2 col-form-label">ທ່ານເປັນນພະຍາດທີ່ເຮັດໃຫ້ເລືອດອອກງ່າຍ ຫຼື
                   ກາລັງກິນຢາທີ່ມີຜົນກະທົບຕໍ່ການກ້າມເລືອດ
+<<<<<<< HEAD
                   ຫຼືບໍ່? <br> Are you suffering from a disease that makes it easier to bleed?
                   Taking medications that affect blood clotting
                   Or not?</label>
+=======
+                  ຫຼືບໍ່? <br><b class="subtitle">Are you suffering from a disease that makes it easier to bleed?
+                    Taking medications that affect blood clotting
+                    Or not?</b></label>
+>>>>>>> a100154e4519e7b63e4d4b169992a4c358415170
 
                 <input [ngClass]="{ 'is-invalid': submitted && f.ques4.errors }" formControlName="ques4" type="radio"
                   value="y" name="ques4">
@@ -574,7 +630,7 @@
                 &nbsp;&nbsp;&nbsp;<br>
                 <input [ngClass]="{ 'is-invalid': submitted && f.ques4.errors }" formControlName="ques4" type="radio"
                   value="o" name="ques4">
-                <label>&nbsp;ບໍ່ຮູ້ / Dont kown</label>
+                <label>&nbsp;ບໍ່ຮູ້ / Don't kown</label>
                 <div *ngIf="submitted && f.ques4.errors" class="invalid-feedback">
                   <div *ngIf="f.ques4.errors.required">ກະລຸນາປ້ອນຂໍ້ມູນ / Required </div>
                 </div>
@@ -584,8 +640,13 @@
               </div>
               <div class="">
                 <label class="col-sm-2 col-form-label">ທ່ານມີປະຫວັດຊັກ, ເປັນລົມບ້າໝູຫຼືເປັນ
+<<<<<<< HEAD
                   ພະຍາດທີ່ກ່ຽວຂ້ອງກັບລະບົບປະສາດ ຫຼື ບໍ່? <br> You have a history of seizures, epilepsy or a
                   Diseases related to the nervous system?</label>
+=======
+                  ພະຍາດທີ່ກ່ຽວຂ້ອງກັບລະບົບປະສາດ ຫຼື ບໍ່? <br> <b class="subtitle">You have a history of seizures, epilepsy or a
+                    Diseases related to the nervous system?</b></label>
+>>>>>>> a100154e4519e7b63e4d4b169992a4c358415170
 
                 <input [ngClass]="{ 'is-invalid': submitted && f.ques5.errors }" formControlName="ques5" type="radio"
                   value="y" name="ques5">
@@ -597,7 +658,7 @@
                 &nbsp;&nbsp;&nbsp;<br>
                 <input [ngClass]="{ 'is-invalid': submitted && f.ques5.errors }" formControlName="ques5" type="radio"
                   value="o" name="ques5">
-                <label>&nbsp;ບໍ່ຮູ້ / Dont kown</label>
+                <label>&nbsp;ບໍ່ຮູ້ / Don't kown</label>
                 <div *ngIf="submitted && f.ques5.errors" class="invalid-feedback">
                   <div *ngIf="f.ques5.errors.required">ກະລຸນາປ້ອນຂໍ້ມູນ / Required </div>
                 </div>
@@ -607,8 +668,13 @@
               </div>
               <div class="">
                 <label class="col-sm-2 col-form-label">ທ່ານກຳລັງໃຫ້ນົມລູກ, ຖືພາຫຼືວາງແຜນຈະ
+<<<<<<< HEAD
                   ເອົາລູກບໍ່? <br> You are breastfeeding, pregnant, or planning to
                   Have a baby?</label>
+=======
+                  ເອົາລູກບໍ່? <br> <b class="subtitle"> You are breastfeeding, pregnant, or planning to
+                    Have a baby?</b></label>
+>>>>>>> a100154e4519e7b63e4d4b169992a4c358415170
 
                 <input [ngClass]="{ 'is-invalid': submitted && f.ques6.errors }" formControlName="ques6" type="radio"
                   value="y" name="ques6">
@@ -620,7 +686,7 @@
                 &nbsp;&nbsp;&nbsp;<br>
                 <input [ngClass]="{ 'is-invalid': submitted && f.ques6.errors }" formControlName="ques6" type="radio"
                   value="o" name="ques6">
-                <label>&nbsp;ບໍ່ຮູ້ / Dont kown</label>
+                <label>&nbsp;ບໍ່ຮູ້ / Don't kown</label>
                 <div *ngIf="submitted && f.ques6.errors" class="invalid-feedback">
                   <div *ngIf="f.ques6.errors.required">ກະລຸນາປ້ອນຂໍ້ມູນ / Required </div>
                 </div>
@@ -630,7 +696,11 @@
               </div>
               <div class="">
                 <label class="col-sm-2 col-form-label">ກ່ອນໜ້ານີ້ທ ່ານເຄີຍແພ້ວັກຊີນແບບຮຸນແຮງ
+<<<<<<< HEAD
                   ບໍ່? <br> Have you ever had a severe allergic reaction to a vaccine before?</label>
+=======
+                  ບໍ່? <br> <b class="subtitle"> Have you ever had a severe allergic reaction to a vaccine before?</b></label>
+>>>>>>> a100154e4519e7b63e4d4b169992a4c358415170
 
                 <input [ngClass]="{ 'is-invalid': submitted && f.ques7.errors }" formControlName="ques7" type="radio"
                   value="y" name="ques7">
@@ -642,7 +712,7 @@
                 &nbsp;&nbsp;&nbsp;<br>
                 <input [ngClass]="{ 'is-invalid': submitted && f.ques7.errors }" formControlName="ques7" type="radio"
                   value="o" name="ques7">
-                <label>&nbsp;ບໍ່ຮູ້ / Dont kown</label>
+                <label>&nbsp;ບໍ່ຮູ້ / Don't kown</label>
                 <div *ngIf="submitted && f.ques7.errors" class="invalid-feedback">
                   <div *ngIf="f.ques7.errors.required">ກະລຸນາປ້ອນຂໍ້ມູນ / Required </div>
                 </div>
@@ -652,8 +722,13 @@
               </div>
               <div class="">
                 <label class="col-sm-2 col-form-label">2 ອາທິດທີ່ຜ່ານມາ ທ່ານເຄີຍຮັບວັກຊີນສະ
+<<<<<<< HEAD
                   ນິດອື່ນບໍ່?<br> Two weeks ago you were vaccinated
                   Any other?</label>
+=======
+                  ນິດອື່ນບໍ່?<br> <b class="subtitle"> Two weeks ago you were vaccinated
+                    Any other? </b></label>
+>>>>>>> a100154e4519e7b63e4d4b169992a4c358415170
 
                 <input [ngClass]="{ 'is-invalid': submitted && f.ques8.errors }" formControlName="ques8" type="radio"
                   value="y" name="ques8">
@@ -665,7 +740,7 @@
                 &nbsp;&nbsp;&nbsp;<br>
                 <input [ngClass]="{ 'is-invalid': submitted && f.ques8.errors }" formControlName="ques8" type="radio"
                   value="o" name="ques8">
-                <label>&nbsp;ບໍ່ຮູ້ / Dont kown</label>
+                <label>&nbsp;ບໍ່ຮູ້ / Don't kown</label>
                 <div *ngIf="submitted && f.ques8.errors" class="invalid-feedback">
                   <div *ngIf="f.ques8.errors.required">ກະລຸນາປ້ອນຂໍ້ມູນ / Required </div>
                 </div>
@@ -674,8 +749,12 @@
 
               </div>
               <div class="">
+<<<<<<< HEAD
                 <label class="col-sm-2 col-form-label">ທ່ານເຄີຍເປັນພະຍາດໂຄວິດ-19ບໍ່? <br> Have you ever had
                   Kovid-19?</label>
+=======
+                <label class="col-sm-2 col-form-label">ທ່ານເຄີຍເປັນພະຍາດໂຄວິດ-19ບໍ່? <br> <b class="subtitle"> Have you ever had Covid-19?</b></label>
+>>>>>>> a100154e4519e7b63e4d4b169992a4c358415170
 
                 <input [ngClass]="{ 'is-invalid': submitted && f.ques9.errors }" formControlName="ques9" type="radio"
                   value="y" name="ques9">
@@ -687,7 +766,7 @@
                 &nbsp;&nbsp;&nbsp;<br>
                 <input [ngClass]="{ 'is-invalid': submitted && f.ques9.errors }" formControlName="ques9" type="radio"
                   value="o" name="ques9">
-                <label>&nbsp;ບໍ່ຮູ້ / Dont kown</label>
+                <label>&nbsp;ບໍ່ຮູ້ / Don't kown</label>
                 <div *ngIf="submitted && f.ques9.errors" class="invalid-feedback">
                   <div *ngIf="f.ques9.errors.required">ກະລຸນາປ້ອນຂໍ້ມູນ / Required </div>
                 </div>
@@ -719,7 +798,7 @@
                   After submitting the information you are asked to take a screenshot or take a note
                   Save the queue card code for verification
                   When getting vaccinated
-                </i>
+                 </i>
               </li>
               <li>
                 ຫຼັງຈາກຮູ້ສະຖານທີ່ ແລະ ເວລາໄປຮັບວັກຊີນ
@@ -732,7 +811,11 @@
               </li>
               <li>
                 ກະລຸນາລໍຖ້າການແຈ້ງຕອບ
+<<<<<<< HEAD
                 <br><i>
+=======
+                <br><i class="subtitle">
+>>>>>>> a100154e4519e7b63e4d4b169992a4c358415170
                   Please wait for notification
                 </i>
               </li>
@@ -1031,7 +1114,11 @@
 
 
             <div class="vancine_dose">
+<<<<<<< HEAD
               <h6 class="sub-title"><u>ປະເທດ / Country</u></h6>
+=======
+              <h5 class="sub-title"><u>ສັນຊາດ / Nationality</u></h5>
+>>>>>>> a100154e4519e7b63e4d4b169992a4c358415170
 
 
 
@@ -1203,7 +1290,7 @@
 
             <div class="">
               <div class="">
-                <label class="col-sm-2 col-form-label">ມື້ນີ້ທ່ານສະບາຍດີບໍ່? <br> <b class="subtitle"> Are you feeling good today?</b></label>
+                <label class="col-sm-2 col-form-label">ມື້ນີ້ທ່ານສະບາຍດີບໍ່? <br> How are you today?</label>
 
                 <input [ngClass]="{ 'is-invalid': submitted && f.ques1.errors }" formControlName="ques1" type="radio"
                   value="y" name="ques1">
@@ -1226,8 +1313,8 @@
 
               <div class="">
                 <label class="col-sm-2 col-form-label">ທ້ານມີໄຂ້ບໍ່? ມີໄຂ້ໝາຍເຖິງອຸນຫະພູມຮ່າງກາຍ
-                  ສູງກວ່າ 37.5 ອົງສາ? <br><b class="subtitle">Do you have a fever? Fever with body temperature
-                    Over 37.5 degrees?</b></label>
+                  ສູງກວ່າ 37.5 ອົງສາ? <br>Do you have a fever? Fever with body temperature
+                  Above 37.5 degrees?</label>
 
 
                 <input [ngClass]="{ 'is-invalid': submitted && f.ques2.errors }" formControlName="ques2" type="radio"
@@ -1251,8 +1338,9 @@
               <div class="">
                 <label class="col-sm-2 col-form-label">ທ່ານເປັນພະຍາດພູມຄຸ້ມກັນບົກພ່ອງ ຫຼື
                   ກຳລັງກິນຢາທີ່ມີຜົນກະທົບຕໍ່ລະບົບພູມຄຸ້ມ
-                  ກັນຂອງທ່ານ ຫຼື ບໍ່? <br> <b class="subtitle">Do you have an autoimmune disease or
-                    Taking medications that affect the immune system or not?</b></label>
+                  ກັນຂອງທ່ານ ຫຼື ບໍ່? <br> Do you have an autoimmune disease or
+                  Taking medications that affect the immune system
+                  Your together or not?</label>
 
                 <input [ngClass]="{ 'is-invalid': submitted && f.ques3.errors }" formControlName="ques3" type="radio"
                   value="y" name="ques3">
@@ -1275,9 +1363,15 @@
               <div class="">
                 <label class="col-sm-2 col-form-label">ທ່ານເປັນນພະຍາດທີ່ເຮັດໃຫ້ເລືອດອອກງ່າຍ ຫຼື
                   ກາລັງກິນຢາທີ່ມີຜົນກະທົບຕໍ່ການກ້າມເລືອດ
+<<<<<<< HEAD
                   ຫຼືບໍ່? <br><b class="subtitle">Are you suffering from a disease that makes it easier to bleed?
                     Taking medications that affect blood clotting
                     Or not?</b></label>
+=======
+                  ຫຼືບໍ່? <br> Are you suffering from a disease that makes it easier to bleed?
+                  Taking medications that affect blood clotting
+                  Or not?</label>
+>>>>>>> a100154e4519e7b63e4d4b169992a4c358415170
 
                 <input [ngClass]="{ 'is-invalid': submitted && f.ques4.errors }" formControlName="ques4" type="radio"
                   value="y" name="ques4">
@@ -1299,8 +1393,8 @@
               </div>
               <div class="">
                 <label class="col-sm-2 col-form-label">ທ່ານມີປະຫວັດຊັກ, ເປັນລົມບ້າໝູຫຼືເປັນ
-                  ພະຍາດທີ່ກ່ຽວຂ້ອງກັບລະບົບປະສາດ ຫຼື ບໍ່? <br> <b class="subtitle">You have a history of seizures, epilepsy or a
-                    Diseases related to the nervous system?</b></label>
+                  ພະຍາດທີ່ກ່ຽວຂ້ອງກັບລະບົບປະສາດ ຫຼື ບໍ່? <br> You have a history of seizures, epilepsy or a
+                  Diseases related to the nervous system?</label>
 
                 <input [ngClass]="{ 'is-invalid': submitted && f.ques5.errors }" formControlName="ques5" type="radio"
                   value="y" name="ques5">
@@ -1322,8 +1416,13 @@
               </div>
               <div class="">
                 <label class="col-sm-2 col-form-label">ທ່ານກຳລັງໃຫ້ນົມລູກ, ຖືພາຫຼືວາງແຜນຈະ
+<<<<<<< HEAD
                   ເອົາລູກບໍ່? <br> <b class="subtitle"> You are breastfeeding, pregnant, or planning to
                     Have a baby?</b></label>
+=======
+                  ເອົາລູກບໍ່? <br> You are breastfeeding, pregnant, or planning to
+                  Have a baby?</label>
+>>>>>>> a100154e4519e7b63e4d4b169992a4c358415170
 
                 <input [ngClass]="{ 'is-invalid': submitted && f.ques6.errors }" formControlName="ques6" type="radio"
                   value="y" name="ques6">
@@ -1345,7 +1444,11 @@
               </div>
               <div class="">
                 <label class="col-sm-2 col-form-label">ກ່ອນໜ້ານີ້ທ ່ານເຄີຍແພ້ວັກຊີນແບບຮຸນແຮງ
+<<<<<<< HEAD
                   ບໍ່? <br>  <b class="subtitle"> Have you ever had a severe allergic reaction to a vaccine before?</b></label>
+=======
+                  ບໍ່? <br> Have you ever had a severe allergic reaction to a vaccine before?</label>
+>>>>>>> a100154e4519e7b63e4d4b169992a4c358415170
 
                 <input [ngClass]="{ 'is-invalid': submitted && f.ques7.errors }" formControlName="ques7" type="radio"
                   value="y" name="ques7">
@@ -1367,8 +1470,13 @@
               </div>
               <div class="">
                 <label class="col-sm-2 col-form-label">2 ອາທິດທີ່ຜ່ານມາ ທ່ານເຄີຍຮັບວັກຊີນສະ
+<<<<<<< HEAD
                   ນິດອື່ນບໍ່?<br><b class="subtitle"> Two weeks ago you were vaccinated
                     Any other? </b></label>
+=======
+                  ນິດອື່ນບໍ່?<br> Two weeks ago you were vaccinated
+                  Any other?</label>
+>>>>>>> a100154e4519e7b63e4d4b169992a4c358415170
 
                 <input [ngClass]="{ 'is-invalid': submitted && f.ques8.errors }" formControlName="ques8" type="radio"
                   value="y" name="ques8">
@@ -1389,7 +1497,8 @@
 
               </div>
               <div class="">
-                <label class="col-sm-2 col-form-label">ທ່ານເຄີຍເປັນພະຍາດໂຄວິດ-19ບໍ່? <br> <b class="subtitle"> Have you ever had Covid-19?</b></label>
+                <label class="col-sm-2 col-form-label">ທ່ານເຄີຍເປັນພະຍາດໂຄວິດ-19ບໍ່? <br> Have you ever had
+                  Kovid-19?</label>
 
                 <input [ngClass]="{ 'is-invalid': submitted && f.ques9.errors }" formControlName="ques9" type="radio"
                   value="y" name="ques9">
@@ -1412,7 +1521,12 @@
 
             <div class="date_to_get">
               <label class="col-sm-2 col-form-label">ຖ້າເຄີຍເປັນພະຍາດໂຄວິດ-19, ວັນທີ່ປຶ່ນປົວ
+<<<<<<< HEAD
                 ຫາຍຂາດແມ່ນມື້ໃດ? <br><b class="subtitle">If ever had covid-19, when you have cured?</b></label>
+=======
+                ຫາຍຂາດແມ່ນມື້ໃດ? <br> If ever had coronavirus-19, the date of treatment
+                What day is missing?</label>
+>>>>>>> a100154e4519e7b63e4d4b169992a4c358415170
               <!-- <h5 class="sub-title"></h5> -->
 
               <input class="form-control" type="date"
@@ -1428,24 +1542,31 @@
               <li>
                 ຫຼັງຈາກສົ່ງຂໍ້ມູນໃຫ້ທ່ານຖ່າຍຮູບໜ້າຈໍຫຼືຈົດ
                 ບັນທຶກລະຫັດບັດຄີວໄວ້ເພື່ອເອົາໄປຢັ້ງຢືນ
+<<<<<<< HEAD
                 ຕອນໄປຮັບການສັກຢາ  <br><i class="subtitle">
                  After submitting the information you are asked to take a screenshot or take a note
                  Save the queue card code for verification
                  When getting vaccinated
+=======
+                ຕອນໄປຮັບການສັກຢາ <br><i>
+                  After submitting the information you are asked to take a screenshot or take a note
+                  Save the queue card code for verification
+                  When getting vaccinated
+>>>>>>> a100154e4519e7b63e4d4b169992a4c358415170
                 </i>
               </li>
               <li>
                 ຫຼັງຈາກຮູ້ສະຖານທີ່ ແລະ ເວລາໄປຮັບວັກຊີນ
                 ແລ້ວ ຕ້ອງໄປຕາມຄີວທີ່ນັດໝາຍ, ຖ້າເກີນ
-                ເວລາທີ່ນັດໝາຍຈະຖືວ່າເປັນການສະລະສິດ <br> <i class="subtitle">
+                ເວລາທີ່ນັດໝາຍຈະຖືວ່າເປັນການສະລະສິດ <br> <i>
                   After knowing the place and time to get vaccinated
-                 Then go to the queue, if more
-                 Appointment time will be considered a waiver
+                  Then go to the queue, if more
+                  Appointment time will be considered a waiver
                 </i>
               </li>
               <li>
                 ກະລຸນາລໍຖ້າການແຈ້ງຕອບ
-                <br><i class="subtitle">
+                <br><i>
                   Please wait for notification
                 </i>
               </li>
