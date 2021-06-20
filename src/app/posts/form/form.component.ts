@@ -81,7 +81,7 @@ export class FormCreate implements OnInit{
 
     })
 
-  
+
     this.service.getdisease()
     .subscribe(response=>{
       this.disease=response;
@@ -225,7 +225,7 @@ if (this.registerForm.value.vac == '2' && this.registerForm.value.vac_details ==
           console.log("Status: Invalid")
         }else if(this.registerForm.status=='VALID'){
           // console.log(this.registerForm.value)
-        
+
           // console.log(data)
   console.log("Status: Valid")
         // console.log(result)
@@ -233,7 +233,9 @@ if (this.registerForm.value.vac == '2' && this.registerForm.value.vac_details ==
         Swal.fire({
           title: 'ລະບົບຈອງຄິວ',
           text: 'ກະລຸນາກວດສອບຂໍ້ມູນຂອງຸທ່ານ',
-          icon: 'question',
+          imageWidth: 400,
+          imageHeight: 350,
+          imageUrl:'assets/assets/images/Untitled2222-removebg-preview.png',
           showCancelButton: true,
           confirmButtonColor: '#3085d6',
           cancelButtonColor: '#d33',
@@ -247,15 +249,20 @@ if (this.registerForm.value.vac == '2' && this.registerForm.value.vac_details ==
                   icon: 'success',
                   title: 'ລະຫັດຂອງທ່ານ:  '+result.ticket_id,
                   text: 'ເອົາໄວ້ຍືນຍັນແກ່ທ່ານໝໍ',
-                  })
-                  this.submitted = false;
-                  this.age_calculate = ''
-                  this.registerForm.reset();
+                  confirmButtonText: 'ຕົກລົງ'
+                  }).then(function() {
+
+                  window.location.reload();
                   // setTimeout(()=>{
                   //   this.submitted = false;
                   //   this.registerForm.reset();
                   //   window.location.reload();
                   // }, 4000)
+                });
+
+
+
+
 
 
 
