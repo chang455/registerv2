@@ -39,6 +39,8 @@ export class FormCreate implements OnInit{
   age_radio3=false
   age_date:any;
   age_calculate:any;
+  age_name :any
+
 
   vac1:any;
   vac2:any;
@@ -79,7 +81,7 @@ export class FormCreate implements OnInit{
 
     })
 
-
+  
     this.service.getdisease()
     .subscribe(response=>{
       this.disease=response;
@@ -113,7 +115,7 @@ export class FormCreate implements OnInit{
             // gender:['',Validators.required],
             name:['',Validators.required],
             lastName: ['', Validators.required],
-            village:['', Validators.required],
+            village:'',
             province:['',Validators.required],
             district:['',Validators.required],
             country:'',
@@ -123,9 +125,9 @@ export class FormCreate implements OnInit{
             id_or_passportid:['',Validators.required],
             phone:['',Validators.required],
             job:['',Validators.required],
-            email: ['', [Validators.required, Validators.email]],
+            email: ['', [Validators.required, Validators.pattern("^[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,4}$")]],
             work_location:['',Validators.required],
-            date_covid:['',Validators.required],
+            date_covid:'',
             ques1:['',Validators.required],
             ques2:['',Validators.required],
             ques3:['',Validators.required],
@@ -150,9 +152,9 @@ export class FormCreate implements OnInit{
 //       console.log(this.registerForm.value.country)
 // console.log(this.registerForm.value)
 // console.log(this.registerForm.value.id_vaccine)
-console.log(this.registerForm.value.province+"-p--")
-console.log(this.registerForm.value.village+"--v-")
-console.log(this.registerForm.value.villageinput+'--VIP--')
+// console.log(this.registerForm.value.province+"-p--")
+// console.log(this.registerForm.value.village+"--v-")
+// console.log(this.registerForm.value.villageinput+'--VIP--')
 
 
 if (this.registerForm.value.village !=""){
@@ -216,22 +218,20 @@ if (this.registerForm.value.vac == '2' && this.registerForm.value.vac_details ==
 
     }
         if(this.registerForm.status=='INVALID'){
-           console.log(data)
+          //  console.log(data)
           console.log(this.registerForm.value)
           console.log("Status: Invalid")
         }else if(this.registerForm.status=='VALID'){
           // console.log(this.registerForm.value)
-
-          console.log(data)
+        
+          // console.log(data)
   console.log("Status: Valid")
         // console.log(result)
 
         Swal.fire({
           title: 'ລະບົບຈອງຄິວ',
           text: 'ກະລຸນາກວດສອບຂໍ້ມູນຂອງຸທ່ານ',
-          imageWidth: 400,
-          imageHeight: 350,
-          imageUrl:'assets/assets/images/Untitled2222-removebg-preview.png',
+          icon: 'question',
           showCancelButton: true,
           confirmButtonColor: '#3085d6',
           cancelButtonColor: '#d33',
@@ -382,8 +382,20 @@ if (this.registerForm.value.vac == '2' && this.registerForm.value.vac_details ==
       return age;
     }
     age_cal(){
-      console.log(this.age_date)
+      // console.log(this.age_date)
       this.age_calculate= this.ageFromDateOfBirthday(this.age_date)
+
+
+      // if ( this.age_calculate <= 17 ){
+      //   this.age_name = 'ອາຍຸຂອງທ່ານແມ່ນ '+this.age_calculate+' ບໍ່ສາມາດຮັບວັກຊິນໄດ້'
+      // }
+
+      // if ( this.age_calculate >=18  ){
+      //   this.age_name = 'ອາຍຸຂອງທ່ານແມ່ນ '+this.age_calculate+' ສາມາດຮັບວັກຊິນໄດ້'
+      // }
+
+
+
     }
 
     countries = [
