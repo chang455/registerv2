@@ -82,7 +82,8 @@ import { District, Province, Vaccines,Location } from 'src/app/posts/form/distri
 })
 export class FormService {
 
-private url= "http://94.237.72.103:1001/vaccine_v1/user/";
+ private url= "http://94.237.72.103:1001/vaccine_v1/user/";
+//private url= "http://localhost:1001/vaccine_v1/user/";
 private token= "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiJUZXN0IVYxIiwidW5hbWUiOiJCaVNlblRvIiwidWVtYWlsIjoic21hcnR2YWNjaW5lbGFvc0BnbWFpbC5jb20iLCJ1c3RhdHVzIjoic3RvcCIsInJ1bGUiOiJhY3RpdmUiLCJpYXQiOjE2MjM5NTQwMzQsImV4cCI6MTkzOTMxNDAzNCwiYXVkIjoiaHR0cDovL0F0Y29kZWxhby5jbyIsImlzcyI6IkF0Y29kZSBMdGQiLCJzdWIiOiJBdGNvZGVsYW9AZ21haWwuY29tIn0.mYPFmXy4cmG5ggvYw7Thxi2NSRm2fDXD9J5gXq43hentLqp-qiCwOiFQhEWVIUFiSV30LlFVtekLayQIc0zmuPhmuYj7_Z0wVKokz7FjjyBJpmKpaOtsF1USKhReiAoIyV6TscqP6HC_PzFuHWQWnTKMPLcvbUfHLtz8qokYg_U";
 
   constructor(private http:HttpClient) { }
@@ -167,6 +168,13 @@ getDis(id:any){
     const url = this.url + "form_insert";
     return this.http.post(url,data,{headers:header});
   }
+
+
+  // insert_from(data:any): Observable<any> {
+
+  //   const url = this.url + "form_insert";
+  //   return this.http.post(url,data);
+  // }
 
   get_vaccine(): Observable<any> {
 
