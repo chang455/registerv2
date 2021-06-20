@@ -20,7 +20,7 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
   --colorShadeE: #fff;
 }
 .navbar{
-  background-color: #5f98f4;
+  background-color: #3575cb;
 }
 .footer{
   background-color: #5f98f4;
@@ -31,16 +31,7 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
   text-align:start;
   padding: 0;
 }
-.Text1{
-  text-align: left;
-  font-family: NotoSansLao;
-  font-size: 8px;
-}
-.Text2{
-  text-align: left;
-  font-family: NotoSansLao;
-  font-size: 15px;
-}
+
 .collapse{
   color: white;
   font-size: 20px;
