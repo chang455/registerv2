@@ -29,10 +29,8 @@
         <input [ngClass]="{ 'is-invalid': submitted && f.vac.errors }" formControlName="age_select" type="radio" value="2"
           name="age_select" (change)="changeAge($event)">
         <label>&nbsp;ອາຍຸລະຫວ່າງ 18-59 ປີ</label>
-
         <input [ngClass]="{ 'is-invalid': submitted && f.vac.errors }" formControlName="age_select" type="radio" value="2"
           name="age_select" (change)="changeAge($event)">
-
         <label>&nbsp;ອາຍຸ 60 ຂື້ນໄປ</label>
         <div *ngIf="submitted && f.vac.errors" class="invalid-feedback">
           <div *ngIf="f.vac.errors.required">Vaccine is required</div>
@@ -400,7 +398,6 @@
             <!-- <select [ngClass]="{ 'is-invalid': submitted && f.country.errors }" name="country" class="form-control" formControlName="country">
                         <option value="" disabled selected hidden>ເລືອກສັນຊາດ</option>
                         <option [value]="country.name" *ngFor="let country of countries">{{ country.name }}</option>
-
                       </select>
                       <div *ngIf="submitted && f.country.errors" class="invalid-feedback">
                         <div *ngIf="f.country.errors.required">Required</div>
@@ -410,8 +407,6 @@
                       <input formControlName="islao" value="y" type="radio" name="islao" checked="checked">
                       <i class="helper"></i>ແມ່ນຄົນລາວ
                     </label>
-
-
                   <label>
                     <input formControlName="islao" type="radio" value="n" name="islao">
                     <i class="helper"></i>ບໍ່ແມ່ນຄົນລາວ
@@ -1003,19 +998,16 @@
             <!-- <div class="col-sm-12 col-xl-3 m-b-30">
               <h6 class="sub-title">ຢູ່ບ້ານໃດ / Current village</h6>
               <ng-container *ngIf="provinceID!=1 else selectVillage">
-
                 <input  type="text" name="villageinput" formControlName="villageinput" class="form-control form-control-default">
                 <div *ngIf="submitted && f.villageinput.errors" class="invalid-feedback">
                   <div *ngIf="f.villageinput.errors.required">village input require</div>
                 </div>
               </ng-container>
               <ng-template #selectVillage>
-
                 <select formControlName="village" name="village" class="form-control form-control-default">
                   <option value="" disabled selected hidden>ເລືອກບ້ານ / Select</option>
                   <option [value]="village.id_village" *ngFor="let village of villageList">{{ village.name_lao }}
                   </option>
-
                 </select>
                 <div *ngIf="submitted && f.village.errors" class="invalid-feedback">
                   <div *ngIf="f.village.errors.required">village select require</div>
@@ -1102,7 +1094,6 @@
             <!-- <select [ngClass]="{ 'is-invalid': submitted && f.country.errors }" name="country" class="form-control" formControlName="country">
                         <option value="" disabled selected hidden>ເລືອກສັນຊາດ</option>
                         <option [value]="country.name" *ngFor="let country of countries">{{ country.name }}</option>
-
                       </select>
                       <div *ngIf="submitted && f.country.errors" class="invalid-feedback">
                         <div *ngIf="f.country.errors.required">Required</div>
@@ -1112,8 +1103,6 @@
                       <input formControlName="islao" value="y" type="radio" name="islao" checked="checked">
                       <i class="helper"></i>ແມ່ນຄົນລາວ
                     </label>
-
-
                   <label>
                     <input formControlName="islao" type="radio" value="n" name="islao">
                     <i class="helper"></i>ບໍ່ແມ່ນຄົນລາວ
@@ -1192,7 +1181,6 @@
               <select name="Diease" class="form-control" formControlName="Disease">
                 <option value="" disabled selected hidden>ເລືອກພະຍາດ / Select</option>
                 <option [value]="dis.id_disease" *ngFor="let dis of disease">{{ dis.name_lao }}</option>
-
               </select>
             </div> -->
 
@@ -1286,7 +1274,7 @@
                   value="o" name="ques4">
                 <label>&nbsp;ບໍ່ຮູ້ / Don't kown</label>
                 <div *ngIf="submitted && f.ques4.errors" class="invalid-feedback">
-                  <div *ngIf="f.ques4.errors.required"> Required </div>
+                  <div *ngIf="f.ques4.errors.required">Required </div>
                 </div>
 
 
@@ -1295,7 +1283,7 @@
               <div class="">
                 <label class="col-sm-2 col-form-label">ທ່ານມີປະຫວັດຊັກ, ເປັນລົມບ້າໝູຫຼືເປັນ
                   ພະຍາດທີ່ກ່ຽວຂ້ອງກັບລະບົບປະສາດ ຫຼື ບໍ່? <br> <b class="subtitle">You have a history of seizures, epilepsy or a
-                    Diseases related to the nervous system?</b>label>
+                    Diseases related to the nervous system?</b></label>
 
                 <input [ngClass]="{ 'is-invalid': submitted && f.ques5.errors }" formControlName="ques5" type="radio"
                   value="y" name="ques5">
