@@ -44,7 +44,7 @@
             <input [ngClass]="{ 'is-invalid': submitted && f.dob.errors }" class="form-control" [(ngModel)]="age_date"
               (change)="age_cal()" type="date" name="dob" formControlName="dob" min="1900-01-01" max="2003-12-31">
             <label class="form-group" for=""> ອາຍຸຂອງທ່ານ </label>
-            <input class="col-sm-2 " type="text" value="{{ age_calculate }}" disabled>
+            <input class="form-control" type="text" value="{{ age_calculate }}" disabled>
             <div *ngIf="submitted && f.dob.errors" class="invalid-feedback">
               <div *ngIf="f.dob.errors.required">date of birth is required</div>
             </div>
