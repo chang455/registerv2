@@ -31,7 +31,7 @@ export class FormCreate implements OnInit{
 
   radio1 = false
   radio2 = false
-  current_date = moment().add(1,'days').format("YYYY-MM-DD");
+  current_date = moment().add(2,'days').format("YYYY-MM-DD");
   current_date_covide = moment().format("YYYY-MM-DD");
 
   age_radio1= false
@@ -125,7 +125,8 @@ export class FormCreate implements OnInit{
             id_or_passportid:['',Validators.required],
             phone:['',Validators.required],
             job:['',Validators.required],
-            email: ['', [Validators.required, Validators.pattern("^[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,4}$")]],
+            email: '',
+       // email: ['', [Validators.required, Validators.pattern("^[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,4}$")]],
             work_location:['',Validators.required],
             date_covid:'',
             ques1:['',Validators.required],
@@ -168,6 +169,7 @@ if (this.registerForm.value.vac == '2' && this.registerForm.value.vac_details ==
         text: 'ລາຍລະອຽດວິກຊີນເຂັມສອງຍັງມີບ່ອນວ່າງ',
         })
 }else if(this.registerForm.value.province != '1'&& this.registerForm.value.villageinput ==""  ){
+  this.submitted = true;
   Swal.fire({
     icon: 'warning',
     title: 'ກະລຸນາກວດສອບຂໍ້ມູນຂອງຸທ່ານ',
@@ -247,6 +249,7 @@ if (this.registerForm.value.vac == '2' && this.registerForm.value.vac_details ==
                   text: 'ເອົາໄວ້ຍືນຍັນແກ່ທ່ານໝໍ',
                   })
                   this.submitted = false;
+                  this.age_calculate = ''
                   this.registerForm.reset();
                   // setTimeout(()=>{
                   //   this.submitted = false;
@@ -263,7 +266,8 @@ if (this.registerForm.value.vac == '2' && this.registerForm.value.vac_details ==
                   text: 'ກະລຸນາລອງໃໝ້ອີກຄັ້ງ',
                   })
                   setTimeout(()=>{
-                    this.submitted = false;
+                    // this.submitted = false;
+                    // this.age_calculate = ''
                     this.registerForm.reset();
                     window.location.reload();
                   }, 4000)

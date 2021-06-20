@@ -112,8 +112,6 @@ font-family: NotoSansLao  ;
 }
 .sub-title{
   color: #3575cb;
-<<<<<<< HEAD
-=======
 }
 .subtitle{
   font-size: 18px;
@@ -121,8 +119,8 @@ font-family: NotoSansLao  ;
 .swl2-popup{
   font-family: NotoSansLao;
   font-size: 16px;
->>>>>>> a100154e4519e7b63e4d4b169992a4c358415170
 }
+
 
 
 
@@ -305,4 +303,3 @@ button.big-button:active::before {
 {
 color: red;
 }
-
