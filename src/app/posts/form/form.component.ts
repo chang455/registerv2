@@ -43,6 +43,10 @@ export class FormCreate implements OnInit{
   vac1:any;
   vac2:any;
   location_code:any;
+
+  disease:any;
+  country_manual:any;
+
   constructor(private service:FormService,private fb:FormBuilder) {
 
 
@@ -71,26 +75,18 @@ export class FormCreate implements OnInit{
     this.service.getHos()
     .subscribe(response=>{
       this.locationList=response;
-      console.log(response)
+      // console.log(response)
 
     })
 
-    this.registerForm = this.fb.group({
-      vac:'',
-      id_vaccine:'',
-      location_to_get:'',
-      date_to_get:'',
-      gender:'',
-      name:'',
-      lastname:'',
-      province:'',
-      district:'',
-      islao:'',
-      id_or_passportid:'',
-      phone:'',
-      email:'',
-      // tb_form_create_date:''
-   });
+
+    this.service.getdisease()
+    .subscribe(response=>{
+      this.disease=response;
+      // console.log(response)
+
+    })
+
 
    }
    registerForm = new FormGroup({});
@@ -109,7 +105,7 @@ export class FormCreate implements OnInit{
         this.registerForm = this.fb.group({
             vac: ['', Validators.required],
             // id_vaccine: ['', Validators.required],
-            id_vaccine:'',
+            id_vaccine:['', Validators.required],
             // vac_detais: ['', Validators.required],
             vac_details:'' ,
             location_to_get: ['', Validators.required],
@@ -129,7 +125,7 @@ export class FormCreate implements OnInit{
             job:['',Validators.required],
             email: ['', [Validators.required, Validators.email]],
             work_location:['',Validators.required],
-            date_covid:'',
+            date_covid:['',Validators.required],
             ques1:['',Validators.required],
             ques2:['',Validators.required],
             ques3:['',Validators.required],
@@ -139,8 +135,8 @@ export class FormCreate implements OnInit{
             ques7:['',Validators.required],
             ques8:['',Validators.required],
             ques9:['',Validators.required],
-            Disease:'',
-            villageinput:['',Validators.required],
+            Disease:['',Validators.required],
+            villageinput:'',
 
         });
     }
@@ -149,21 +145,40 @@ export class FormCreate implements OnInit{
     get f() { return this.registerForm.controls; }
 
     onSubmit() {
-      console.log(this.location_code)
-      console.log(this.ageFromDateOfBirthday('2000-01-01'))
+      // console.log(this.location_code)
+      // console.log(this.ageFromDateOfBirthday('2000-01-01'))
 //       console.log(this.registerForm.value.country)
 // console.log(this.registerForm.value)
 // console.log(this.registerForm.value.id_vaccine)
+console.log(this.registerForm.value.province+"-p--")
+console.log(this.registerForm.value.village+"--v-")
+console.log(this.registerForm.value.villageinput+'--VIP--')
 
-if (this.registerForm.value.vac == '2' && this.registerForm.value.vac_details == "" && this.registerForm.value.id_vaccine==""){
+
+if (this.registerForm.value.village !=""){
+console.log('whattt')
+}
+if (this.registerForm.value.vac == '2' && this.registerForm.value.vac_details == ""){
   this.submitted = true;
  Swal.fire({
         icon: 'warning',
         title: 'ກະລຸນາກວດສອບຂໍ້ມູນຂອງຸທ່ານ',
-        text: 'ວິກຊີນ ຫຼື ປະເພດວັກຊີນມີບ່ອນວ່າງ',
+        text: 'ລາຍລະອຽດວິກຊີນເຂັມສອງຍັງມີບ່ອນວ່າງ',
         })
+}else if(this.registerForm.value.province != '1'&& this.registerForm.value.villageinput ==""  ){
+  Swal.fire({
+    icon: 'warning',
+    title: 'ກະລຸນາກວດສອບຂໍ້ມູນຂອງຸທ່ານ',
+    text: 'ລາຍລະອຽດບ້ານຍັງມີບ່ອນວ່າງ',
+    })
 }else{
   this.submitted = true;
+
+  if (this.registerForm.value.islao ==1){
+    this.country_manual = 'Laos'
+  }else{
+    this.country_manual = this.registerForm.value.country
+  }
       const data={
 
         'id_vaccine':this.registerForm.value.id_vaccine,
@@ -178,9 +193,9 @@ if (this.registerForm.value.vac == '2' && this.registerForm.value.vac_details ==
       'villageinput':this.registerForm.value.villageinput,
       'district':this.registerForm.value.district,
       'province':this.registerForm.value.province,
-      'islao':this.registerForm.value.islao,     //IS_LAOS
+      'islao':this.registerForm.value.islao,     //1 = lao 2 = another
       'job':this.registerForm.value.job,
-      'country':this.registerForm.value.country, // COUNTRY
+      'country':this.country_manual, // COUNTRY
       'id_or_passportid':this.registerForm.value.id_or_passportid,
       'phone':this.registerForm.value.phone,
       'email':this.registerForm.value.email,
@@ -197,23 +212,26 @@ if (this.registerForm.value.vac == '2' && this.registerForm.value.vac_details ==
       'ques7':this.registerForm.value.ques7,
       'ques8':this.registerForm.value.ques8,
       'ques9':this.registerForm.value.ques9,
+      'Disease':this.registerForm.value.Disease
 
     }
         if(this.registerForm.status=='INVALID'){
-          console.log(data)
+           console.log(data)
           console.log(this.registerForm.value)
           console.log("Status: Invalid")
         }else if(this.registerForm.status=='VALID'){
           // console.log(this.registerForm.value)
-          // console.log("Status: Valid")
-          console.log(data)
 
+          console.log(data)
+  console.log("Status: Valid")
         // console.log(result)
 
         Swal.fire({
           title: 'ລະບົບຈອງຄິວ',
           text: 'ກະລຸນາກວດສອບຂໍ້ມູນຂອງຸທ່ານ',
-          icon: 'question',
+          imageWidth: 400,
+          imageHeight: 350,
+          imageUrl:'assets/assets/images/Untitled2222-removebg-preview.png',
           showCancelButton: true,
           confirmButtonColor: '#3085d6',
           cancelButtonColor: '#d33',
@@ -490,7 +508,7 @@ if (this.registerForm.value.vac == '2' && this.registerForm.value.vac_details ==
       { code: "KR", code3: "KOR", name: "Korea (the Republic of)", number: "410" },
       { code: "KW", code3: "KWT", name: "Kuwait", number: "414" },
       { code: "KG", code3: "KGZ", name: "Kyrgyzstan", number: "417" },
-      { code: "LA", code3: "LAO", name: "Lao People's Democratic Republic (the)", number: "418" },
+      { code: "LA", code3: "LAO", name: "Laos", number: "418" },
       { code: "LV", code3: "LVA", name: "Latvia", number: "428" },
       { code: "LB", code3: "LBN", name: "Lebanon", number: "422" },
       { code: "LS", code3: "LSO", name: "Lesotho", number: "426" },

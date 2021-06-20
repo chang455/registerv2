@@ -112,6 +112,14 @@ font-family: NotoSansLao  ;
 }
 .sub-title{
   color: #3575cb;
+  font-size: 17px;
+}
+.subtitle{
+  font-size: 18px;
+}
+.swl2-popup{
+  font-family: NotoSansLao;
+  font-size: 16px;
 }
 
 
