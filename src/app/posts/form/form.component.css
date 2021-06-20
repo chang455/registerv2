@@ -265,9 +265,9 @@ button.big-button:active::before {
 
 
  input[type='radio']:after {
-        width: 15px;
-        height: 15px;
-        border-radius: 15px;
+        width: 18px;
+        height: 18px;
+        border-radius: 18px;
         top: -2px;
         left: -1px;
         position: relative;
@@ -279,9 +279,9 @@ button.big-button:active::before {
     }
 
     input[type='radio']:checked:after {
-        width: 15px;
-        height: 15px;
-        border-radius: 15px;
+        width: 18px;
+        height: 18px;
+        border-radius: 18px;
         top: -2px;
         left: -1px;
         position: relative;
@@ -293,13 +293,3 @@ button.big-button:active::before {
     }
 
 
-    .lc
-
-    {
-    color: green;
-    }
-
-    .lc2
-{
-color: red;
-}
