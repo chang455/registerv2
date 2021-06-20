@@ -233,8 +233,8 @@ if (this.registerForm.value.vac == '2' && this.registerForm.value.vac_details ==
         Swal.fire({
           title: 'ລະບົບຈອງຄິວ',
           text: 'ກະລຸນາກວດສອບຂໍ້ມູນຂອງຸທ່ານ',
-          imageWidth: 400,
-          imageHeight: 350,
+          imageWidth: 150,
+          imageHeight: 150,
           imageUrl:'assets/assets/images/Untitled2222-removebg-preview.png',
           showCancelButton: true,
           confirmButtonColor: '#3085d6',
