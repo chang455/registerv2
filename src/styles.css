@@ -53,13 +53,13 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
   width: auto;
   height: 100px;
   display: grid;
-  justify-content: space-between;
+  margin: auto;
 }
 .row{
   font-family: NotoSansLao;
   font-size: 17px;
   justify-content: space-between;
-  margin: auto;
+  
 }
 .btn{
   justify-content: right;
