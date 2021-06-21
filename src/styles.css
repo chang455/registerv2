@@ -39,6 +39,10 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
   font-size: 13px;
   text-align: center;
 }
+.Text2{
+  text-align: center;
+  justify-content: center;
+}
 .collapse{
   color: white;
   font-size: 20px;
@@ -49,12 +53,12 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
   width: auto;
   height: 100px;
   display: grid;
-  margin: auto;
+  justify-content: space-between;
 }
 .row{
   font-family: NotoSansLao;
   font-size: 17px;
-  justify-content: center;
+  justify-content: space-between;
   margin: auto;
 }
 .btn{
