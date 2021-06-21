@@ -20,7 +20,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/aiyproject",
+            "outputPath": "dist/register",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -107,5 +107,5 @@
       }
     }
   },
-  "defaultProject": "aiyproject"
+  "defaultProject": "vms"
 }
