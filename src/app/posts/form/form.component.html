@@ -209,11 +209,11 @@
             <!-- <h4 class="sub-title">ແມ່ນຄົນລາວຫຼືບໍ່?</h4> -->
 
             <input [ngClass]="{ 'is-invalid': submitted && f.title.errors }" formControlName="title" type="radio"
-              value="male" name="title">
+              value="ທ້າວ" name="title">
             <label>&nbsp;ທ້າວ / Mr</label>
             &nbsp;&nbsp;
             <input [ngClass]="{ 'is-invalid': submitted && f.title.errors }" formControlName="title" type="radio"
-              value="female" name="title">
+              value="ນາງ" name="title">
             <label>&nbsp;ນາງ / Miss/Ms/Mrs </label>
 
 
@@ -448,7 +448,9 @@
               <div class="col-sm-10">
 
                 <input [ngClass]="{ 'is-invalid': submitted && f.phone.errors }" formControlName="phone" name="phone"
+
                   type="number" pattern="[0-9]*" inputmode="numeric" class="form-control" placeholder="020XXXXXXXX">
+
                 <div *ngIf="submitted && f.phone.errors" class="invalid-feedback">
                   <div *ngIf="f.phone.errors.required">Number is required</div>
                 </div>
@@ -1144,7 +1146,7 @@
               <div class="col-sm-10">
 
                 <input [ngClass]="{ 'is-invalid': submitted && f.phone.errors }" formControlName="phone" name="phone"
-                  type="test" class="form-control" placeholder="020XXXXXXXX ">
+                  type="number" class="form-control" placeholder="020XXXXXXXX ">
                 <div *ngIf="submitted && f.phone.errors" class="invalid-feedback">
                   <div *ngIf="f.phone.errors.required">Phone Number is required</div>
                 </div>
