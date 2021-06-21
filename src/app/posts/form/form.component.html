@@ -448,7 +448,9 @@
               <div class="col-sm-10">
 
                 <input [ngClass]="{ 'is-invalid': submitted && f.phone.errors }" formControlName="phone" name="phone"
-                  type="number" class="form-control" placeholder="020XXXXXXXX ">
+
+                  type="number" pattern="[0-9]*" inputmode="numeric" class="form-control" placeholder="020XXXXXXXX">
+
                 <div *ngIf="submitted && f.phone.errors" class="invalid-feedback">
                   <div *ngIf="f.phone.errors.required">Number is required</div>
                 </div>
