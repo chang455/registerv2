@@ -71,7 +71,7 @@
                         Location: <a >{{ tick.location_name }}</a>
                       </li>
                       <li class="list-group-item" *ngFor="let tick of getTicket">
-                        Appointment: <a >{{ tick.Appointment_date | date:'longDate' }}</a>
+                        Appointment: <a >{{ tick.Appointment_date | date:'dd/MM/yyy' }}</a>
                       </li>
                       <li class="list-group-item" *ngFor="let tick of getTicket">
                         Phone: <a >{{ tick.phone }}</a>
