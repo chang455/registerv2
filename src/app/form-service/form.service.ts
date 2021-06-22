@@ -157,6 +157,14 @@ getDis(id:any){
     const url = this.url + "get_disease";
     return this.http.get<any>(url, {headers:header});
   }
+  getticket(id:any){
+    let header = new HttpHeaders().set(
+      "x-access-token",this.token
+    );
+    const url = this.url + "get_ticket?id="+id;
+    return this.http.get<any>(url, {headers:header});
+  }
+
 
 
 
@@ -169,7 +177,7 @@ getDis(id:any){
     return this.http.post(url,data,{headers:header});
   }
 
-  
+
   // insert_from(data:any): Observable<any> {
 
   //   const url = this.url + "form_insert";

@@ -26,9 +26,10 @@ export class TicketComponent implements OnInit {
 
     this.service.getticket(this.tiketGet) //DP-WHWV61ID LHM47VXV
     .subscribe(response=>{
-      // console.log(response.Status)
+
+      // console.log("HOOO"+response.Status)
       if (response.Status=='Error') {
-        // console.log("Hello"+response.Status)
+        // console.log(response.Status)
         Swal.fire({
           icon: 'error',
           title: 'ບໍ່ພົບຂໍ້ມູນ',
