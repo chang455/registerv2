@@ -19,11 +19,13 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
   --colorShadeD: #5f98f4;
   --colorShadeE: #fff;
 }
-.navbar{
-  background-color: white;
+body{
+  display: flex;
+  flex-direction: column;
 }
 .footer{
   background-color: #317AF1;
+  margin-top: auto;
 }
 .Text{
   font-family: NotoSansLao;
