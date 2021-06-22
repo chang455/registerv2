@@ -275,7 +275,7 @@
 
               <select [ngClass]="{ 'is-invalid': submitted && f.province.errors }" name="province" class="form-control"
                 formControlName="province" [(ngModel)]="provinceID" (change)="onchange()">
-                <option value="" disable seleted hidden>ເລືອກແຂວງ / Select</option>
+                <option value="" disable seleted hidden>ເລືອກແຂວງ / Select Province</option>
                 <option [value]="province.id_province" *ngFor="let province of provinceList">{{ province.name_lao }}
                 </option>
 
@@ -289,7 +289,7 @@
 
               <select [ngClass]="{ 'is-invalid': submitted && f.district.errors }" name="district" class="form-control"
                 formControlName="district" [(ngModel)]="districtID" (change)="disonchange()">
-                <option value="" disabled selected hidden>ເລືອກເມືອງ / Select</option>
+                <option value="" disabled selected hidden>ເລືອກເມືອງ / Select District</option>
                 <option [value]="district.id_district" *ngFor="let district of districtList">{{ district.name_lao }}
                 </option>
 
@@ -309,7 +309,7 @@
               <ng-template #selectVillage>
 
                 <select [ngClass]="{ 'is-invalid': submitted && f.village.errors }" formControlName="village" name="village" class="form-control form-control-default">
-                  <option value="" disabled selected hidden>ເລືອກບ້ານ / Select</option>
+                  <option value="" disabled selected hidden>ເລືອກບ້ານ / Select Village</option>
                   <option [value]="village.id_village" *ngFor="let village of villageList">{{ village.name_lao }}
                   </option>
 
@@ -347,7 +347,7 @@
                   <div class="vaccine_type">
                     <select [ngClass]="{ 'is-invalid': submitted && f.country.errors }" name="country"
                       class="form-control" formControlName="country">
-                      <option value="" disabled selected hidden>ເລືອກສັນຊາດ / Select</option>
+                      <option value="" disabled selected hidden>ເລືອກປະເທດ / Select Country</option>
                       <option [value]="country.name" *ngFor="let country of countries">{{ country.name }}</option>
 
                     </select>
@@ -949,7 +949,7 @@
 
               <select [ngClass]="{ 'is-invalid': submitted && f.province.errors }" name="province" class="form-control"
                 formControlName="province" [(ngModel)]="provinceID" (change)="onchange()">
-                <option value="" disable seleted hidden>ເລືອກແຂວງ / Select</option>
+                <option value="" disable seleted hidden>ເລືອກແຂວງ / Select Province</option>
                 <option [value]="province.id_province" *ngFor="let province of provinceList">{{ province.name_lao }}
                 </option>
 
@@ -963,7 +963,7 @@
 
               <select [ngClass]="{ 'is-invalid': submitted && f.district.errors }" name="district" class="form-control"
                 formControlName="district" [(ngModel)]="districtID" (change)="disonchange()">
-                <option value="" disabled selected hidden>ເລືອກເມືອງ / Select</option>
+                <option value="" disabled selected hidden>ເລືອກເມືອງ / Select District</option>
                 <option [value]="district.id_district" *ngFor="let district of districtList">{{ district.name_lao }}
                 </option>
 
@@ -984,7 +984,7 @@
               <ng-template #selectVillage>
 
                 <select [ngClass]="{ 'is-invalid': submitted && f.village.errors }" formControlName="village" name="village" class="form-control form-control-default">
-                  <option value="" disabled selected hidden>ເລືອກບ້ານ / Select</option>
+                  <option value="" disabled selected hidden>ເລືອກບ້ານ / Select Vilage</option>
                   <option [value]="village.id_village" *ngFor="let village of villageList">{{ village.name_lao }}
                   </option>
 
@@ -1170,7 +1170,7 @@
               <label class="col-sm-2 col-form-label">ທ່ານມີພະຍາດໃດບໍ້? <br> Do you have any disease? *</label>
               <!-- <h5 class="sub-title">ອາຊີບ</h5> -->
               <select  [ngClass]="{ 'is-invalid': submitted && f.Disease.errors }" name="Disease" class="form-control" formControlName="Disease">
-                <option value="" disabled selected hidden>ເລືອກພະຍາດ / Select</option>
+                <option value="" disabled selected hidden>ເລືອກພະຍາດ / Select Village</option>
                 <option [value]="dis.id_disease" *ngFor="let dis of disease">{{ dis.name_lao }}</option>
 
               </select>
@@ -1199,7 +1199,7 @@
                 &nbsp;&nbsp;&nbsp; <br><br>
                 <input [ngClass]="{ 'is-invalid': submitted && f.ques1.errors }" formControlName="ques1" type="radio"
                   value="o" name="ques1">
-                <label>&nbsp;ບໍ່ຮູ້ / Don't kown</label>
+                <label>&nbsp;ບໍ່ຮູ້ / Don't know</label>
 
                 <div *ngIf="submitted && f.ques1.errors" class="invalid-feedback">
                   <div *ngIf="f.ques1.errors.required">Required </div>
@@ -1224,7 +1224,7 @@
                 &nbsp;&nbsp;&nbsp;<br><br>
                 <input [ngClass]="{ 'is-invalid': submitted && f.ques2.errors }" formControlName="ques2" type="radio"
                   value="o" name="ques2">
-                <label>&nbsp;ບໍ່ຮູ້ / Don't kown</label>
+                <label>&nbsp;ບໍ່ຮູ້ / Don't know</label>
                 <div *ngIf="submitted && f.ques2.errors" class="invalid-feedback">
                   <div *ngIf="f.ques2.errors.required"> Required </div>
                 </div>
@@ -1248,7 +1248,7 @@
                 &nbsp;&nbsp;&nbsp;<br><br>
                 <input [ngClass]="{ 'is-invalid': submitted && f.ques3.errors }" formControlName="ques3" type="radio"
                   value="o" name="ques3">
-                <label>&nbsp;ບໍ່ຮູ້ / Don't kown</label>
+                <label>&nbsp;ບໍ່ຮູ້ / Don't know</label>
                 <div *ngIf="submitted && f.ques3.errors" class="invalid-feedback">
                   <div *ngIf="f.ques3.errors.required">Required </div>
                 </div>
@@ -1273,7 +1273,7 @@
                 &nbsp;&nbsp;&nbsp;<br><br>
                 <input [ngClass]="{ 'is-invalid': submitted && f.ques4.errors }" formControlName="ques4" type="radio"
                   value="o" name="ques4">
-                <label>&nbsp;ບໍ່ຮູ້ / Don't kown</label>
+                <label>&nbsp;ບໍ່ຮູ້ / Don't know</label>
                 <div *ngIf="submitted && f.ques4.errors" class="invalid-feedback">
                   <div *ngIf="f.ques4.errors.required">Required </div>
                 </div>
@@ -1296,7 +1296,7 @@
                 &nbsp;&nbsp;&nbsp;<br><br>
                 <input [ngClass]="{ 'is-invalid': submitted && f.ques5.errors }" formControlName="ques5" type="radio"
                   value="o" name="ques5">
-                <label>&nbsp;ບໍ່ຮູ້ / Don't kown</label>
+                <label>&nbsp;ບໍ່ຮູ້ / Don't know</label>
                 <div *ngIf="submitted && f.ques5.errors" class="invalid-feedback">
                   <div *ngIf="f.ques5.errors.required"> Required </div>
                 </div>
@@ -1319,7 +1319,7 @@
                 &nbsp;&nbsp;&nbsp;<br><br>
                 <input [ngClass]="{ 'is-invalid': submitted && f.ques6.errors }" formControlName="ques6" type="radio"
                   value="o" name="ques6">
-                <label>&nbsp;ບໍ່ຮູ້ / Don't kown</label>
+                <label>&nbsp;ບໍ່ຮູ້ / Don't know</label>
                 <div *ngIf="submitted && f.ques6.errors" class="invalid-feedback">
                   <div *ngIf="f.ques6.errors.required"> Required </div>
                 </div>
@@ -1341,7 +1341,7 @@
                 &nbsp;&nbsp;&nbsp;<br><br>
                 <input [ngClass]="{ 'is-invalid': submitted && f.ques7.errors }" formControlName="ques7" type="radio"
                   value="o" name="ques7">
-                <label>&nbsp;ບໍ່ຮູ້ / Don't kown</label>
+                <label>&nbsp;ບໍ່ຮູ້ / Don't know</label>
                 <div *ngIf="submitted && f.ques7.errors" class="invalid-feedback">
                   <div *ngIf="f.ques7.errors.required">Required </div>
                 </div>
@@ -1364,7 +1364,7 @@
                 &nbsp;&nbsp;&nbsp;<br><br>
                 <input [ngClass]="{ 'is-invalid': submitted && f.ques8.errors }" formControlName="ques8" type="radio"
                   value="o" name="ques8">
-                <label>&nbsp;ບໍ່ຮູ້ / Don't kown</label>
+                <label>&nbsp;ບໍ່ຮູ້ / Don't know</label>
                 <div *ngIf="submitted && f.ques8.errors" class="invalid-feedback">
                   <div *ngIf="f.ques8.errors.required">Required </div>
                 </div>
@@ -1385,7 +1385,7 @@
                 &nbsp;&nbsp;&nbsp;<br><br>
                 <input [ngClass]="{ 'is-invalid': submitted && f.ques9.errors }" formControlName="ques9" type="radio"
                   value="o" name="ques9">
-                <label>&nbsp;ບໍ່ຮູ້ / Don't kown</label>
+                <label>&nbsp;ບໍ່ຮູ້ / Don't know</label>
                 <div *ngIf="submitted && f.ques9.errors" class="invalid-feedback">
                   <div *ngIf="f.ques9.errors.required">Required </div>
                 </div>
