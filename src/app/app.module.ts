@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
+import { RouterModule, Route } from '@angular/router';
 import { AppComponent } from './app.component';
 import { FormCreate } from './posts/form/form.component';
 import { HttpClientModule } from '@angular/common/http';
@@ -9,21 +9,25 @@ import {MatButtonModule} from '@angular/material/button';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatIconModule} from '@angular/material/icon';
 import { FlexLayoutModule } from '@angular/flex-layout'
-import { FormService } from './form-service/form.service';
 import { FormGroup, FormsModule,ReactiveFormsModule } from '@angular/forms';
-import { SearchComponent } from './search/search.component';
-import { RouterModule, Routes } from '@angular/router';
-import { Route } from '@angular/compiler/src/core';
 
 
+import { TicketComponent } from './posts/ticket/ticket.component';
+
+const appRoute : Route[]= [
+  {path:'form', component: FormCreate},
+  {path:'ticket', component: TicketComponent},
+  {path: '',redirectTo:'form', pathMatch:'full'}
+]
 @NgModule({
   declarations: [
     AppComponent,
     FormCreate,
-    SearchComponent,
+    TicketComponent
 
   ],
   imports: [
+    RouterModule.forRoot(appRoute),
     BrowserModule,
     HttpClientModule,
     MatToolbarModule,

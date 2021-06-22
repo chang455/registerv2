@@ -88,6 +88,12 @@ export class FormCreate implements OnInit{
       // console.log(response)
 
     })
+    this.service.getticket('LHM47VXV') //DP-WHWV61ID
+    .subscribe(response=>{
+      // this.disease=response;
+      // console.log(response)
+
+    })
 
 
    }
@@ -245,6 +251,7 @@ if (this.registerForm.value.vac == '2' && this.registerForm.value.vac_details ==
           if (result.isConfirmed) {
             this.service.insert_from(data).subscribe(result=>{
               if(result.resultCode == '00'){
+                console.log("Code"+result.resultCode)
                 Swal.fire({
                   icon: 'success',
                   title: 'ລະຫັດຂອງທ່ານ:  '+result.ticket_id,
@@ -259,14 +266,24 @@ if (this.registerForm.value.vac == '2' && this.registerForm.value.vac_details ==
                   //   window.location.reload();
                   // }, 4000)
                 });
+              }
+              else if(result.resultCode == '03'){
+                Swal.fire({
+                  icon: 'error',
+                  title: 'ໂຮງໝໍທີ່ທ່ານເລືອກຖືກຈຳກັດ',
+                  text: 'ກະລຸນາເລືອກໂຮງໝໍອື່ນ ຫຼື ປ່ຽນເປັນວັນທີອື່ນ',
+                  confirmButtonText: 'ຕົກລົງ'
+                  })/*.then(function() {
 
-
-
-
-
-
-
-              }else{
+                  window.location.reload();
+                  // setTimeout(()=>{
+                  //   this.submitted = false;
+                  //   this.registerForm.reset();
+                  //   window.location.reload();
+                  // }, 4000)
+                });*/
+              }
+              else{
                 Swal.fire({
                   icon: 'warning',
                   title: 'ການສະໝັກລົ້ມເຫຼວ  ',
