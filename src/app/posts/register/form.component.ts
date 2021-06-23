@@ -5,7 +5,7 @@ import { Observable } from "rxjs";
 import { FormService } from "src/app/form-service/form.service";
 import { District, Province, Vaccines,Location, Job, Village } from "./district-get";
 import {FormBuilder, FormControl, FormGroup, NgForm, Validators} from '@angular/forms';
-import { MustMatch } from 'src/app/posts/register/must-match.validator';
+import { MustMatch } from 'src/app/posts/Register/must-match.validator';
 import { DatePipe } from '@angular/common';
 import * as moment from 'moment';
 import Swal from "sweetalert2";
