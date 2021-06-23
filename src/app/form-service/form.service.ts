@@ -75,7 +75,7 @@ import { HttpClient, HttpHeaders,HttpErrorResponse,HttpRequest,HttpEvent  } from
 import { Injectable } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { Observable } from 'rxjs';
-import { District, Province, Vaccines,Location } from 'src/app/posts/form/district-get';
+import { District, Province, Vaccines,Location } from 'src/app/posts/register/district-get';
 
 @Injectable({
   providedIn: 'root'
