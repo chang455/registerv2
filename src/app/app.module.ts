@@ -2,7 +2,9 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule, Route } from '@angular/router';
 import { AppComponent } from './app.component';
+
 import { FormCreate } from './posts/Register/form.component';
+
 import { HttpClientModule } from '@angular/common/http';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import {MatButtonModule} from '@angular/material/button';
@@ -12,7 +14,9 @@ import { FlexLayoutModule } from '@angular/flex-layout'
 import { FormGroup, FormsModule,ReactiveFormsModule } from '@angular/forms';
 
 
+
 import { TicketComponent } from './posts/Search/ticket.component';
+
 
 const appRoute : Route[]= [
   {path:'Register', component: FormCreate},
