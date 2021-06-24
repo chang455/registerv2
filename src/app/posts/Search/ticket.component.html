@@ -1,0 +1,83 @@
+<div style="height: 3rem;  background: #5f98f4;"></div>
+<!-- <div class="box">
+
+
+
+<div class="sx">
+  <div class="search-box">
+    <button class="btn-search" (click)="ticketfun()"><i class="fas fa-search"></i></button>
+    <input type="text" class="input-search" [(ngModel)]="tiketGet" placeholder="----ບ້ອນລະຫັດບັດຄິວ---">
+  </div>
+</div>
+</div>
+
+<div class="box" style="height: 20rem;">
+
+</div>
+  <div class="container-fluid">
+    <ul class="list-group">
+      <li class="list-group-item" *ngFor="let tick of getTicket">
+        Ticket Code: <a >{{ tick.ticket_code }}</a>
+      </li>
+      <li class="list-group-item" *ngFor="let tick of getTicket">
+        name: <a >{{ tick.name }}</a>
+      </li>
+      <li class="list-group-item" *ngFor="let tick of getTicket">
+        Lastname: <a >{{ tick.lastname }}</a>
+      </li>
+      <li class="list-group-item" *ngFor="let tick of getTicket">
+        Vaccine receive: <a >{{ tick.vaccine_name }}</a>
+      </li>
+      <li class="list-group-item" *ngFor="let tick of getTicket">
+        Location: <a >{{ tick.location_name }}</a>
+      </li>
+      <li class="list-group-item" *ngFor="let tick of getTicket">
+        Appointment: <a >{{ tick.Appointment_date }}</a>
+      </li>
+      <li class="list-group-item" *ngFor="let tick of getTicket">
+        Phone: <a >{{ tick.phone }}</a>
+      </li>
+
+
+    </ul>
+  </div>
+
+ -->
+<div class="box">
+<div class="box2">
+<h1 style="color: cornsilk;">ບ້ອນລະຫັດບັດຄິວ</h1>
+
+
+         <input [(ngModel)]="tiketGet" type="search" placeholder="ຕົວຢ່າງ:DP-xxxxxxx" class="search-field" />
+            <button type="submit" class="search-button" (click)="ticketfun()">
+         <i class="fas fa-search"></i>
+                  </button>
+                  <div style="height: 3rem;  background: #317AF1;"></div>
+                  <div class="container-fluid">
+                    <ul class="list-group">
+                     <li class="list-group-item" *ngFor="let tick of getTicket">
+                        Ticket Code: <a >{{ tick.ticket_code }}</a>
+                      </li>
+                      <li class="list-group-item" *ngFor="let tick of getTicket">
+                        name: <a >{{ tick.name }}</a>
+                      </li>
+                      <li class="list-group-item" *ngFor="let tick of getTicket">
+                        Lastname: <a >{{ tick.lastname }}</a>
+                      </li>
+                      <li class="list-group-item" *ngFor="let tick of getTicket">
+                        Vaccine receive: <a >{{ tick.vaccine_name }}</a>
+                      </li>
+                      <li class="list-group-item" *ngFor="let tick of getTicket">
+                        Location: <a >{{ tick.location_name }}</a>
+                      </li>
+                      <li class="list-group-item" *ngFor="let tick of getTicket">
+                        Appointment: <a >{{ tick.Appointment_date | date:'dd/MM/yyy' }}</a>
+                      </li>
+                      <li class="list-group-item" *ngFor="let tick of getTicket">
+                        Phone: <a >{{ tick.phone }}</a>
+                      </li>
+                    </ul>
+                  </div>
+</div>
+
+</div>
