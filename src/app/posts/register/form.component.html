@@ -16,6 +16,18 @@
       <span aria-hidden="true">&times;</span>
     </button>
   </div>
+  <div class="showlogo">
+    <div class="Logo d-flex align-items-center ml-2 mr-2">
+      <div class="Mar2 col-sm-4 col-md-2 mt-2">
+        <img class="icons" src="assets/assets/images/Untitled2222-removebg-preview.png">
+      </div>
+      <div class="Mar1 col-sm-4 col-md-2 mt-2">
+        <img class="icons" src="assets/assets/images/ກະຊວງລາວ.png">
+      </div>
+    </div>
+  </div>
+
+
   <div class="modal-body">
     <div class='container'>
       <div class='row'>
@@ -23,11 +35,27 @@
         [elementType]='elementType'
         [value]='value' cssClass='aclass'>
         </ngx-qrcode>
+        <h3>ກະລຸນາຖ່າຍຮູບໄວ້</h3>
       </div>
       </div>
   </div>
   <div class="modal-footer">
-    <button type="button" class="btn btn-outline-dark" (click)="reload()">Finish</button>
+    <button type="button" class="btn btn-outline-dark" (click)="reload()">ຕົກລົງ/Ok</button>
+    <div class="Logos row align-items-center">
+    <div class="Text col-sm-4 col-md-2 mt-2">
+      <img class="icon" src="assets/assets/images/Petro Trade.png">
+  </div>
+   <div class="Text col-sm-4 col-md-2 mt-2">
+      <img class="icon" src="assets/assets/images/Kanya_Mitthaphap.png">
+  </div>
+    <div  class="Text col-sm-4 col-md-2 mt-2">
+      <img class="icon" src="assets/assets/images/SmartTech.png">
+  </div>
+  <div class="Text col-sm-4 col-md-2 mt-2">
+      <img class="icon" src="assets/assets/images/Khompanya.png">
+  </div>
+    </div>
+
   </div>
 </ng-template>
 
@@ -46,7 +74,7 @@
 </ng-template>
 
 
-
+  <button (click)="open(content)">Click me</button>
 <div class="page-wrapper p-t-45 p-b-50">
   <div class="wrapper wrapper--w790">
     <div class="card card-5 ">

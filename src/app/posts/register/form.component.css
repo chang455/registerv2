@@ -120,6 +120,47 @@ font-family: NotoSansLao  ;
   font-family: NotoSansLao;
   font-size: 16px;
 }
+.modal-body{
+  justify-content: center;
+  text-align: center;
+  font-family: NotoSansLao;
+}
+.modal-footer{
+  justify-content: center;
+  font-family: NotoSansLao;
+}
+.showlogo{
+  justify-content: center;
+  padding: 2rem;
+}
+.Logo{
+  justify-content:space-between;
+}
+.Logos{
+  justify-content: space-between;
+}
+.Mar1{
+  margin-left: 1px;
+}
+.Mar2{
+  margin-right: 1px;
+}
+.icons{
+  width: 4rem;
+  height: 4rem;
+  display: grid;
+  flex-direction: row;
+  flex-wrap: wrap;
+  padding: 0;
+}
+
+.icon{
+  width: 5rem;
+  height: 5rem;
+  margin: auto;
+  display: grid;
+}
+
 
 
 
