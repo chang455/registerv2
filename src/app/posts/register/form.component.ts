@@ -270,6 +270,7 @@ if (this.registerForm.value.vac == '2' && this.registerForm.value.vac_details ==
         }).then((result) => {
           if (result.isConfirmed) {
             this.modalService.open(loading,{ centered: true });
+            console.log();
             this.service.insert_from(data).subscribe(result=>{
 
               if(result.resultCode == '00'){
