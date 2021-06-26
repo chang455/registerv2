@@ -31,6 +31,20 @@
   </div>
 </ng-template>
 
+<!-- Loading -->
+<ng-template #loading let-c="close" let-d="dismiss">
+  <div class="modal-header">
+    <h4 class="modal-title" id="modal-basic-title">Loading Please Wait</h4>
+  </div>
+  <div class="modal-body">
+    <h4> ກະລຸນາລໍຖ້າ</h4>
+  </div>
+  <div class="modal-footer">
+
+
+  </div>
+</ng-template>
+
 
 
 <div class="page-wrapper p-t-45 p-b-50">
@@ -43,7 +57,7 @@
       </div>
 
       <div class="card-body bg-light">
-        <form class="position bg-light " method="POST" [formGroup]="registerForm" (ngSubmit)="onSubmit(content)">
+        <form class="position bg-light " method="POST" [formGroup]="registerForm" (ngSubmit)="onSubmit(content,loading)">
           <!--
           <input [ngClass]="{ 'is-invalid': submitted && f.vac.errors }" formControlName="age_select" type="radio" value="1"
           name="age_select" (change)="changeAge($event)">

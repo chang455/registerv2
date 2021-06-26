@@ -173,7 +173,7 @@ export class FormCreate implements OnInit{
     // convenience getter for easy access to form fields
     get f() { return this.registerForm.controls; }
 
-    onSubmit(content:any) {
+    onSubmit(content:any,loading:any) {
       // console.log(this.location_code)
       // console.log(this.ageFromDateOfBirthday('2000-01-01'))
 //       console.log(this.registerForm.value.country)
@@ -256,20 +256,22 @@ if (this.registerForm.value.vac == '2' && this.registerForm.value.vac_details ==
   // console.log("Status: Valid")
   //       // console.log(result)
 
-  //       Swal.fire({
-  //         title: 'ລະບົບຈອງຄິວ',
-  //         text: 'ກະລຸນາກວດສອບຂໍ້ມູນຂອງຸທ່ານ',
-  //         imageWidth: 150,
-  //         imageHeight: 150,
-  //         imageUrl:'assets/assets/images/Untitled2222-removebg-preview.png',
-  //         showCancelButton: true,
-  //         confirmButtonColor: '#3085d6',
-  //         cancelButtonColor: '#d33',
-  //         confirmButtonText: 'ຕົກລົງ'
+        Swal.fire({
+          title: 'ລະບົບຈອງຄິວ',
+          text: 'ກະລຸນາກວດສອບຂໍ້ມູນຂອງຸທ່ານ',
+          imageWidth: 150,
+          imageHeight: 150,
+          imageUrl:'assets/assets/images/Untitled2222-removebg-preview.png',
+          showCancelButton: true,
+          confirmButtonColor: '#3085d6',
+          cancelButtonColor: '#d33',
+          confirmButtonText: 'ຕົກລົງ'
 
-  //       }).then((result) => {
-  //         if (result.isConfirmed) {
+        }).then((result) => {
+          if (result.isConfirmed) {
+            this.modalService.open(loading,{ centered: true });
             this.service.insert_from(data).subscribe(result=>{
+
               if(result.resultCode == '00'){
                 // console.log("Code"+result.resultCode)
                 // Swal.fire({
@@ -286,10 +288,12 @@ if (this.registerForm.value.vac == '2' && this.registerForm.value.vac_details ==
                   //   window.location.reload();
                   // }, 4000)
                 // });
+                 console.log("Code"+result.resultCode)
                 this.elementType = NgxQrcodeElementTypes.URL;
                 this.value = result.ticket_id;
                 this.CorrectionLevel= NgxQrcodeErrorCorrectionLevels.HIGH;
                 this.modalService.open(content,{ centered: true });
+                this.registerForm.reset();
                 return  this.value = result.ticket_id;
               }
               else if(result.resultCode == '03'){
@@ -327,8 +331,8 @@ if (this.registerForm.value.vac == '2' && this.registerForm.value.vac_details ==
             // this.registerForm.reset();
             // window.location.reload();
             })
-          // }
-        // })
+          }
+        })
         }
 }
 
