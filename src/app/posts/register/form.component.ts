@@ -252,23 +252,23 @@ if (this.registerForm.value.vac == '2' && this.registerForm.value.vac_details ==
         }else if(this.registerForm.status=='VALID'){
           // console.log(this.registerForm.value)
 
-          // console.log(data)
-  console.log("Status: Valid")
-        // console.log(result)
+  //         // console.log(data)
+  // console.log("Status: Valid")
+  //       // console.log(result)
 
-        Swal.fire({
-          title: 'ລະບົບຈອງຄິວ',
-          text: 'ກະລຸນາກວດສອບຂໍ້ມູນຂອງຸທ່ານ',
-          imageWidth: 150,
-          imageHeight: 150,
-          imageUrl:'assets/assets/images/Untitled2222-removebg-preview.png',
-          showCancelButton: true,
-          confirmButtonColor: '#3085d6',
-          cancelButtonColor: '#d33',
-          confirmButtonText: 'ຕົກລົງ'
+  //       Swal.fire({
+  //         title: 'ລະບົບຈອງຄິວ',
+  //         text: 'ກະລຸນາກວດສອບຂໍ້ມູນຂອງຸທ່ານ',
+  //         imageWidth: 150,
+  //         imageHeight: 150,
+  //         imageUrl:'assets/assets/images/Untitled2222-removebg-preview.png',
+  //         showCancelButton: true,
+  //         confirmButtonColor: '#3085d6',
+  //         cancelButtonColor: '#d33',
+  //         confirmButtonText: 'ຕົກລົງ'
 
-        }).then((result) => {
-          if (result.isConfirmed) {
+  //       }).then((result) => {
+  //         if (result.isConfirmed) {
             this.service.insert_from(data).subscribe(result=>{
               if(result.resultCode == '00'){
                 // console.log("Code"+result.resultCode)
@@ -327,8 +327,8 @@ if (this.registerForm.value.vac == '2' && this.registerForm.value.vac_details ==
             // this.registerForm.reset();
             // window.location.reload();
             })
-          }
-        })
+          // }
+        // })
         }
 }
 
