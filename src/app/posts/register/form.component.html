@@ -9,6 +9,28 @@
 <p>First name valid: {{ first.valid }}</p>
 <p>Form value: {{ f.value | json }}</p>
 <p>Form valid: {{ f.valid }}</p> -->
+<ng-template #content let-c="close" let-d="dismiss">
+  <div class="modal-header">
+    <h4 class="modal-title" id="modal-basic-title">Angular 10 QRcode Generator</h4>
+    <button type="button" class="close" aria-label="Close" (click)="reload()">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    <div class='container'>
+      <div class='row'>
+        <ngx-qrcode
+        [elementType]='elementType'
+        [value]='value' cssClass='aclass'>
+        </ngx-qrcode>
+      </div>
+      </div>
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-outline-dark" (click)="reload()">Finish</button>
+  </div>
+</ng-template>
+
 
 
 <div class="page-wrapper p-t-45 p-b-50">
@@ -21,7 +43,7 @@
       </div>
 
       <div class="card-body bg-light">
-        <form class="position bg-light " method="POST" [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+        <form class="position bg-light " method="POST" [formGroup]="registerForm" (ngSubmit)="onSubmit(content)">
           <!--
           <input [ngClass]="{ 'is-invalid': submitted && f.vac.errors }" formControlName="age_select" type="radio" value="1"
           name="age_select" (change)="changeAge($event)">
@@ -196,7 +218,7 @@
               <!-- <h5 class="sub-title"></h5> -->
 
               <input [ngClass]="{ 'is-invalid': submitted && f.date_to_get.errors }" class="form-control" type="date"
-                name="date_to_get" formControlName="date_to_get" min="{{current_date}}" max="2021-06-31">
+                name="date_to_get" formControlName="date_to_get" min="{{current_date}}" max="{{ current_date_max }}">
               <div *ngIf="submitted && f.date_to_get.errors" class="invalid-feedback">
                 <div *ngIf="f.date_to_get.errors.required">Date is required</div>
               </div>
@@ -870,7 +892,7 @@
               <!-- <h5 class="sub-title"></h5> -->
 
               <input [ngClass]="{ 'is-invalid': submitted && f.date_to_get.errors }" class="form-control" type="date"
-                name="date_to_get" formControlName="date_to_get" min="{{current_date}}" max="2021-06-31">
+                name="date_to_get" formControlName="date_to_get" min="{{current_date}}" max="{{ current_date_max }}">
               <div *ngIf="submitted && f.date_to_get.errors" class="invalid-feedback">
                 <div *ngIf="f.date_to_get.errors.required">Date is required</div>
               </div>

@@ -9,10 +9,24 @@ import { MustMatch } from 'src/app/posts/Register/must-match.validator';
 import { DatePipe } from '@angular/common';
 import * as moment from 'moment';
 import Swal from "sweetalert2";
+import {ModalDismissReasons, NgbModal, NgbModalConfig} from '@ng-bootstrap/ng-bootstrap';
+import { NgxQrcodeElementTypes, NgxQrcodeErrorCorrectionLevels } from '@techiediaries/ngx-qrcode';
 @Component({
   selector: 'form-create',
   templateUrl: './form.component.html',
-  styleUrls: ['./form.component.css']
+  styleUrls: ['./form.component.css'],
+  styles: [`
+    .dark-modal .modal-content {
+      background-color: #292b2c;
+      color: white;
+    }
+    .dark-modal .close {
+      color: white;
+    }
+    .light-blue-backdrop {
+      background-color: #5cb3fd;
+    }
+  `]
 })
 
 export class FormCreate implements OnInit{
@@ -33,7 +47,7 @@ export class FormCreate implements OnInit{
   radio2 = false
   current_date = moment().add(2,'days').format("YYYY-MM-DD");
   current_date_covide = moment().format("YYYY-MM-DD");
-
+  current_date_max=moment().add(20,'days').format("YYYY-MM-DD");
   age_radio1= false
   age_radio2=false
   age_radio3=false
@@ -46,12 +60,18 @@ export class FormCreate implements OnInit{
   vac2:any;
   location_code:any;
 
+  closeModal: any;
+
   disease:any;
   country_manual:any;
+  elementType:any;
+  CorrectionLevel:any;
+  value :any;
 
-  constructor(private service:FormService,private fb:FormBuilder) {
+  constructor(private service:FormService,private fb:FormBuilder,private modalService: NgbModal ,config: NgbModalConfig) {
 
-
+    config.backdrop = 'static';
+    config.keyboard = false;
 
     this.service.getPro()
     .subscribe(response=>{
@@ -153,7 +173,7 @@ export class FormCreate implements OnInit{
     // convenience getter for easy access to form fields
     get f() { return this.registerForm.controls; }
 
-    onSubmit() {
+    onSubmit(content:any) {
       // console.log(this.location_code)
       // console.log(this.ageFromDateOfBirthday('2000-01-01'))
 //       console.log(this.registerForm.value.country)
@@ -251,21 +271,26 @@ if (this.registerForm.value.vac == '2' && this.registerForm.value.vac_details ==
           if (result.isConfirmed) {
             this.service.insert_from(data).subscribe(result=>{
               if(result.resultCode == '00'){
-                console.log("Code"+result.resultCode)
-                Swal.fire({
-                  icon: 'success',
-                  title: 'ລະຫັດຂອງທ່ານ:  '+result.ticket_id,
-                  text: 'ເອົາໄວ້ຍືນຍັນແກ່ທ່ານໝໍ',
-                  confirmButtonText: 'ຕົກລົງ'
-                  }).then(function() {
+                // console.log("Code"+result.resultCode)
+                // Swal.fire({
+                //   icon: 'success',
+                //   title: 'ລະຫັດຂອງທ່ານ:  '+result.ticket_id,
+                //   text: 'ເອົາໄວ້ຍືນຍັນແກ່ທ່ານໝໍ',
+                //   confirmButtonText: 'ຕົກລົງ'
+                //   }).then(function() {
 
-                  window.location.reload();
+                //   window.location.reload();
                   // setTimeout(()=>{
                   //   this.submitted = false;
                   //   this.registerForm.reset();
                   //   window.location.reload();
                   // }, 4000)
-                });
+                // });
+                this.elementType = NgxQrcodeElementTypes.URL;
+                this.value = result.ticket_id;
+                this.CorrectionLevel= NgxQrcodeErrorCorrectionLevels.HIGH;
+                this.modalService.open(content,{ centered: true });
+                return  this.value = result.ticket_id;
               }
               else if(result.resultCode == '03'){
                 Swal.fire({
@@ -425,7 +450,32 @@ if (this.registerForm.value.vac == '2' && this.registerForm.value.vac_details ==
 
 
     }
+    // triggerModal(content:any) {
+    //   this.modalService.open(content, {ariaLabelledBy: 'modal-basic-title'}).result.then((res) => {
+    //     this.closeModal = `Closed with: ${res}`;
+    //   }, (res) => {
+    //     this.closeModal = `Dismissed ${this.getDismissReason(res)}`;
+    //   });
+    // }
 
+
+    // private getDismissReason(reason: any): string {
+    //   if (reason === ModalDismissReasons.ESC) {
+    //     return 'by pressing ESC';
+    //   } else if (reason === ModalDismissReasons.BACKDROP_CLICK) {
+    //     return 'by clicking on a backdrop';
+    //   } else {
+    //     return  `with: ${reason}`;
+    //   }
+    // }
+
+    open(content:any) {
+      this.modalService.open(content);
+    }
+
+    reload(){
+      window.location.reload();
+    }
     countries = [
       { code: "AF", code3: "AFG", name: "Afghanistan", number: "004" },
       { code: "AL", code3: "ALB", name: "Albania", number: "008" },
