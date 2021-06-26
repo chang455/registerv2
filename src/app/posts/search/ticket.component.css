@@ -7,8 +7,8 @@
 
  .box {
   margin: 0;
-  width: 98.5vw;
-  height: 90vh;
+  width: auto;
+  height: max-content;
 
   display: flex;
   align-items: center;
