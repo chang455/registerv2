@@ -18,6 +18,7 @@ import { NgxQRCodeModule } from '@techiediaries/ngx-qrcode';
 import { TicketComponent } from './posts/Search/ticket.component';
 import { NgxCaptchaModule } from 'ngx-captcha';
 
+import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 const appRoute : Route[]= [
   {path:'Register', component: FormCreate},
   {path:'Search', component: TicketComponent},
@@ -43,7 +44,8 @@ const appRoute : Route[]= [
     ReactiveFormsModule,
     NgbModule,
     NgxQRCodeModule,
-    NgxCaptchaModule
+    NgxCaptchaModule,
+    MatProgressSpinnerModule
   ],
   providers: [],
   bootstrap: [AppComponent]

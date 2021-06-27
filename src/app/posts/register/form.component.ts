@@ -9,6 +9,7 @@ import { MustMatch } from 'src/app/posts/Register/must-match.validator';
 import { DatePipe } from '@angular/common';
 import * as moment from 'moment';
 import Swal from "sweetalert2";
+import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 import {ModalDismissReasons, NgbModal, NgbModalConfig} from '@ng-bootstrap/ng-bootstrap';
 import { NgxQrcodeElementTypes, NgxQrcodeErrorCorrectionLevels } from '@techiediaries/ngx-qrcode';
 @Component({

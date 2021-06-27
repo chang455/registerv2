@@ -73,13 +73,33 @@
 <!-- Loading -->
 <ng-template #loading let-c="close" let-d="dismiss">
   <div class="modal-header">
-    <h4 class="modal-title" id="modal-basic-title">Loading Please Wait</h4>
+    <h4 class="modal-title" id="modal-basic-title">ກະລຸນາລໍຖ້າ</h4>
   </div>
   <div class="modal-body">
-    <h4> ກະລຸນາລໍຖ້າ</h4>
+    <div class="container">
+      <div class='row'>
+        <mat-progress-spinner></mat-progress-spinner>
+        <mat-spinner></mat-spinner>
+        <mat-progress-spinner></mat-progress-spinner>
+        
+      </div>
   </div>
+</div>
   <div class="modal-footer">
-
+    <div class="Logos row align-items-center">
+      <div class="Text col-sm-4 col-md-2 mt-2">
+        <img class="icon" src="assets/assets/images/Petro Trade.png">
+    </div>
+     <div class="Text col-sm-4 col-md-2 mt-2">
+        <img class="icon" src="assets/assets/images/Kanya_Mitthaphap.png">
+    </div>
+      <div  class="Text col-sm-4 col-md-2 mt-2">
+        <img class="icon" src="assets/assets/images/SmartTech.png">
+    </div>
+    <div class="Text col-sm-4 col-md-2 mt-2">
+        <img class="icon" src="assets/assets/images/Khompanya.png">
+    </div>
+      </div>
 
   </div>
 </ng-template>
