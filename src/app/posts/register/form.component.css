@@ -24,6 +24,24 @@
   text-align: center;
   color: white;
 }
+@media only screen and (max-width:320px) {
+  .card-5 .card-heading {
+    padding: 20px 0;
+    background:#5f98f4;
+    -webkit-border-top-left-radius: 10px;
+    -moz-border-radius-topleft: 10px;
+    border-top-left-radius: 10px;
+    -webkit-border-top-right-radius: 10px;
+    -moz-border-radius-topright: 10px;
+    border-top-right-radius: 10px;
+    text-align: center;
+    color: #5f98f4;
+   width: 364px;
+  }
+}
+
+
+
 
 .card-5 .card-body {
   padding: 52px 85px;
@@ -367,4 +385,14 @@ button.big-button:active::before {
         border: 2px solid white;
     }
 
+
+    @media only screen and (max-width:320px) {
+      .card-heading
+      {
+        width: 364px;
+      }.date_to_get{
+        width: 300px;
+      }
+
+    }
 
