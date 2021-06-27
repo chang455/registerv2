@@ -301,7 +301,7 @@ if (this.registerForm.value.vac == '2' && this.registerForm.value.vac_details ==
 
         }).then((result) => {
           if (result.isConfirmed) {
-            this.modalService.open(loading,{ centered: true, size:'sm' });
+            this.modalService.open(loading,{size:'sm'});
             console.log();
             this.service.insert_from(data).subscribe(result=>{
 
@@ -334,20 +334,20 @@ if (this.registerForm.value.vac == '2' && this.registerForm.value.vac_details ==
 
                 console.log(result)
                 this.elementType = NgxQrcodeElementTypes.URL;
-                this.value = result.ticket_id
-                +'+'+this.registerForm.value.name
-                +'+'+this.registerForm.value.lastName
-                +'+'+this.registerForm.value.id_or_passportid
-                +'+'+this.registerForm.value.phone
-                +'+'+this.vaccin_name
-                +'+'+this.location_name
-                +'+'+this.registerForm.value.dob
-                +'+'+this.registerForm.value.date_to_get
-                +'+'+this.province_name
-                +'+'+this.district_name
-                ;
+                // this.value = result.ticket_id
+                // +'+'+this.registerForm.value.name
+                // +'+'+this.registerForm.value.lastName
+                // +'+'+this.registerForm.value.id_or_passportid
+                // +'+'+this.registerForm.value.phone
+                // +'+'+this.vaccin_name
+                // +'+'+this.location_name
+                // +'+'+this.registerForm.value.dob
+                // +'+'+this.registerForm.value.date_to_get
+                // +'+'+this.province_name
+                // +'+'+this.district_name;
+                this.value = result.ticket_id;
                 this.CorrectionLevel= NgxQrcodeErrorCorrectionLevels.HIGH;
-                this.modalService.open(content,{ centered: true});
+                this.modalService.open(content);
 
                 // this.registerForm.reset();
 
@@ -535,10 +535,11 @@ if (this.registerForm.value.vac == '2' && this.registerForm.value.vac_details ==
     // }
 
     open(content:any) {
-      this.modalService.open(content);
+      this.modalService.open(content ,{ centered: true});
     }
+
     loading(content:any){
-      this.modalService.open(content)
+      this.modalService.open(content ,{ centered: true})
     }
 
 

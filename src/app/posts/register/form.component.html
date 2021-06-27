@@ -10,12 +10,11 @@
 <p>Form value: {{ f.value | json }}</p>
 <p>Form valid: {{ f.valid }}</p> -->
 <ng-template class="width" #content let-c="close" let-d="dismiss">
-  <div class="modal-header">
-    <h4 class="modal-title" id="modal-basic-title">ລົງທະບຽນສຳເລັດ</h4>
+  <!-- <div class="modal-header">
     <button type="button" class="close" aria-label="Close" (click)="reload()">
       <span aria-hidden="true">&times;</span>
     </button>
-  </div>
+  </div> -->
   <div class="showlogo">
     <div class="Logo d-flex align-items-center ml-2 mr-2">
       <div class="Mar2 col-sm-4 col-md-2 mt-2">
@@ -32,42 +31,47 @@
     <div class='container'>
       <div class='row'>
         <div class="col">
+          <h4 class="modal-title" id="modal-basic-title">ລົງທະບຽນສຳເລັດ</h4>
           <ul class="List list-group-items">
-            <h6>ຊື່ ແລະ ນາມສະກຸນ: {{ show_name }}&nbsp;{{ show_lastname }}</h6>
-        <h6>ສັນຊາດ: {{ show_nation }}{{ show_nationInter }}</h6>
-        <h6>ເລກID: {{ show_id }}</h6>
-        <h6>ເບີໂທ: {{ show_phone }}</h6>
-        <h6>ສັນເດືອນປີເກີດ: {{ show_dob }}</h6>
-        <h6>ແຂວງ: {{ show_province }}</h6>
-        <h6>ເມືອງ: {{ show_district }}</h6>
+            <li>ຊື່ ແລະ ນາມສະກຸນ: {{ show_name }}&nbsp;{{ show_lastname }}</li>
+        <li>ສັນຊາດ: {{ show_nation }}{{ show_nationInter }}</li>
+        <li>ເລກID: {{ show_id }}</li>
+        <li>ເບີໂທ: {{ show_phone }}</li>
+        <li>ສັນເດືອນປີເກີດ: {{ show_dob }}</li>
+        <li>ແຂວງ: {{ show_province }}</li>
+        <li>ເມືອງ: {{ show_district }}</li>
           </ul>
         </div>
         <ngx-qrcode
         [elementType]='elementType'
         [value]='value' cssClass='aclass'>
         </ngx-qrcode>
+        <h6>{{ value }}</h6>
         <h3>ກະລຸນາຖ່າຍຮູບໄວ້</h3>
       </div>
+      <button type="button" class="btn btn-outline-dark" (click)="reload()">
+    ຕົກລົງ/Ok
+  </button>
       </div>
   </div>
+
   <div class="modal-footer">
-    <button type="button" class="btn btn-outline-dark" (click)="reload()">ຕົກລົງ/Ok</button>
-    <div class="Logos row align-items-center">
+    <div class="Logos row">
+      <div class="Text col-sm-4 col-md-2 mt-2">
+        <img class="icon" src="assets/assets/images/Petro_trade.png">
+    </div>
+     <div class="Text col-sm-4 col-md-2 mt-2">
+        <img class="icon" src="assets/assets/images/kanya_mitthapharp.png">
+    </div>
+      <div  class="Text col-sm-4 col-md-2 mt-2">
+        <img class="icon" src="assets/assets/images/smart_tech.png">
+    </div>
     <div class="Text col-sm-4 col-md-2 mt-2">
-      <img class="icon" src="assets/assets/images/Petro Trade.png">
-  </div>
-   <div class="Text col-sm-4 col-md-2 mt-2">
-      <img class="icon" src="assets/assets/images/Kanya_Mitthaphap.png">
-  </div>
-    <div  class="Text col-sm-4 col-md-2 mt-2">
-      <img class="icon" src="assets/assets/images/SmartTech.png">
-  </div>
-  <div class="Text col-sm-4 col-md-2 mt-2">
-      <img class="icon" src="assets/assets/images/Khompanya.png">
-  </div>
+        <img class="icon" src="assets/assets/images/khompunya.png">
+    </div>
+      </div>
     </div>
 
-  </div>
 </ng-template>
 
 <!-- Loading -->
@@ -78,9 +82,11 @@
   <div class="modal-body">
     <div class="container">
       <div class='row'>
-        <mat-progress-spinner></mat-progress-spinner>
-        <mat-spinner></mat-spinner>
-        <mat-progress-spinner></mat-progress-spinner>
+        <div class="spin">
+          <mat-spinner></mat-spinner>
+        </div>
+
+
 
       </div>
   </div>
