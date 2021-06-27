@@ -31,13 +31,24 @@
   <div class="modal-body">
     <div class='container'>
       <div class='row'>
-        <h4>ຊື່ ແລະ ນາມສະກຸນ: {{ show_name }}&nbsp;{{ show_lastname }}</h4>
-        <h4>ສັນຊາດ: {{ show_nation }}{{ show_nationInter }}</h4>
-        <h4>ເລກID: {{ show_id }}</h4>
-        <h4>ເບີໂທ: {{ show_phone }}</h4>
-        <h4>ສັນເດືອນປີເກີດ: {{ show_dob }}</h4>
-        <h4>ແຂວງ: {{ show_province }}</h4>
-        <h4>ເມືອງ: {{ show_district }}</h4>
+         <!-- <h5>ຊື່ ແລະ ນາມສະກຸນ: {{ show_name }}&nbsp;{{ show_lastname }}</h5>
+        <h5>ສັນຊາດ: {{ show_nation }}{{ show_nationInter }}</h5>
+        <h5>ເລກID: {{ show_id }}</h5>
+        <h5>ເບີໂທ: {{ show_phone }}</h5>
+        <h5>ສັນເດືອນປີເກີດ: {{ show_dob }}</h5>
+        <h5>ແຂວງ: {{ show_province }}</h5>
+        <h5>ເມືອງ: {{ show_district }}</h5> -->
+         <div class="col">
+        <ul class="List list-group-items">
+          <h5>ຊື່ ແລະ ນາມສະກຸນ: Anoukone Somoulay</h5>
+          <h5>ສັນຊາດ<span>:</span> Lao</h5>
+          <h5>ເລກID<span>:</span> 99449054</h5>
+          <h5>ເບີໂທ <span>:</span> 2099449054</h5>
+          <h5>ສັນເດືອນປີເກີດ<span>:</span> 17/1/2000</h5>
+          <h5>ແຂວງ<span>:</span> Nakhoneluang</h5>
+          <h5>ເມືອງ<span>:</span> Sikhod</h5>
+        </ul>
+        </div>
         <ngx-qrcode
         [elementType]='elementType'
         [value]='value' cssClass='aclass'>
@@ -79,17 +90,6 @@
 
   </div>
 </ng-template>
-<div class='container'>
-  <div class='row'>
-    <ngx-qrcode
-    [elementType]='elementType'
-    [value]='valuetest' cssClass='aclass'>
-    </ngx-qrcode>
-    <h3>ກະລຸນາຖ່າຍຮູບໄວ້</h3>
-  </div>
-  </div>
-
-
   <button (click)="open(content)">Click me</button>
 <div class="page-wrapper p-t-45 p-b-50">
   <div class="wrapper wrapper--w790">

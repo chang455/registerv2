@@ -141,7 +141,7 @@ export class FormCreate implements OnInit{
 
 
     ngOnInit() {
-      this.valuetest="kone"+"Hallo";
+      
 
       this.siteKey='6LceNVobAAAAAOqEADQI6XTeGyInMVXkCtH7znSW';
 

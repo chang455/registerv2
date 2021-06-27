@@ -160,6 +160,11 @@ font-family: NotoSansLao  ;
   margin: auto;
   display: grid;
 }
+.List{
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+}
 
 
 
