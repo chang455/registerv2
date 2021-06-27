@@ -132,16 +132,31 @@ font-family: NotoSansLao  ;
 .modal-footer{
   justify-content: center;
   font-family: NotoSansLao;
+  display: grid;
+  flex-direction: row;
+}
+@media only screen and (max-width:760px) {
+  .Logos{
+    font-family: NotoSansLao;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 5px;
+    margin-left: 2rem;
+    object-fit: scale-down;
+  }
+
 }
 .showlogo{
   justify-content: center;
-  padding: 2rem;
+  padding-left: 2rem;
+  padding-right: 2rem;
 }
 .Logo{
   justify-content:space-between;
 }
 .Logos{
   justify-content: space-between;
+  margin-right: 2rem;
 }
 .Mar1{
   margin-left: 1px;
@@ -157,21 +172,31 @@ font-family: NotoSansLao  ;
   flex-wrap: wrap;
   padding: 0;
 }
-
 .icon{
-  width: 5rem;
-  height: 5rem;
-  margin: auto;
+  width: 100px;
+  height: 85px;
   display: grid;
+  object-fit:contain;
+}
+.Logos>.hieght >.width{
+  height: 100px;
+  width: 120px;
+  margin-bottom: 1rem;
+}
+.Logos>.hieght1 >.width1{
+  width: 130px;
+  height: 120px;
 }
 .List{
+  list-style: none;
   text-align: left;
   display: flex;
   flex-direction: column;
+  line-height: 1.5rem;
 }
-
-
-
+.spin{
+  margin-left: 4.5rem;
+}
 
 
 

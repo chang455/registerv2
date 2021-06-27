@@ -204,7 +204,7 @@ export class FormCreate implements OnInit{
 
 
 if (this.registerForm.value.village !=""){
-console.log('whattt')
+// console.log('whattt')
 }
 if (this.registerForm.value.vac == '2' && this.registerForm.value.vac_details == ""){
   this.submitted = true;
@@ -268,8 +268,8 @@ if (this.registerForm.value.vac == '2' && this.registerForm.value.vac_details ==
 
         if(this.registerForm.status=='INVALID'){
           //  console.log(data)
-          console.log(this.registerForm.value)
-          console.log("Status: Invalid")
+          // console.log(this.registerForm.value)
+          // console.log("Status: Invalid")
 
 
         }else if(this.registerForm.status=='VALID'){
@@ -332,20 +332,21 @@ if (this.registerForm.value.vac == '2' && this.registerForm.value.vac_details ==
                 this.show_nationInter=this.country_manual;
 
 
-                console.log(result)
+                // console.log(result)
                 this.elementType = NgxQrcodeElementTypes.URL;
-                this.value = result.ticket_id
-                +'+'+this.registerForm.value.name
-                +'+'+this.registerForm.value.lastName
-                +'+'+this.registerForm.value.id_or_passportid
-                +'+'+this.registerForm.value.phone
-                +'+'+this.vaccin_name
-                +'+'+this.location_name
-                +'+'+this.registerForm.value.dob
-                +'+'+this.registerForm.value.date_to_get
-                +'+'+this.province_name
-                +'+'+this.district_name
-                ;
+                // this.value = result.ticket_id
+                // +'+'+this.registerForm.value.name
+                // +'+'+this.registerForm.value.lastName
+                // +'+'+this.registerForm.value.id_or_passportid
+                // +'+'+this.registerForm.value.phone
+                // +'+'+this.vaccin_name
+                // +'+'+this.location_name
+                // +'+'+this.registerForm.value.dob
+                // +'+'+this.registerForm.value.date_to_get
+                // +'+'+this.province_name
+                // +'+'+this.district_name
+                // ;
+                this.value = result.ticket_id;
                 this.CorrectionLevel= NgxQrcodeErrorCorrectionLevels.HIGH;
                 this.modalService.open(content,{ centered: true});
 
