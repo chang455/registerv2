@@ -11,7 +11,7 @@
 <p>Form valid: {{ f.valid }}</p> -->
 <ng-template #content let-c="close" let-d="dismiss">
   <div class="modal-header">
-    <h4 class="modal-title" id="modal-basic-title">Angular 10 QRcode Generator</h4>
+    <h4 class="modal-title" id="modal-basic-title">ລົງທະບຽນສຳເລັດ</h4>
     <button type="button" class="close" aria-label="Close" (click)="reload()">
       <span aria-hidden="true">&times;</span>
     </button>
@@ -31,6 +31,13 @@
   <div class="modal-body">
     <div class='container'>
       <div class='row'>
+        <h4>ຊື່ ແລະ ນາມສະກຸນ: {{ show_name }}&nbsp;{{ show_lastname }}</h4>
+        <h4>ສັນຊາດ: {{ show_nation }}{{ show_nationInter }}</h4>
+        <h4>ເລກID: {{ show_id }}</h4>
+        <h4>ເບີໂທ: {{ show_phone }}</h4>
+        <h4>ສັນເດືອນປີເກີດ: {{ show_dob }}</h4>
+        <h4>ແຂວງ: {{ show_province }}</h4>
+        <h4>ເມືອງ: {{ show_district }}</h4>
         <ngx-qrcode
         [elementType]='elementType'
         [value]='value' cssClass='aclass'>
@@ -72,6 +79,15 @@
 
   </div>
 </ng-template>
+<div class='container'>
+  <div class='row'>
+    <ngx-qrcode
+    [elementType]='elementType'
+    [value]='valuetest' cssClass='aclass'>
+    </ngx-qrcode>
+    <h3>ກະລຸນາຖ່າຍຮູບໄວ້</h3>
+  </div>
+  </div>
 
 
   <button (click)="open(content)">Click me</button>
@@ -354,7 +370,7 @@
               <select [ngClass]="{ 'is-invalid': submitted && f.district.errors }" name="district" class="form-control"
                 formControlName="district" [(ngModel)]="districtID" (change)="disonchange()">
                 <option value="" disabled selected hidden>ເລືອກເມືອງ / Select District</option>
-                <option [value]="district.id_district" *ngFor="let district of districtList">{{ district.name_lao }}
+                <option [value]="district.id_district"  *ngFor="let district of districtList">{{ district.name_lao }}
                 </option>
 
               </select>
@@ -794,6 +810,11 @@
               </li>
             </div>
             <hr>
+            <ngx-recaptcha2
+            [siteKey]="siteKey"
+
+            formControlName="recaptcha">
+          </ngx-recaptcha2>
 
             <button class="big-button" type="submit" id="submit-form"> ສົ່ງຂໍ້ມູນ </button>
 
@@ -1499,6 +1520,11 @@
                 </div>
                 <hr>
 
+                <ngx-recaptcha2
+                [siteKey]="siteKey"
+
+                formControlName="recaptcha">
+              </ngx-recaptcha2>
             <button class="big-button" type="submit" id="submit-form"> ສົ່ງຂໍ້ມູນ </button>
 
 

@@ -16,7 +16,7 @@ import { FormGroup, FormsModule,ReactiveFormsModule } from '@angular/forms';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { NgxQRCodeModule } from '@techiediaries/ngx-qrcode';
 import { TicketComponent } from './posts/Search/ticket.component';
-
+import { NgxCaptchaModule } from 'ngx-captcha';
 
 const appRoute : Route[]= [
   {path:'Register', component: FormCreate},
@@ -42,7 +42,8 @@ const appRoute : Route[]= [
     FormsModule,
     ReactiveFormsModule,
     NgbModule,
-    NgxQRCodeModule
+    NgxQRCodeModule,
+    NgxCaptchaModule
   ],
   providers: [],
   bootstrap: [AppComponent]

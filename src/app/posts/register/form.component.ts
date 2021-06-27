@@ -54,7 +54,7 @@ export class FormCreate implements OnInit{
   age_date:any;
   age_calculate:any;
   age_name :any
-
+  valuetest:any;
 
   vac1:any;
   vac2:any;
@@ -67,7 +67,21 @@ export class FormCreate implements OnInit{
   elementType:any;
   CorrectionLevel:any;
   value :any;
-
+  siteKey:any;
+  location_name:any;
+  vaccin_name:any
+  province_name:any
+  district_name:any;
+  nation_name:any;
+  show_name:any;
+  show_lastname:any;
+  show_nation:any;
+  show_id:any;
+  show_phone:any;
+  show_dob:any;
+  show_province:any;
+  show_district:any;
+  show_nationInter:any;
   constructor(private service:FormService,private fb:FormBuilder,private modalService: NgbModal ,config: NgbModalConfig) {
 
     config.backdrop = 'static';
@@ -127,6 +141,9 @@ export class FormCreate implements OnInit{
 
 
     ngOnInit() {
+      this.valuetest="kone"+"Hallo";
+
+      this.siteKey='6LceNVobAAAAAOqEADQI6XTeGyInMVXkCtH7znSW';
 
 
 
@@ -152,6 +169,7 @@ export class FormCreate implements OnInit{
             phone:['',Validators.required],
             job:['',Validators.required],
             email: '',
+            recaptcha: ['', Validators.required],
        // email: ['', [Validators.required, Validators.pattern("^[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,4}$")]],
             work_location:['',Validators.required],
             date_covid:'',
@@ -209,6 +227,7 @@ if (this.registerForm.value.vac == '2' && this.registerForm.value.vac_details ==
   }else{
     this.country_manual = this.registerForm.value.country
   }
+
       const data={
 
         'id_vaccine':this.registerForm.value.id_vaccine,
@@ -245,17 +264,29 @@ if (this.registerForm.value.vac == '2' && this.registerForm.value.vac_details ==
       'Disease':this.registerForm.value.Disease
 
     }
+
         if(this.registerForm.status=='INVALID'){
           //  console.log(data)
           console.log(this.registerForm.value)
           console.log("Status: Invalid")
+
+
         }else if(this.registerForm.status=='VALID'){
           // console.log(this.registerForm.value)
 
   //         // console.log(data)
   // console.log("Status: Valid")
   //       // console.log(result)
-
+  this.vacines_info(this.registerForm.value.id_vaccine)
+  this.hospital_info(this.registerForm.value.location_to_get)
+  this.province_info(this.registerForm.value.province)
+  this.district_info(this.registerForm.value.district)
+  // this.nation_info(this.registerForm.value.islao)
+  // console.log(this.location_name);
+  // console.log(this.vaccin_name);
+  // console.log(this.province_name);
+  // console.log(this.district_name);
+  // console.log(this.country_manual);
         Swal.fire({
           title: 'ລະບົບຈອງຄິວ',
           text: 'ກະລຸນາກວດສອບຂໍ້ມູນຂອງຸທ່ານ',
@@ -289,13 +320,40 @@ if (this.registerForm.value.vac == '2' && this.registerForm.value.vac_details ==
                   //   window.location.reload();
                   // }, 4000)
                 // });
-                 console.log("Code"+result.resultCode)
+                this.show_name=this.registerForm.value.name;
+                this.show_lastname=this.registerForm.value.lastName;
+                // this.show_nation=this.nation_name;
+                this.show_id=this.registerForm.value.id_or_passportid;
+                this.show_phone=this.registerForm.value.phone;
+                this.show_dob=this.registerForm.value.date_to_get;
+                this.show_province=this.province_name;
+                this.show_district=this.district_name;
+                this.show_nationInter=this.country_manual;
+
+
+                console.log(result)
                 this.elementType = NgxQrcodeElementTypes.URL;
-                this.value = result.ticket_id;
+                this.value = result.ticket_id
+                +'+'+this.registerForm.value.name
+                +'+'+this.registerForm.value.lastName
+                +'+'+this.registerForm.value.id_or_passportid
+                +'+'+this.registerForm.value.phone
+                +'+'+this.vaccin_name
+                +'+'+this.location_name
+                +'+'+this.registerForm.value.dob
+                +'+'+this.registerForm.value.date_to_get
+                +'+'+this.province_name
+                +'+'+this.district_name
+                ;
                 this.CorrectionLevel= NgxQrcodeErrorCorrectionLevels.HIGH;
                 this.modalService.open(content,{ centered: true });
-                this.registerForm.reset();
-                return  this.value = result.ticket_id;
+                // this.registerForm.reset();
+
+                return  this.value,
+                this.show_name,
+                this.show_lastname,
+                this.show_nation, this.show_id,this.show_phone,this.show_dob,this.show_province,
+                this.show_district,this.show_nationInter;
               }
               else if(result.resultCode == '03'){
                 Swal.fire({
@@ -477,6 +535,8 @@ if (this.registerForm.value.vac == '2' && this.registerForm.value.vac_details ==
     open(content:any) {
       this.modalService.open(content);
     }
+
+
 
     reload(){
       window.location.reload();
@@ -734,7 +794,659 @@ if (this.registerForm.value.vac == '2' && this.registerForm.value.vac_details ==
   ];
 
 
+
+  hospital_info(id:any){
+
+        switch (id) {
+        case 'DP':
+        this.location_name='ວັດຈີນດົງປ່າແຫຼບ'
+        break;
+
+        case 'HF':
+          this.location_name='ໂຮງຫມໍ150'
+        break;
+        case 'ST':
+          this.location_name='ໂຮງໝໍເສດຖາ'
+        break;
+        case 'SS':
+          this.location_name='ໂຮງໝໍເມືອງຈັນ​ທະ​ບູ​ລີ'
+        break;
+        case 'PP':
+          this.location_name='ສະມາຄົມຈີນ'
+        break;
+        case 'CT':
+          this.location_name='ໂຮງໝໍເມືອງສີໂຄດຕະບອງ'
+        break;
+        case 'CC':
+          this.location_name='ສະໂມສອນປົກຄອງເມືອງຈັນທະບຸລີ'
+        break;
+        case 'SS':
+          this.location_name='ມ.ຕ ສີໄຄ'
+        break;
+        case 'SK':
+          this.location_name='ສະໂມສອນປົກຄອງເມືອງສີໂຄດຕະບອງ'
+        break;
+        case 'SH':
+          this.location_name='ໂຮງໝໍເມືອງໄຊ​ເສດ​ຖາ'
+        break;
+        case 'VH':
+          this.location_name='ມ.ສ ມິດຕະພາບລາວຫວຽດ'
+        break;
+        case 'SB':
+          this.location_name='ສະໜາມກິລາຮົມບຶງຂະຫຍອງ'
+        break;
+        case 'NH':
+          this.location_name='ໂຮງໝໍເມືອງສີສັດຕະນາກ'
+        break;
+        case 'EH':
+          this.location_name='ໂຮງໝໍນ້ອຍອີໄລ'
+        break;
+        case 'XH':
+          this.location_name='ໂຮງໝໍເມືອງນາຊາຍທອງ'
+        break;
+        case 'KH':
+          this.location_name='ໂຮງໝໍນ້ອຍໂຄດສີວິໄລ'
+        break;
+        case 'XC':
+          this.location_name='ສະໂມສອນປົກຄອງເມືອງໄຊທານີ'
+        break;
+        case 'HH':
+          this.location_name='ໂຮງໝໍເມືອງໄຊທານີ'
+        break;
+        case 'FH':
+          this.location_name='ໂຮງໝໍເມືອງຫາດຊາຍຟອງ(ຕຶກໃໝ້)'
+        break;
+        case 'AH':
+          this.location_name='ໂຮງໝໍນ້ອຍນາສາ'
+        break;
+        case 'NC':
+          this.location_name='ນາຈະເລີນ'
+        break;
+        case 'RH':
+          this.location_name='ໂຮງໝໍເມືອງຫາດຊາຍຟອງ'
+        break;
+        case 'PH':
+          this.location_name='ໂຮງໝໍນ້ອຍປາກຕອນ'
+        break;
+        case 'GH':
+          this.location_name='ໂຮງໝໍເມືອງສັງທອງ'
+        break;
+        case 'EH':
+          this.location_name='ໂຮງໝໍເມືອງປາກງື່ມ(ຈຸດ 2)'
+        break;
+        case 'DS':
+          this.location_name='ດົງໂພສີ'
+        break;
+        case 'IT':
+          this.location_name='ໄອເຕັກ'
+        break;
+        case 'NH':
+          this.location_name='ໂຮງໝໍເມືອງປາກງື່ມ'
+        break;
+
 }
+
+
+}
+
+vacines_info(id:any){
+switch (id) {
+  case '1':
+     this.vaccin_name='Pfizer'
+      break;
+  case '2':
+        this.vaccin_name='AstraZeneca'
+      break;
+  case '3':
+        this.vaccin_name='Sinopharm'
+      break;
+      case '4':
+        this.vaccin_name='Sputnik'
+      break;
+      case '5':
+        this.vaccin_name='Covax'
+      break;
+      case '6':
+        this.vaccin_name='Sinovac'
+      break;
+      case '7':
+        this.vaccin_name='Moderna'
+      break;
+      case '8':
+        this.vaccin_name='Jonhson & Jonhson'
+      break;
+
+      }
+    }
+
+  province_info(id:any){
+    switch (id) {
+      case '1':
+         this.province_name='ນະຄອນຫຼວງວຽງຈັນ'
+          break;
+      case '2':
+            this.province_name='ຜົ້ງສາລີ'
+          break;
+      case '3':
+            this.province_name='ຫຼວງນ້ຳທາ'
+          break;
+          case '4':
+            this.province_name='ອຸດົມໄຊ'
+          break;
+          case '5':
+            this.province_name='ບໍ່ແກ້ວ'
+          break;
+          case '6':
+            this.province_name='ຫຼວງພະບາງ'
+          break;
+          case '7':
+            this.province_name='ຫົວພັນ'
+          break;
+          case '8':
+            this.province_name='ໄຊຍະບູລີ'
+          break;
+
+          case '9':
+            this.province_name='ຊຽງຂວາງ'
+          break;
+          case '10':
+            this.province_name='ແຂວງວຽງຈັນ'
+          break;
+          case '11':
+            this.province_name='ບໍລິຄຳໄຊ'
+          break;
+          case '12':
+            this.province_name='ຄຳມ່ວນ'
+          break;
+          case '13':
+            this.province_name='ສະຫວັນນະເຂດ'
+          break;
+          case '14':
+            this.province_name='ສາລະວັນ'
+          break;
+          case '15':
+            this.province_name='ເຊກອງ'
+          break;
+          case '16':
+            this.province_name='ຈຳປາສັກ'
+          break;
+          case '17':
+            this.province_name='ອັດຕະປື'
+          break;
+          case '18':
+            this.province_name='ໄຊສົມບູນ'
+          break;
+
+          }
+  }
+
+
+  district_info(id:any){
+    switch (id) {
+      case '1':
+         this.district_name='ຈັນ​ທະ​ບູ​ລີ'
+          break;
+      case '2':
+            this.district_name='ສີ​ໂຄດ​ຕະ​ບອງ'
+          break;
+      case '3':
+            this.district_name='ໄຊ​ເສດ​ຖາ'
+          break;
+          case '4':
+            this.district_name='ສີ​ສັດ​ຕະ​ນາກ'
+          break;
+          case '5':
+            this.district_name='ນາ​ຊາຍ​ທອງ'
+          break;
+          case '6':
+            this.district_name='ໄຊ​ທາ​ນີ'
+          break;
+          case '7':
+            this.district_name='ຫາດ​ຊາຍ​ຟອງ'
+          break;
+          case '8':
+            this.district_name='ສັງ​ທອງ'
+          break;
+
+          case '9':
+            this.district_name='ປາກ​ງື່ມ'
+          break;
+          case '10':
+            this.district_name='ເມືອງ​ຜົ້ົ້ງ​ສາ​ລີ'
+          break;
+          case '11':
+            this.district_name='ເມືອງ​ໄໝ່'
+          break;
+          case '12':
+            this.district_name='ເມືອງ​ຂວາ'
+          break;
+          case '13':
+            this.district_name='ເມືອງ​ສຳ​ພັນ'
+          break;
+          case '14':
+            this.district_name='ເມືອງ​ບູນ​ເໜືອ'
+          break;
+          case '15':
+            this.district_name='ເມືອງຍອດ​ອູ'
+          break;
+          case '16':
+            this.district_name='ເມືອງ​ບູນ​ໃຕ້'
+          break;
+          case '17':
+            this.district_name='ເມືອງ​ນ້ຳ​ທາ'
+          break;
+          case '18':
+            this.district_name='ເມືອງ​ສິງ'
+          break;
+          case'19':
+          this.district_name='ເມືອງ​ລອງ'
+          break;
+          case'20':
+          this.district_name='ເມືອງວຽງ​ພູ​ຄາ'
+          break;
+          case'21':
+          this.district_name='ເມືອງ​ນາ​ແລ'
+          break;
+          case'22':
+          this.district_name='ເມືອງ​ໄຊ'
+          break;
+          case'23':
+          this.district_name='ເມືອງ​ຫຼາ'
+          break;
+          case'24':
+          this.district_name='ເມືອງນາ​ໝໍ້'
+          break;
+          case'25':
+          this.district_name='ເມືອງ​ງາ'
+          break;
+          case'26':
+          this.district_name='ເມືອງ​ແບ່ງ'
+          break;
+          case'27':
+          this.district_name='ເມືອງ​ຮຸນ'
+          break;
+          case'28':
+          this.district_name='ເມືອງ​ປາກ​ແບ່ງ'
+          break;
+          case'29':
+          this.district_name='ເມືອງ​ຫວ້ຍ​ຊາຍ'
+          break;
+          case'30':
+          this.district_name='ເມືອງ​ຕົ້ົ້ນ​ເຜິ້ງ'
+          break;
+          case'31':
+          this.district_name='ເມືອງ​ເມິງ'
+          break;
+          case'32':
+          this.district_name='ເມືອງ​ຜາ​ອຸ​ດົມ'
+          break;
+          case'33':
+          this.district_name='ເມືອງ​ປາກ​ທາ'
+          break;
+          case'34':
+          this.district_name='ເມືອງ​ຫຼວງ​ພະ​ບາງ'
+          break;
+          case'35':
+          this.district_name='ເມືອງຊຽງ​ເງິນ'
+          break;
+          case'36':
+          this.district_name='ເມືອງ​ນານ'
+          break;
+          case'37':
+          this.district_name='ເມືອງ​ປາກ​ອູ'
+          break;
+          case'38':
+          this.district_name='ເມືອງ​ນ້ຳ​ບາກ'
+          break;
+          case'39':
+          this.district_name='ເມືອງງອຍ'
+          break;
+          case'40':
+          this.district_name='ເມືອງ​ປາກ​ແຊງ'
+          break;
+          case'41':
+          this.district_name='ເມືອງ​ໂພນ​ໄຊ'
+          break;
+          case'42':
+          this.district_name='ເມືອງ​ຈອມ​ເພັດ'
+          break;
+          case'43':
+          this.district_name='ເມືອງວຽງ​ຄຳ'
+          break;
+          case'44':
+          this.district_name='ເມືອງ​ພູ​ຄູນ'
+          break;
+          case'45':
+          this.district_name='ເມືອງ​ຊຳ​ເໜືອ'
+          break;
+          case'46':
+          this.district_name='ເມືອງ​ຊຽງ​ຄໍ້'
+          break;
+          case'47':
+          this.district_name='ເມືອງວຽງ​ທອງ'
+          break;
+          case'48':
+          this.district_name='ເມືອງວຽງ​ໄຊ'
+          break;
+          case'49':
+          this.district_name='ເມືອງ​ຫົວ​ເມືອງ'
+          break;
+          case'50':
+          this.district_name='ເມືອງ​ຊຳ​ໃຕ້'
+          break;
+          case'51':
+          this.district_name='ເມືອງ​ໄຊ​ຍະ​ບູ​ລີ'
+          break;
+          case'52':
+          this.district_name='ເມືອງ​ຄອບ'
+          break;
+          case'53':
+          this.district_name='ເມືອງ​ຫົງ​ສາ'
+          break;
+          case'54':
+          this.district_name='ເມືອງ​ເງິນ'
+          break;
+          case'55':
+          this.district_name='ເມືອງ​ຊຽງ​ຫ​ອ່ນ'
+          break;
+          case'56':
+          this.district_name='ເມືອງ​ພຽງ'
+          break;
+          case'57':
+          this.district_name='ເມືອງ​ປາກ​ລາຍ'
+          break;
+          case'58':
+          this.district_name='ເມືອງ​ແກ່ນ​ທ້າວ'
+          break;
+          case'59':
+          this.district_name='ເມືອງ​ບໍ່​ແຕນ'
+          break;
+          case'60':
+          this.district_name='ເມືອງ​ທົ່ງ​ມີ​ໄຊ'
+          break;
+          case'61':
+          this.district_name='ເມືອງ​ແປກ'
+          break;
+          case'62':
+          this.district_name='ເມືອງ​ຄຳ'
+          break;
+          case'63':
+          this.district_name='ເມືອງ​ໜອງ​ແຮດ'
+          break;
+          case'64':
+          this.district_name='ເມືອງ​ຄູນ'
+          break;
+          case'65':
+          this.district_name='ເມືອງ​ໝອກ​ໄໝ່'
+          break;
+          case'66':
+          this.district_name='ເມືອງ​ພູ​ກູດ'
+          break;
+          case'67':
+          this.district_name='ເມືອງ​ຜາ​ໄຊ'
+          break;
+          case'68':
+          this.district_name='ໂພນ​ໂຮງ'
+          break;
+          case'69':
+          this.district_name='ທູ​ລະ​ຄົມ'
+          break;
+          case'70':
+          this.district_name='​ແກ້ວ​ອຸ​ດົມ'
+          break;
+          case'71':
+          this.district_name='​ກາ​ສີ'
+          break;
+          case'72':
+          this.district_name='ວັງ​ວຽງ'
+          break;
+          case'73':
+          this.district_name='ເຟືອງ'
+          break;
+          case'74':
+          this.district_name='​ຊະ​ນາ​ຄາມ'
+          break;
+          case'75':
+          this.district_name='​ແມດ'
+          break;
+          case'76':
+          this.district_name='​ຫີນ​ເຫີບ'
+          break;
+          case'77':
+          this.district_name='ວຽງ​ຄຳ'
+          break;
+          case'78':
+          this.district_name='ເມືອງ​ປາກ​ຊັນ'
+          break;
+          case'79':
+          this.district_name='ເມືອງ​ທ່າ​ພະ​ບາດ'
+          break;
+          case'80':
+          this.district_name='ເມືອງ​ປາກ​ກະ​ດິງ'
+          break;
+          case'81':
+          this.district_name='ເມືອງ​ບໍ​ລິ​ຄັນ'
+          break;
+          case'82':
+          this.district_name='ເມືອງ​ຄຳ​ເກີດ'
+          break;
+          case'83':
+          this.district_name='ເມືອງວຽງ​ທອງ'
+          break;
+          case'84':
+          this.district_name='ເມືອງ​ທ່າ​ແຂກ'
+          break;
+          case'85':
+          this.district_name='ເມືອງ​ມະ​ຫາ​ໄຊ'
+          break;
+          case'86':
+          this.district_name='ເມືອງ​ໜອງ​ບົກ'
+          break;
+          case'87':
+          this.district_name='ເມືອງ​ຫີນ​ບູນ'
+          break;
+          case'88':
+          this.district_name='ເມືອງ​ຍົມ​ມະ​ລາດ'
+          break;
+          case'89':
+          this.district_name='ເມືອງ​ບົວ​ລະ​ພາ'
+          break;
+          case'90':
+          this.district_name='ເມືອງ​ນາ​ກາຍ'
+          break;
+          case'91':
+          this.district_name='ເມືອງ​ເຊ​ບັ້ງ​ໄຟ'
+          break;
+          case'92':
+          this.district_name='ເມືອງ​ໄຊ​ບົວ​ທອງ'
+          break;
+          case'93':
+          this.district_name='ໄກສອນພົມວິຫານ'
+          break;
+          case'94':
+          this.district_name='ອຸ​ທຸມ​ພອນ'
+          break;
+          case'95':
+          this.district_name='ອາດ​ສະ​ພັງ​ທອງ'
+          break;
+          case'96':
+          this.district_name='​ພິນ'
+          break;
+          case'97':
+          this.district_name='ເຊ​ໂປນ'
+          break;
+          case'98':
+          this.district_name='ນອງ'
+          break;
+          case'99':
+          this.district_name='ທ່າ​ປາງ​ທອງ'
+          break;
+          case'100':
+          this.district_name='ສອງ​ຄອນ'
+          break;
+          case'101':
+          this.district_name='ຈຳ​ພອນ'
+          break;
+          case'102':
+          this.district_name='ຊົນ​ບຸ​ລີ'
+          break;
+          case'103':
+          this.district_name='ໄຊ​ບຸ​ລີ'
+          break;
+          case'104':
+          this.district_name='ສາ​ລະ​ວັນ'
+          break;
+          case'105':
+          this.district_name='ຕະ​ໂອຍ'
+          break;
+          case'106':
+          this.district_name='ຕຸ້ມ​ລານ'
+          break;
+          case'107':
+          this.district_name='ລະ​ຄອນ​ເພັງ'
+          break;
+          case'108':
+          this.district_name='ວາ​ປີ'
+          break;
+          case'109':
+          this.district_name='ຄົງ​ເຊ​ໂດນ'
+          break;
+          case'110':
+          this.district_name='ເລົ່າ​ງາມ'
+          break;
+          case'111':
+          this.district_name='ສະ​ມ່ວຍ'
+          break;
+          case'112':
+          this.district_name='ລະ​ມາມ'
+          break;
+          case'113':
+          this.district_name='ກະ​ລຶມ'
+          break;
+          case'114':
+          this.district_name='ດັກ​ຈຶງ'
+          break;
+          case'115':
+          this.district_name='ປາກ​ເຊ'
+          break;
+          case'116':
+          this.district_name='ຊະ​ນະ​ສົມ​ບູນ'
+          break;
+          case'117':
+          this.district_name='ບາ​ຈຽງ​ຈະ​ເລີນ​ສຸກ'
+          break;
+          case'118':
+          this.district_name='ປາກ​ຊ່ອງ'
+          break;
+          case'119':
+          this.district_name='ປະ​ທຸມ​ພອນ'
+          break;
+          case'120':
+          this.district_name='ໂພນ​ທອງ'
+          break;
+          case'121':
+          this.district_name='ຈຳ​ປາ​ສັກ'
+          break;
+          case'122':
+          this.district_name='ສຸ​ຂຸມ​ມາ'
+          break;
+          case'123':
+          this.district_name='ມູນ​ລະ​ປະ​ໂມກ'
+          break;
+          case'124':
+          this.district_name='ໂຂງ'
+          break;
+          case'125':
+          this.district_name='ໄຊ​ເສດ​ຖາ'
+          break;
+          case'126':
+          this.district_name='ສາ​ມັກ​ຄີ​ໄຊ'
+          break;
+          case'127':
+          this.district_name='ສະ​ໜາມ​ໄຊ'
+          break;
+          case'128':
+          this.district_name='ສານ​ໄຊ'
+          break;
+          case'129':
+          this.district_name='ພູ​ວົງ'
+          break;
+          case'130':
+          this.district_name='ໄຊ​ສົມ​ບູນ'
+          break;
+          case'131':
+          this.district_name='ທ່າ​ໂທມ'
+          break;
+          case'132':
+          this.district_name='ຮົ່ມ'
+          break;
+          case'133':
+          this.district_name='ລ້ອງ​ຊານ'
+          break;
+          case'134':
+          this.district_name='ພູນ'
+          break;
+          case'135':
+          this.district_name='ສົບເບົ້າ'
+          break;
+          case'136':
+          this.district_name='ແອດ'
+          break;
+          case'137':
+          this.district_name='ວິລະບູລີ'
+          break;
+          case'138':
+          this.district_name='ອາດສະພອນ'
+          break;
+          case'139':
+          this.district_name='ໄຊພູທອງ'
+          break;
+          case'140':
+          this.district_name='ທ່າພະລານໄຊ'
+          break;
+          case'141':
+          this.district_name='ທ່າແຕງ'
+          break;
+          case'142':
+          this.district_name='ລອງຊານ'
+          break;
+          case'143':
+          this.district_name='ຮົ່ມ'
+          break;
+          case'144':
+          this.district_name='ໄຊສົມບູນ'
+          break;
+          case'145':
+          this.district_name='ໜື່ນ'
+          break;
+          case'146':
+          this.district_name='ທ່າໂທມ'
+          break;
+          case'147':
+          this.district_name='ເມືອງໄຊຈຳພອນ'
+          break;
+          case'148':
+          this.district_name='ເມືອງ​ໂພນທອງ'
+          break;
+          case'149':
+          this.district_name='ເມືອງຄູນຄຳ'
+          break;
+
+          }
+  }
+  nation_info(id:any){
+    switch (id) {
+      case '1':
+      this.nation_name='ລາວ'
+      break;
+      case '2':
+        this.nation_name=''
+      break;
+  }
+  }
+
+}
+
 
 
 

@@ -27,6 +27,7 @@
     "angular": "^1.8.2",
     "bootstrap": "^5.0.1",
     "moment": "^2.29.1",
+    "ngx-captcha": "^9.0.1",
     "rxjs": "~6.6.0",
     "sweetalert2": "^11.0.17",
     "tslib": "^2.1.0",
