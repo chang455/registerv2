@@ -142,7 +142,7 @@ export class FormCreate implements OnInit{
 
 
     ngOnInit() {
-      
+
 
       this.siteKey='6LceNVobAAAAAOqEADQI6XTeGyInMVXkCtH7znSW';
 
@@ -301,7 +301,7 @@ if (this.registerForm.value.vac == '2' && this.registerForm.value.vac_details ==
 
         }).then((result) => {
           if (result.isConfirmed) {
-            this.modalService.open(loading,{ centered: true });
+            this.modalService.open(loading,{ centered: true, size:'sm' });
             console.log();
             this.service.insert_from(data).subscribe(result=>{
 
@@ -347,7 +347,8 @@ if (this.registerForm.value.vac == '2' && this.registerForm.value.vac_details ==
                 +'+'+this.district_name
                 ;
                 this.CorrectionLevel= NgxQrcodeErrorCorrectionLevels.HIGH;
-                this.modalService.open(content,{ centered: true });
+                this.modalService.open(content,{ centered: true});
+
                 // this.registerForm.reset();
 
                 return  this.value,
@@ -535,6 +536,9 @@ if (this.registerForm.value.vac == '2' && this.registerForm.value.vac_details ==
 
     open(content:any) {
       this.modalService.open(content);
+    }
+    loading(content:any){
+      this.modalService.open(content)
     }
 
 

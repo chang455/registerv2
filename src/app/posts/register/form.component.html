@@ -9,7 +9,7 @@
 <p>First name valid: {{ first.valid }}</p>
 <p>Form value: {{ f.value | json }}</p>
 <p>Form valid: {{ f.valid }}</p> -->
-<ng-template #content let-c="close" let-d="dismiss">
+<ng-template class="width" #content let-c="close" let-d="dismiss">
   <div class="modal-header">
     <h4 class="modal-title" id="modal-basic-title">ລົງທະບຽນສຳເລັດ</h4>
     <button type="button" class="close" aria-label="Close" (click)="reload()">
@@ -81,12 +81,12 @@
         <mat-progress-spinner></mat-progress-spinner>
         <mat-spinner></mat-spinner>
         <mat-progress-spinner></mat-progress-spinner>
-        
+
       </div>
   </div>
 </div>
   <div class="modal-footer">
-    <div class="Logos row align-items-center">
+    <!-- <div class="Logos row align-items-center">
       <div class="Text col-sm-4 col-md-2 mt-2">
         <img class="icon" src="assets/assets/images/Petro Trade.png">
     </div>
@@ -99,11 +99,12 @@
     <div class="Text col-sm-4 col-md-2 mt-2">
         <img class="icon" src="assets/assets/images/Khompanya.png">
     </div>
-      </div>
+      </div> -->
 
   </div>
 </ng-template>
   <button (click)="open(content)">Click me</button>
+  <button (click)="open(loading)">Click me</button>
 <div class="page-wrapper p-t-45 p-b-50">
   <div class="wrapper wrapper--w790">
     <div class="card card-5 ">
