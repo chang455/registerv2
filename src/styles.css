@@ -51,7 +51,7 @@ body{
 }
 .icon{
   width: auto;
-  height: 100px;
+  height: 130px;
   display: grid;
   margin: auto;
 }
@@ -65,3 +65,9 @@ body{
   justify-content: right;
   border-radius: 3px;
 }
+@media only screen and (max-width:320px) {
+  .footer{
+    width: 364px;
+  }
+}
+
