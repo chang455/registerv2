@@ -302,7 +302,7 @@ if (this.registerForm.value.vac == '2' && this.registerForm.value.vac_details ==
           text: 'ກະລຸນາກວດສອບຂໍ້ມູນຂອງຸທ່ານ',
           imageWidth: 150,
           imageHeight: 150,
-          imageUrl:'assets/assets/images/Untitled2222-removebg-preview.png',
+          imageUrl:'assets/assets/images/newlogosmall.jpeg',
           showCancelButton: true,
           confirmButtonColor: '#3085d6',
           cancelButtonColor: '#d33',
