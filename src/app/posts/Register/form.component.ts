@@ -83,6 +83,10 @@ export class FormCreate implements OnInit{
   show_province:any;
   show_district:any;
   show_nationInter:any;
+  show_cvin_ref:any;
+  show_location:any;
+  show_dtg:any
+
   constructor(private service:FormService,private fb:FormBuilder,private modalService: NgbModal ,config: NgbModalConfig) {
 
     config.backdrop = 'static';
@@ -302,7 +306,7 @@ if (this.registerForm.value.vac == '2' && this.registerForm.value.vac_details ==
           text: 'ກະລຸນາກວດສອບຂໍ້ມູນຂອງຸທ່ານ',
           imageWidth: 150,
           imageHeight: 150,
-          imageUrl:'assets/assets/images/Untitled2222-removebg-preview.png',
+          imageUrl:'assets/assets/images/newlogobig.jpeg',
           showCancelButton: true,
           confirmButtonColor: '#3085d6',
           cancelButtonColor: '#d33',
@@ -335,11 +339,13 @@ if (this.registerForm.value.vac == '2' && this.registerForm.value.vac_details ==
                 // this.show_nation=this.nation_name;
                 this.show_id=this.registerForm.value.id_or_passportid;
                 this.show_phone=this.registerForm.value.phone;
-                this.show_dob=this.registerForm.value.date_to_get;
+                this.show_dob=this.registerForm.value.dob;
                 this.show_province=this.province_name;
                 this.show_district=this.district_name;
                 this.show_nationInter=this.country_manual;
-
+                this.show_cvin_ref=this.registerForm.value.vac_details;
+                this.show_location=this.location_name;
+                this.show_dtg=this.registerForm.value.date_to_get;
 
                 // console.log(result)
                 this.elementType = NgxQrcodeElementTypes.URL;
@@ -367,7 +373,7 @@ if (this.registerForm.value.vac == '2' && this.registerForm.value.vac_details ==
                 this.show_name,
                 this.show_lastname,
                 this.show_nation, this.show_id,this.show_phone,this.show_dob,this.show_province,
-                this.show_district,this.show_nationInter;
+                this.show_district,this.show_nationInter,this.show_cvin_ref,this.show_location,this.show_dtg;
               }
               else if(result.resultCode == '03'){
                 Swal.fire({
