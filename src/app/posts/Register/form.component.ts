@@ -270,7 +270,16 @@ if (this.registerForm.value.vac == '2' && this.registerForm.value.vac_details ==
           //  console.log(data)
           // console.log(this.registerForm.value)
           // console.log("Status: Invalid")
+          Swal.fire({
+            title: 'ກະລຸນາກວດສອບຂໍ້ມູນ',
+            text: 'ກະລຸນາກວດສອບຂໍ້ມູນຂອງຸທ່ານ',
+            icon: 'error',
 
+            confirmButtonColor: '#3085d6',
+
+            confirmButtonText: 'ຕົກລົງ'
+
+          })
 
         }else if(this.registerForm.status=='VALID'){
           // console.log(this.registerForm.value)
