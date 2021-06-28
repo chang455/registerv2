@@ -13,11 +13,12 @@ import {MatIconModule} from '@angular/material/icon';
 import { FlexLayoutModule } from '@angular/flex-layout'
 import { FormGroup, FormsModule,ReactiveFormsModule } from '@angular/forms';
 
-
-
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { NgxQRCodeModule } from '@techiediaries/ngx-qrcode';
 import { TicketComponent } from './posts/Search/ticket.component';
+import { NgxCaptchaModule } from 'ngx-captcha';
 
-
+import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 const appRoute : Route[]= [
   {path:'Register', component: FormCreate},
   {path:'Search', component: TicketComponent},
@@ -40,7 +41,11 @@ const appRoute : Route[]= [
     MatIconModule,
     FlexLayoutModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    NgbModule,
+    NgxQRCodeModule,
+    NgxCaptchaModule,
+    MatProgressSpinnerModule
   ],
   providers: [],
   bootstrap: [AppComponent]

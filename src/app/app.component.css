@@ -8,3 +8,8 @@
 .Toggle2{
   margin-left: 2rem;
 }
+@media only screen and (max-width:320px) {
+  .iphone5{
+    width: 364px;
+  }
+}
