@@ -1,0 +1,67 @@
+/* You can add global styles to this file, and also import other style files */
+@import '~bootstrap/dist/css/bootstrap.min.css';
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+@font-face {
+  font-family: NotoSansLao;
+  src: url(assets/fonts/NotoSansLao-Bold.ttf);
+}
+.Noto{
+  font-family: NotoSansLao;
+}
+
+:root {
+
+  --colorShadeA: #3779b5;
+  --colorShadeB: #3779b5;
+  --colorShadeC: #3675cb;
+  --colorShadeD: #5f98f4;
+  --colorShadeE: #fff;
+}
+body{
+  display: flex;
+  flex-direction: column;
+}
+.footer{
+  background-color: #317AF1;
+  margin-top: auto;
+}
+.Text{
+  font-family: NotoSansLao;
+  font-size: 10px;
+  text-align:start;
+  padding: 0;
+}
+.Text1{
+  text-align: left;
+  font-family: NotoSansLao;
+  font-size: 13px;
+  text-align: center;
+}
+.Text2{
+  justify-content: center;
+  text-align: center;
+}
+.collapse{
+  color: white;
+  font-size: 20px;
+  font-family: NotoSansLao;
+  margin: auto;
+}
+.icon{
+  width: auto;
+  height: 100px;
+  display: grid;
+  margin: auto;
+}
+.row{
+  font-family: NotoSansLao;
+  font-size: 17px;
+  justify-content: space-between;
+
+}
+.btn{
+  justify-content: right;
+  border-radius: 3px;
+}
