@@ -255,7 +255,7 @@ if (this.registerForm.value.vac == '2' && this.registerForm.value.vac_details ==
       'email':this.registerForm.value.email,
       'dob':this.registerForm.value.dob,
       //'national':this.registerForm.value.national,  //NATIONAL
-      'work_location':this.registerForm.value.work_location,
+      'workplace':this.registerForm.value.work_location,
       'date_covid':this.registerForm.value.date_covid,
       'ques1':this.registerForm.value.ques1,
       'ques2':this.registerForm.value.ques2,
