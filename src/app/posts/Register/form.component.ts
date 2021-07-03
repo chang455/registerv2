@@ -364,6 +364,7 @@ if (this.registerForm.value.vac == '2' && this.registerForm.value.vac_details ==
 
                 // +'+'+this.district_name
                 // ;
+                console.log(data)
 
                 this.value = result.ticket_id;
                 this.CorrectionLevel= NgxQrcodeErrorCorrectionLevels.HIGH;
@@ -834,7 +835,7 @@ if (this.registerForm.value.vac == '2' && this.registerForm.value.vac_details ==
         case 'ST':
           this.location_name='ໂຮງໝໍເສດຖາ'
         break;
-        case 'SS':
+        case 'CH':
           this.location_name='ໂຮງໝໍເມືອງຈັນ​ທະ​ບູ​ລີ'
         break;
         case 'PP':
