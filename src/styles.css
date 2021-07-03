@@ -50,10 +50,11 @@ body{
   margin: auto;
 }
 .icon{
-  width: auto;
-  height: 130px;
-  display: grid;
+  width: 150px;
+  height: 120px;
+  display: flex;
   margin: auto;
+  padding-right: 15px;
 }
 .row{
   font-family: NotoSansLao;
@@ -61,13 +62,27 @@ body{
   justify-content: space-between;
 
 }
-.btn{
-  justify-content: right;
-  border-radius: 3px;
-}
 @media only screen and (max-width:320px) {
   .footer{
     width: 364px;
   }
+}
+@media only screen and (max-width:770px){
+  .Logos{
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 20px;
+    display: grid;
+    object-fit: scale-down;
+  }
+}
+@media only screen and (max-width:990px){
+  .Logos{
+    display: flex;
+    object-fit: scale-down;
+  }
+}
+.Logos{
+  width: fit-content;
+  height: auto;
 }
 
