@@ -841,7 +841,7 @@ if (this.registerForm.value.vac == '2' && this.registerForm.value.vac_details ==
         case 'PP':
           this.location_name='ສະມາຄົມຈີນ'
         break;
-        case 'CT':
+        case 'KH':
           this.location_name='ໂຮງໝໍເມືອງສີໂຄດຕະບອງ'
         break;
         case 'CC':
@@ -868,37 +868,37 @@ if (this.registerForm.value.vac == '2' && this.registerForm.value.vac_details ==
         case 'EH':
           this.location_name='ໂຮງໝໍນ້ອຍອີໄລ'
         break;
-        case 'XH':
+        case 'AH':
           this.location_name='ໂຮງໝໍເມືອງນາຊາຍທອງ'
         break;
-        case 'KH':
+        case 'RH':
           this.location_name='ໂຮງໝໍນ້ອຍໂຄດສີວິໄລ'
         break;
         case 'XC':
           this.location_name='ສະໂມສອນປົກຄອງເມືອງໄຊທານີ'
         break;
-        case 'HH':
+        case 'XH':
           this.location_name='ໂຮງໝໍເມືອງໄຊທານີ'
         break;
         case 'FH':
           this.location_name='ໂຮງໝໍເມືອງຫາດຊາຍຟອງ(ຕຶກໃໝ້)'
         break;
-        case 'AH':
+        case 'NS':
           this.location_name='ໂຮງໝໍນ້ອຍນາສາ'
         break;
         case 'NC':
           this.location_name='ນາຈະເລີນ'
         break;
-        case 'RH':
+        case 'HH':
           this.location_name='ໂຮງໝໍເມືອງຫາດຊາຍຟອງ'
         break;
         case 'PH':
           this.location_name='ໂຮງໝໍນ້ອຍປາກຕອນ'
         break;
-        case 'GH':
+        case 'UH':
           this.location_name='ໂຮງໝໍເມືອງສັງທອງ'
         break;
-        case 'EH':
+        case 'GH':
           this.location_name='ໂຮງໝໍເມືອງປາກງື່ມ(ຈຸດ 2)'
         break;
         case 'DS':
